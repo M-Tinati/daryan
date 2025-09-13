@@ -1,0 +1,393 @@
+{% extends 'base.html' %}
+
+{% block title %}صفحه اصلی | کارخانه لوله پلی اتیلن{% endblock %}
+
+{% block content %}
+<body class="font-vazirmatn bg-blue-50 text-black">
+<!-- ===== Hero Section ===== -->
+<section class="relative overflow-hidden h-96 md:h-[600px] lg:h-[500px]">
+  <div class="absolute inset-0 bg-gradient-to-b from-black/20 via-black/10 to-black/50"></div>
+  <div class="absolute inset-0 bg-[radial-gradient(circle_at_50%_30%,rgba(255,255,255,0.2),transparent_70%)]"></div>
+
+  <img src="https://picsum.photos/1280/720?random=3"
+       alt="polyethylene factory" 
+       class="w-full h-full object-cover opacity-0 transition-opacity duration-1000 ease-in-out transform hover:scale-105"
+       id="heroImage">
+
+  <div class="absolute inset-0 flex flex-col items-center justify-center text-center text-white px-4 z-10">
+    <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 opacity-0 transform scale-95 transition-all duration-1000 ease-in-out"
+        id="heroTitle">
+      خرید لوله پلی‌اتیلن مستقیم از کارخانه
+    </h1>
+    <p class="mb-6 text-base sm:text-lg md:text-xl lg:text-2xl opacity-0 transform scale-95 transition-all duration-1000 ease-in-out"
+       id="heroText">
+      کیفیت تضمینی، قیمت رقابتی و ارسال سریع برای پروژه‌های شما
+    </p>
+    <a href="#products"
+       class="relative bg-orange-400 hover:bg-orange-300 text-black px-6 py-3 rounded-lg font-semibold opacity-0 transform scale-95 transition-all duration-1000 ease-in-out flex items-center shadow-lg hover:shadow-xl animate-cta"
+       id="heroButton">
+      ثبت سفارش فوری
+      <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+      </svg>
+    </a>
+  </div>
+</section>
+
+<!-- ===== Custom Animations ===== -->
+<style>
+@keyframes pulseGlow {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 10px rgba(255,165,0, 0.4);
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(255,165,0, 0.7);
+  }
+}
+
+@keyframes softShake {
+  0%, 100% { transform: translateX(0); }
+  20% { transform: translateX(-3px); }
+  40% { transform: translateX(3px); }
+  60% { transform: translateX(-2px); }
+  80% { transform: translateX(2px); }
+}
+
+.animate-cta {
+  animation: pulseGlow 2s infinite ease-in-out, softShake 5s infinite ease-in-out;
+}
+</style>
+<!-- ===== About Section ===== -->
+<section id="about" class="container mx-auto my-16 px-4 flex flex-col md:flex-row items-center">
+  <!-- متن -->
+  <div class="md:w-1/2 text-center md:text-right pr-4 animate-fadeIn">
+    <h2 class="text-3xl font-bold mb-4 text-blue-800">
+      چرا مشتریان ما را انتخاب می‌کنند؟
+    </h2>
+    <p class="text-black leading-relaxed mb-6">
+      کارخانه لوله پلی‌اتیلن ما با بیش از دو دهه تجربه، به عنوان یکی از بزرگ‌ترین و معتبرترین تولیدکنندگان لوله پلی‌اتیلن در ایران شناخته می‌شود.  
+      ما با بهره‌گیری از <span class="font-bold text-blue-800">پیشرفته‌ترین ماشین‌آلات روز دنیا</span> و استفاده از مواد اولیه درجه یک، محصولاتی تولید می‌کنیم که از نظر کیفیت و دوام در سطحی بالاتر از استانداردهای جهانی قرار دارند.  
+      هدف ما تنها فروش نیست؛ بلکه ایجاد <span class="font-bold text-orange-500">اعتماد بلندمدت</span> با مشتریان است.  
+      به همین دلیل پروژه‌های ملی، شرکت‌های بزرگ پیمانکاری و هزاران مشتری وفادار، انتخاب اولشان ما بوده‌ایم.  
+      اگر به دنبال <span class="font-bold text-green-600">محصولی با طول عمر بالا، مقاومت بی‌نظیر و خدمات پشتیبانی واقعی</span> هستید، پاسخ شما همین‌جاست.
+    </p>
+
+    <!-- مزایا -->
+    <ul class="text-black space-y-3 mb-6">
+      <li class="flex items-center justify-center md:justify-end">
+        <span class="ml-2 text-green-600">✔</span> استفاده از مواد اولیه 100% درجه یک
+      </li>
+      <li class="flex items-center justify-center md:justify-end">
+        <span class="ml-2 text-green-600">✔</span> استانداردهای بین‌المللی و تاییدیه‌های معتبر
+      </li>
+      <li class="flex items-center justify-center md:justify-end">
+        <span class="ml-2 text-green-600">✔</span> بیش از ۲۰ سال تجربه تخصصی
+      </li>
+      <li class="flex items-center justify-center md:justify-end">
+        <span class="ml-2 text-green-600">✔</span> پشتیبانی و خدمات پس از فروش واقعی
+      </li>
+    </ul>
+
+    <!-- آمار -->
+    <div class="grid grid-cols-3 gap-4 text-center">
+      <div>
+        <p class="text-2xl font-bold text-blue-800 counter" data-target="20">0</p>
+        <p class="text-sm text-gray-600">سال تجربه</p>
+      </div>
+      <div>
+        <p class="text-2xl font-bold text-blue-800 counter" data-target="1000">0</p>
+        <p class="text-sm text-gray-600">پروژه موفق</p>
+      </div>
+      <div>
+        <p class="text-2xl font-bold text-blue-800 counter" data-target="50">0</p>
+        <p class="text-sm text-gray-600">شهر تحت پوشش</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- عکس -->
+  <div class="md:w-1/2 mt-6 md:mt-0 animate-slideUp">
+    <img src="https://picsum.photos/1280/720?random=2"
+         alt="about us factory"
+         class="w-full h-auto rounded-lg shadow-lg">
+  </div>
+</section>
+
+<!-- انیمیشن‌ها -->
+<style>
+@keyframes fadeIn {
+  from {opacity: 0; transform: translateY(20px);}
+  to {opacity: 1; transform: translateY(0);}
+}
+@keyframes slideUp {
+  from {opacity: 0; transform: translateY(40px);}
+  to {opacity: 1; transform: translateY(0);}
+}
+.animate-fadeIn {
+  animation: fadeIn 1.2s ease-in-out both;
+}
+.animate-slideUp {
+  animation: slideUp 1.2s ease-in-out both;
+}
+</style>
+
+<!-- شمارنده آمار -->
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const counters = document.querySelectorAll(".counter");
+  let started = false;
+
+  function startCounting() {
+    if (started) return;
+    started = true;
+
+    counters.forEach(counter => {
+      let target = +counter.getAttribute("data-target");
+      let count = 0;
+      let speed = target / 100; // سرعت افزایش
+
+      let update = setInterval(() => {
+        count += speed;
+        if (count >= target) {
+          counter.textContent = target + "+";
+          clearInterval(update);
+        } else {
+          counter.textContent = Math.floor(count);
+        }
+      }, 30);
+    });
+  }
+
+  // شروع شمارش وقتی سکشن دیده شد
+  const aboutSection = document.getElementById("about");
+  const observer = new IntersectionObserver(entries => {
+    if (entries[0].isIntersecting) {
+      startCounting();
+    }
+  }, { threshold: 0.5 });
+
+  observer.observe(aboutSection);
+});
+</script>
+<!-- ===== Products Section ===== -->
+<section id="products" class="container mx-auto my-16 px-4">
+  <h2 class="text-3xl font-bold mb-8 text-center text-blue-800">محصولات</h2>
+
+  <!-- Flex افقی و scrollable -->
+  <div class="flex flex-row overflow-x-auto gap-6 pb-4">
+
+    {% for product in products %}
+    <div class="bg-white shadow-md rounded-lg overflow-hidden transform hover:scale-105 hover:shadow-xl transition duration-300 min-w-[80%] sm:min-w-[45%] md:min-w-[300px]">
+      <img src="{{ product.image.url }}" class="w-full h-48 object-contain bg-gray-100" alt="{{ product.name }}">
+      <div class="p-4 text-center">
+        <h3 class="font-semibold text-lg mb-2 text-blue-700">{{ product.name }}</h3>
+        {% if product.description %}
+          <p class="text-black text-sm">{{ product.description }}</p>
+        {% endif %}
+      </div>
+    </div>
+    {% endfor %}
+
+  </div>
+</section>
+<!-- ===== News Section ===== -->
+<section class="container mx-auto my-16 px-4 bg-blue-50 py-12 rounded-lg">
+  <h2 class="text-3xl font-bold mb-8 text-center text-blue-800">اخبار و اطلاعیه‌های صنعت پلی‌اتیلن</h2>
+
+  <!-- Flex افقی در موبایل، گرید سه‌تایی در دسکتاپ -->
+  <div class="flex flex-row overflow-x-auto gap-6 md:grid md:grid-cols-3 md:overflow-visible">
+
+    {% for post in posts %}
+    <div class="bg-white shadow-md rounded-lg overflow-hidden hover:shadow-xl transition duration-300 min-w-[80%] sm:min-w-[45%] md:min-w-0">
+      <img src="{{ post.image.url }}" class="w-full h-48 object-contain bg-gray-100" alt="{{ post.title }}">
+      <div class="p-4">
+        <h3 class="font-semibold text-lg mb-2 text-blue-700">{{ post.title }}</h3>
+        <p class="text-black text-sm">{{ post.content|truncatechars:100 }}</p>
+      </div>
+    </div>
+    {% endfor %}
+
+  </div>
+</section>
+
+
+<!-- ===== Chat Button & Modal ===== -->
+<div class="fixed bottom-8 right-4 z-50">
+
+  <!-- Chat Button -->
+  <button id="chatBtn"
+          class="bg-blue-600 hover:bg-blue-500 text-white px-5 py-3 rounded-full shadow-lg flex items-center space-x-2">
+    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"></path>
+    </svg>
+    <span>مشاوره آنلاین</span>
+  </button>
+
+  <!-- Chat Modal -->
+  <div id="chatModal"
+       class="fixed inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center px-4">
+    <div id="chatBox"
+         class="bg-white rounded-2xl shadow-2xl w-full max-w-lg p-6 relative transform transition-all duration-300 scale-95">
+
+      <h3 class="text-2xl font-bold mb-2 text-center text-blue-700">فرم مشاوره و تماس</h3>
+      <p class="text-gray-600 mb-6 text-center text-sm">
+        لطفاً اطلاعات خود را وارد کنید تا کارشناسان ما در اسرع وقت با شما تماس بگیرند.
+      </p>
+
+      <!-- فرم مشاوره -->
+      <form id="contactForm" method="post">
+        {% csrf_token %}
+
+        <div class="relative">
+          <input type="text" id="name" name="name" required
+                 class="peer w-full px-3 py-2 border-b-2 border-gray-300 text-gray-900 placeholder-transparent focus:outline-none focus:border-blue-600">
+          <label for="name"
+                 class="absolute right-3 -top-2.5 text-gray-500 text-sm transition-all peer-placeholder-shown:top-2 peer-placeholder-shown:text-gray-400 peer-placeholder-shown:text-base">
+            نام و نام خانوادگی
+          </label>
+        </div>
+
+        <div class="relative">
+          <input type="tel" id="phone" name="phone" required
+                 class="peer w-full px-3 py-2 border-b-2 border-gray-300 text-gray-900 placeholder-transparent focus:outline-none focus:border-blue-600">
+          <label for="phone"
+                 class="absolute right-3 -top-2.5 text-gray-500 text-sm transition-all peer-placeholder-shown:top-2 peer-placeholder-shown:text-gray-400 peer-placeholder-shown:text-base">
+            شماره تماس
+          </label>
+        </div>
+
+        <div class="relative">
+          <input type="email" id="email" name="email"
+                 class="peer w-full px-3 py-2 border-b-2 border-gray-300 text-gray-900 placeholder-transparent focus:outline-none focus:border-blue-600">
+          <label for="email"
+                 class="absolute right-3 -top-2.5 text-gray-500 text-sm transition-all peer-placeholder-shown:top-2 peer-placeholder-shown:text-gray-400 peer-placeholder-shown:text-base">
+            ایمیل (اختیاری)
+          </label>
+        </div>
+
+        <div class="relative">
+          <select id="subject" name="subject"
+                  class="w-full px-3 py-2 border-b-2 border-gray-300 text-gray-900 focus:outline-none focus:border-blue-600">
+            <option>سفارش محصول</option>
+            <option>مشاوره فنی</option>
+            <option>پشتیبانی</option>
+            <option>سایر</option>
+          </select>
+          <label for="subject" class="absolute right-3 -top-2.5 text-gray-500 text-sm">
+            موضوع
+          </label>
+        </div>
+
+        <div class="relative">
+          <textarea id="message" name="message" rows="3"
+                    class="peer w-full px-3 py-2 border-b-2 border-gray-300 text-gray-900 placeholder-transparent focus:outline-none focus:border-blue-600"></textarea>
+          <label for="message"
+                 class="absolute right-3 -top-2.5 text-gray-500 text-sm transition-all peer-placeholder-shown:top-2 peer-placeholder-shown:text-gray-400 peer-placeholder-shown:text-base">
+            توضیحات (اختیاری)
+          </label>
+        </div>
+
+        <button type="submit"
+                class="w-full bg-blue-600 hover:bg-blue-500 text-white py-3 rounded-lg font-semibold transition-all duration-300">
+          ارسال درخواست
+        </button>
+      </form>
+
+      <!-- پیام موفقیت -->
+      <div id="successMsg" class="hidden mt-6 text-center">
+        <div class="bg-green-100 border border-green-300 text-green-700 px-4 py-3 rounded-lg">
+          ✅ درخواست شما با موفقیت ارسال شد. کارشناسان ما به زودی تماس خواهند گرفت.
+        </div>
+      </div>
+
+      <!-- دکمه بستن modal -->
+      <button id="closeModal"
+              class="absolute top-3 right-3 text-gray-500 hover:text-gray-800 text-2xl">&times;</button>
+
+    </div>
+  </div>
+</div>
+
+<!-- ===== JS ===== -->
+<script>
+const chatBtn = document.getElementById('chatBtn');
+const chatModal = document.getElementById('chatModal');
+const chatBox = document.getElementById('chatBox');
+const closeModal = document.getElementById('closeModal');
+const contactForm = document.getElementById('contactForm');
+const successMsg = document.getElementById('successMsg');
+
+// باز/بستن modal
+chatBtn.addEventListener('click', () => {
+    chatModal.classList.remove('hidden');
+    setTimeout(() => {
+        chatBox.classList.remove('scale-95');
+        chatBox.classList.add('scale-100');
+    }, 50);
+});
+
+closeModal.addEventListener('click', () => {
+    chatModal.classList.add('hidden');
+    chatBox.classList.add('scale-95');
+});
+
+chatModal.addEventListener('click', (e) => {
+    if (e.target === chatModal) {
+        chatModal.classList.add('hidden');
+        chatBox.classList.add('scale-95');
+    }
+});
+
+// ارسال فرم با AJAX
+contactForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    const formData = new FormData(contactForm);
+
+    fetch('/submit-consultation/', {
+        method: 'POST',
+        headers: {
+            'X-CSRFToken': document.querySelector('[name=csrfmiddlewaretoken]').value
+        },
+        body: formData
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            contactForm.classList.add('hidden');
+            successMsg.classList.remove('hidden');
+        }
+    });
+});
+</script>
+
+{% endblock %}
+
+{% block scripts %}
+<script>
+  window.addEventListener('load', () => {
+    const heroImage = document.getElementById('heroImage');
+    const heroTitle = document.getElementById('heroTitle');
+    const heroText = document.getElementById('heroText');
+    const heroButton = document.getElementById('heroButton');
+
+    // نمایش سریع متن و دکمه
+    heroImage.classList.remove('opacity-0');
+    heroTitle.classList.remove('opacity-0', 'scale-95');
+    heroText.classList.remove('opacity-0', 'scale-95');
+    heroButton.classList.remove('opacity-0', 'scale-95');
+  });
+
+  // افکت parallax ساده روی scroll
+  const heroSection = document.querySelector('section.relative');
+  window.addEventListener('scroll', () => {
+    const offset = window.scrollY * 0.3;
+    heroSection.querySelector('img').style.transform = `translateY(${offset}px) scale(1.05)`;
+  });
+
+</script>
+{% endblock %}

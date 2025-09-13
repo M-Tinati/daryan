@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<section class="container mx-auto my-16 px-4">
+  <h2 class="text-3xl font-bold mb-8 text-center text-blue-800">وبلاگ</h2>
+
+  <!-- Grid ریسپانسیو: موبایل 2 ستون، دسکتاپ 3 ستون -->
+  <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+    {% for post in posts %}
+    <div class="bg-white shadow-md rounded-lg overflow-hidden hover:shadow-xl transition duration-300">
+      <img src="{{ post.image.url }}" class="w-full h-48 object-contain bg-gray-100" alt="{{ post.title }}">
+      <div class="p-4">
+        <h3 class="font-semibold text-lg mb-2 text-blue-700">{{ post.title }}</h3>
+        <p class="text-black text-sm">{{ post.content|truncatechars:100 }}</p>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+{% endblock content %}

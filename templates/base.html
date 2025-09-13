@@ -1,0 +1,26 @@
+{% load i18n %}
+<!DOCTYPE html>
+<html lang="{{ LANGUAGE_CODE }}" dir="{% if LANGUAGE_CODE == 'fa' %}rtl{% else %}ltr{% endif %}" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %}{% trans "کارخانه لوله پلی اتیلن" %}{% endblock %}</title>
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+  <!-- هدر -->
+  {% include 'inc/header.html' %}
+
+  <!-- محتوای صفحات فرزند -->
+  <main class="min-h-[70vh]">
+    {% block content %}{% endblock %}
+  </main>
+
+  <!-- فوتر -->
+  {% include 'inc/footer.html' %}
+
+  {% block scripts %}{% endblock %}
+</body>
+</html>

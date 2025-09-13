@@ -1,0 +1,136 @@
+{% extends "base.html" %}
+{% load widget_tweaks %}
+{% load static %}
+
+{% block content %}
+<div class="flex justify-center items-start min-h-screen bg-gray-100 px-4 py-10">
+    <!-- کارت فرم -->
+    <div class="w-full max-w-4xl bg-white rounded-2xl shadow-lg p-6 flex flex-col md:flex-row">
+        
+        <!-- ستون فرم -->
+        <div class="w-full md:w-1/2 pr-0 md:pr-6">
+            <h2 class="text-2xl font-bold text-center md:text-left mb-6">ثبت نام</h2>
+            <form method="post" class="space-y-5">
+                {% csrf_token %}
+                {{ form.non_field_errors }}
+                
+                <!-- شماره تلفن -->
+                <div class="flex flex-col md:flex-row md:items-center">
+                    <div class="w-full md:w-2/3">
+                        <label class="block text-sm font-medium text-gray-700">شماره تلفن</label>
+                        {{ form.phone|add_class:"w-full p-2 border rounded-lg mt-1 focus:ring-2 focus:ring-blue-500" }}
+                        {% if form.phone.errors %}
+                            <p class="text-red-500 text-xs mt-1">{{ form.phone.errors|first }}</p>
+                        {% endif %}
+                    </div>
+                    <div class="md:hidden text-black text-xs mt-1">
+                        باید دقیقاً ۱۱ رقم باشد و فقط شامل اعداد.
+                    </div>
+                </div>
+
+                <!-- نام -->
+                <div class="flex flex-col md:flex-row md:items-center">
+                    <div class="w-full md:w-2/3">
+                        <label class="block text-sm font-medium text-gray-700">نام</label>
+                        {{ form.first_name|add_class:"w-full p-2 border rounded-lg mt-1 focus:ring-2 focus:ring-blue-500" }}
+                        {% if form.first_name.errors %}
+                            <p class="text-red-500 text-xs mt-1">{{ form.first_name.errors|first }}</p>
+                        {% endif %}
+                    </div>
+                    <div class="md:hidden text-black text-xs mt-1">
+                        حداقل ۲ کاراکتر، حروف فارسی یا انگلیسی.
+                    </div>
+                </div>
+
+                <!-- نام خانوادگی -->
+                <div class="flex flex-col md:flex-row md:items-center">
+                    <div class="w-full md:w-2/3">
+                        <label class="block text-sm font-medium text-gray-700">نام خانوادگی</label>
+                        {{ form.last_name|add_class:"w-full p-2 border rounded-lg mt-1 focus:ring-2 focus:ring-blue-500" }}
+                        {% if form.last_name.errors %}
+                            <p class="text-red-500 text-xs mt-1">{{ form.last_name.errors|first }}</p>
+                        {% endif %}
+                    </div>
+                    <div class="md:hidden text-black text-xs mt-1">
+                        حداقل ۲ کاراکتر، حروف فارسی یا انگلیسی.
+                    </div>
+                </div>
+
+                <!-- نام کاربری -->
+                <div class="flex flex-col md:flex-row md:items-center">
+                    <div class="w-full md:w-2/3">
+                        <label class="block text-sm font-medium text-gray-700">نام کاربری</label>
+                        {{ form.username|add_class:"w-full p-2 border rounded-lg mt-1 focus:ring-2 focus:ring-blue-500" }}
+                        {% if form.username.errors %}
+                            <p class="text-red-500 text-xs mt-1">{{ form.username.errors|first }}</p>
+                        {% endif %}
+                    </div>
+                    <div class="md:hidden text-black text-xs mt-1">
+                        بین ۴ تا ۲۰ کاراکتر، بدون فاصله.
+                    </div>
+                </div>
+
+                <!-- شهر -->
+                <div class="flex flex-col md:flex-row md:items-center">
+                    <div class="w-full md:w-2/3">
+                        <label class="block text-sm font-medium text-gray-700">شهر</label>
+                        {{ form.city|add_class:"w-full p-2 border rounded-lg mt-1 focus:ring-2 focus:ring-blue-500" }}
+                        {% if form.city.errors %}
+                            <p class="text-red-500 text-xs mt-1">{{ form.city.errors|first }}</p>
+                        {% endif %}
+                    </div>
+                    <div class="md:hidden text-black text-xs mt-1">
+                        از لیست شهرهای استان آذربایجان شرقی انتخاب کنید.
+                    </div>
+                </div>
+
+                <!-- رمز عبور -->
+                <div class="flex flex-col md:flex-row md:items-center">
+                    <div class="w-full md:w-2/3">
+                        <label class="block text-sm font-medium text-gray-700">رمز عبور</label>
+                        {{ form.password1|add_class:"w-full p-2 border rounded-lg mt-1 focus:ring-2 focus:ring-blue-500" }}
+                        {% if form.password1.errors %}
+                            <p class="text-red-500 text-xs mt-1">{{ form.password1.errors|first }}</p>
+                        {% endif %}
+                    </div>
+                    <div class="md:hidden text-black text-xs mt-1">
+                        حداقل ۸ کاراکتر، ترکیبی از حروف و اعداد.
+                    </div>
+                </div>
+
+                <!-- تکرار رمز عبور -->
+                <div class="flex flex-col md:flex-row md:items-center">
+                    <div class="w-full md:w-2/3">
+                        <label class="block text-sm font-medium text-gray-700">تکرار رمز عبور</label>
+                        {{ form.password2|add_class:"w-full p-2 border rounded-lg mt-1 focus:ring-2 focus:ring-blue-500" }}
+                        {% if form.password2.errors %}
+                            <p class="text-red-500 text-xs mt-1">{{ form.password2.errors|first }}</p>
+                        {% endif %}
+                    </div>
+                    <div class="md:hidden text-black text-xs mt-1">
+                        مجدداً رمز عبور را وارد کنید.
+                    </div>
+                </div>
+
+                <button type="submit" class="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition font-medium">
+                    ثبت نام
+                </button>
+            </form>
+        </div>
+
+        <!-- ستون راهنمای ثبت‌نام (فقط برای دسکتاپ) -->
+        <div class="hidden md:block md:w-1/2 md:pl-6 border-l border-gray-200 pt-0">
+            <h2 class="text-xl font-bold text-center md:text-right mb-4">راهنمای ثبت‌نام</h2>
+            <ul class="space-y-4 text-gray-600 text-sm list-disc list-inside">
+                <li><strong>شماره تلفن:</strong> باید دقیقاً ۱۱ رقم باشد و فقط شامل اعداد مجاز است (بدون کاراکترهای اضافی).</li>
+                <li><strong>نام:</strong> حداقل ۲ کاراکتر، می‌تواند شامل حروف فارسی یا انگلیسی باشد (بدون اعداد یا علائم خاص).</li>
+                <li><strong>نام خانوادگی:</strong> حداقل ۲ کاراکتر، می‌تواند شامل حروف فارسی یا انگلیسی باشد (بدون اعداد یا علائم خاص).</li>
+                <li><strong>نام کاربری:</strong> بین ۴ تا ۲۰ کاراکتر، بدون فاصله یا کاراکترهای خاص (فقط حروف، اعداد و زیرخط مجاز است).</li>
+                <li><strong>شهر:</strong> از لیست شهرهای استان آذربایجان شرقی انتخاب شود (اطمینان حاصل کنید که گزینه مناسب را برگزینید).</li>
+                <li><strong>رمز عبور:</strong> حداقل ۸ کاراکتر، شامل ترکیبی از حروف بزرگ و کوچک، اعداد و علائم خاص برای امنیت بیشتر.</li>
+                <li><strong>تکرار رمز عبور:</strong> دقیقاً همان رمز عبور وارد شده در فیلد قبلی را تکرار کنید تا مطابقت بررسی شود.</li>
+            </ul>
+        </div>
+    </div>
+</div>
+{% endblock content %}

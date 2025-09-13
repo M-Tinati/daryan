@@ -1,0 +1,473 @@
+<header
+  class="bg-gradient-to-r from-blue-50 via-white to-blue-50 border-b border-gray-200 shadow-md sticky top-0 z-50 transition-all duration-300 ease-in-out"
+  id="main-header"
+>
+  <div class="container mx-auto px-4">
+    <!-- ردیف بالا: لوگو، منوی کاربر، انتخاب زبان، دکمه CTA -->
+    <div class="py-3 flex flex-row-reverse items-center justify-between">
+      <!-- لوگو -->
+      <a
+        href="{% url 'home:main' %}"
+        class="text-2xl md:text-3xl font-bold text-blue-800 hover:text-blue-600 transition-colors duration-300"
+      >
+        کارخانه پلی‌اتیلن
+      </a>
+
+      <!-- بخش‌های سمت راست دسکتاپ -->
+      <div class="hidden md:flex items-center gap-6">
+        <!-- منوی کشویی ورود/ثبت نام یا خروج (دسکتاپ) -->
+        <div class="relative">
+          {% if user.is_authenticated %}
+          <!-- دکمه پروفایل + فلش -->
+          <button
+            id="userMenuButton"
+            class="flex items-center gap-2 bg-gray-100 hover:bg-gray-200 px-3 py-2 rounded-md focus:outline-none transition"
+          >
+            <img
+              src="/path/to/avatar.png"
+              alt="Avatar"
+              class="w-7 h-7 rounded-full border-2 border-blue-400"
+            />
+            <span class="text-gray-700 font-semibold"
+              >سلام، {{ user.username }}</span
+            >
+            <svg
+              class="w-4 h-4 transition-transform duration-200"
+              id="dropdownArrow"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M19 9l-7 7-7-7"
+              />
+            </svg>
+          </button>
+
+          <!-- منوی کشویی با انیمیشن نرم -->
+          <div
+            id="userDropdown"
+            class="absolute right-0 mt-1 w-52 bg-white border border-gray-200 rounded-md shadow-lg flex-col overflow-hidden opacity-0 scale-95 transform origin-top transition-all duration-200 pointer-events-none"
+          >
+            <a
+              href="{% url 'accounts:dashboard' %}"
+              class="flex items-center gap-2 px-4 py-2 text-white bg-blue-500 hover:bg-blue-400 rounded-md transition transform hover:scale-105"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-5 w-5"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M3 7h18M3 12h18M3 17h18"
+                />
+              </svg>
+              پنل کاربری
+            </a>
+            <form action="{% url 'accounts:logout' %}" method="post">
+              {% csrf_token %}
+              <button
+                type="submit"
+                class="w-full flex items-center gap-2 px-4 py-2 text-white bg-red-500 hover:bg-red-400 rounded-md transition transform hover:scale-105 mt-1"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-5 w-5"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M17 16l4-4m0 0l-4-4m4 4H7"
+                  />
+                </svg>
+                خروج
+              </button>
+            </form>
+          </div>
+          {% else %}
+          <!-- دکمه حساب کاربری + فلش -->
+          <button
+            id="guestMenuButton"
+            class="flex items-center gap-3 bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg font-semibold shadow-md transition transform hover:scale-105 focus:outline-none"
+          >
+            <span>حساب کاربری</span>
+            <svg
+              class="w-4 h-4 transition-transform duration-200"
+              id="dropdownArrow"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M19 9l-7 7-7-7"
+              />
+            </svg>
+          </button>
+          <!-- منوی کشویی با انیمیشن نرم -->
+          <div
+            id="guestDropdown"
+            class="absolute right-0 mt-1 w-[148px]   rounded-md shadow-lg flex flex-col overflow-hidden opacity-0 scale-95 transform origin-top transition-all duration-200 pointer-events-none"
+          >
+            <a
+              href="{% url 'accounts:login' %}"
+              class="flex items-center gap-2 justify-center px-4 py-2 text-white bg-blue-500 hover:bg-blue-600 rounded-md font-semibold text-sm transition transform hover:scale-105 w-full"
+            >
+              ورود
+            </a>
+
+            <a
+              href="{% url 'accounts:register' %}"
+              class="flex items-center gap-2 justify-center px-4 py-2 text-white bg-green-500 hover:bg-green-600 rounded-md font-semibold text-sm transition transform hover:scale-105 mt-1 w-full"
+            >
+              ثبت نام
+            </a>
+          </div>
+          {% endif %}
+        </div>
+
+        <!-- انتخاب زبان کشویی (دسکتاپ) -->
+        <div class="relative">
+          <button
+            id="languageMenuButton"
+            class="flex items-center gap-2 bg-gray-100 hover:bg-gray-200 px-3 py-2 rounded-md focus:outline-none transition"
+          >
+            <span class="text-gray-700 font-semibold">🌍 زبان</span>
+            <svg
+              class="w-4 h-4 transition-transform duration-200"
+              id="languageDropdownArrow"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M19 9l-7 7-7-7"
+              />
+            </svg>
+          </button>
+
+          <!-- منوی کشویی زبان با انیمیشن نرم -->
+          <div
+            id="languageDropdown"
+            class="absolute right-0 mt-1 w-52 bg-white border border-gray-200 rounded-md shadow-lg flex-col overflow-hidden opacity-0 scale-95 transform origin-top transition-all duration-200 pointer-events-none"
+          >
+            <form action="" method="post" class="w-full">
+              {% csrf_token %}
+              <input
+                name="next"
+                type="hidden"
+                value="{{ request.get_full_path }}"
+              />
+              <button
+                name="language"
+                value="fa"
+                type="submit"
+                class="w-full flex items-center gap-2 px-4 py-2 text-white bg-blue-500 hover:bg-blue-400 rounded-md transition transform hover:scale-105"
+              >
+                🇮🇷 فارسی
+              </button>
+            </form>
+            <form action="" method="post" class="w-full mt-1">
+              {% csrf_token %}
+              <input
+                name="next"
+                type="hidden"
+                value="{{ request.get_full_path }}"
+              />
+              <button
+                name="language"
+                value="en"
+                type="submit"
+                class="w-full flex items-center gap-2 px-4 py-2 text-white bg-blue-500 hover:bg-blue-400 rounded-md transition transform hover:scale-105"
+              >
+                🇬🇧 English
+              </button>
+            </form>
+          </div>
+        </div>
+
+        <!-- دکمه CTA سریع -->
+        <a
+          href="#contact"
+          class="bg-blue-600 hover:bg-blue-500 text-white px-4 py-2 rounded-lg font-semibold transition transform hover:scale-105 duration-200"
+        >
+          🛒 ثبت سفارش
+        </a>
+      </div>
+
+      <!-- دکمه موبایل -->
+      <button
+        id="mobile-menu-button"
+        class="md:hidden focus:outline-none bg-blue-600 text-white p-2 rounded-md shadow"
+      >
+        <svg
+          class="w-6 h-6"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            id="menu-icon"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M4 6h16M4 12h16m-7 6h7"
+          ></path>
+        </svg>
+      </button>
+    </div>
+
+    <!-- ردیف پایین: منو ناوبری (دسکتاپ) -->
+    <nav
+      class="hidden md:flex items-center justify-center space-x-6 space-x-reverse text-gray-700 font-bold border-t border-gray-200 py-2"
+    >
+      <a
+        href="{% url 'shop:product_list' %}"
+        class="hover:text-blue-600 transition relative group flex items-center gap-1"
+        >📦 محصولات
+        <span
+          class="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 transition-all group-hover:w-full"
+        ></span>
+      </a>
+      <span class="mx-2 text-gray-300">|</span>
+      <a
+        href="{% url 'blog:blog_list' %}"
+        class="hover:text-blue-600 transition relative group flex items-center gap-1"
+        >📰 وبلاگ
+        <span
+          class="absolute bottom-0 left-0 w-0.5 bg-blue-600 transition-all group-hover:w-full"
+        ></span>
+      </a>
+      <span class="mx-2 text-gray-300">|</span>
+      <a
+        href="{% url 'home:about' %}"
+        class="hover:text-blue-600 transition relative group flex items-center gap-1"
+        >☎️ تماس با ما
+        <span
+          class="absolute bottom-0 left-0 w-0.5 bg-blue-600 transition-all group-hover:w-full"
+        ></span>
+      </a>
+    </nav>
+  </div>
+
+  <!-- منوی موبایل -->
+  <div
+    id="mobile-menu"
+    class="hidden fixed top-0 right-0 w-72 h-full bg-gradient-to-b from-white to-blue-50 shadow-lg border-l border-gray-200 z-40 transition-transform transform translate-x-full"
+  >
+    <div
+      class="flex justify-between items-center px-6 py-4 border-b border-gray-200"
+    >
+      <span class="font-bold text-blue-800">منو</span>
+      <button id="close-menu" class="text-gray-500 hover:text-red-500 text-xl">
+        &times;
+      </button>
+    </div>
+    <nav
+      class="flex flex-col items-start px-6 py-6 space-y-4 text-gray-700 font-bold"
+    >
+      <a
+        href="{% url 'shop:product_list' %}"
+        class="hover:text-blue-600 transition flex items-center gap-2"
+        >📦 محصولات</a
+      >
+      <a
+        href="{% url 'blog:blog_list' %}"
+        class="hover:text-blue-600 transition flex items-center gap-2"
+        >📰 وبلاگ</a
+      >
+      <a
+        href="{% url 'home:about' %}"
+        class="hover:text-blue-600 transition flex items-center gap-2"
+        >☎️ تماس با ما</a
+      >
+
+      <!-- فرم ورود/ثبت نام یا خروج موبایل -->
+      <div class="pt-4 border-t border-gray-200 w-full flex flex-col gap-2">
+        {% if user.is_authenticated %}
+        <span class="text-gray-700 font-semibold"
+          >سلام، {{ user.username }}</span
+        >
+        <a
+          href="{% url 'accounts:dashboard' %}"
+          class="bg-blue-500 hover:bg-blue-400 text-white px-4 py-2 rounded-md transition transform hover:scale-105 duration-200 w-full text-center"
+          >پنل کاربری</a
+        >
+        <form action="{% url 'accounts:logout' %}" method="post">
+          {% csrf_token %}
+          <button
+            type="submit"
+            class="bg-red-500 hover:bg-red-400 text-white px-4 py-2 rounded-md transition transform hover:scale-105 duration-200 w-full"
+          >
+            خروج
+          </button>
+        </form>
+        {% else %}
+        <a
+          href="{% url 'accounts:login' %}"
+          class="bg-blue-500 hover:bg-blue-400 text-white px-4 py-2 rounded-md transition transform hover:scale-105 duration-200 w-full text-center"
+          >ورود</a
+        >
+        <a
+          href="{% url 'accounts:register' %}"
+          class="bg-blue-500 hover:bg-blue-400 text-white px-4 py-2 rounded-md transition transform hover:scale-105 duration-200 w-full text-center"
+          >ثبت نام</a
+        >
+        {% endif %}
+      </div>
+
+      <!-- انتخاب زبان موبایل -->
+      <div class="pt-4 border-t border-gray-200 w-full">
+        <span class="text-sm text-gray-600 block mb-2">🌍 زبان:</span>
+        <div class="flex gap-2">
+          <form action="" method="post" class="inline">
+            {% csrf_token %}
+            <input
+              name="next"
+              type="hidden"
+              value="{{ request.get_full_path }}"
+            />
+            <button
+              name="language"
+              value="fa"
+              type="submit"
+              class="px-3 py-1 text-sm border rounded border-gray-300 hover:bg-blue-100 flex items-center gap-1 w-full text-center"
+            >
+              🇮🇷 فارسی
+            </button>
+          </form>
+          <form action="" method="post" class="inline">
+            {% csrf_token %}
+            <input
+              name="next"
+              type="hidden"
+              value="{{ request.get_full_path }}"
+            />
+            <button
+              name="language"
+              value="en"
+              type="submit"
+              class="px-3 py-1 text-sm border rounded border-gray-300 hover:bg-blue-100 flex items-center gap-1 w-full text-center"
+            >
+              🇬🇧 English
+            </button>
+          </form>
+        </div>
+      </div>
+    </nav>
+  </div>
+</header>
+<script>
+  const menuButton = document.getElementById("mobile-menu-button");
+  const mobileMenu = document.getElementById("mobile-menu");
+  const closeMenu = document.getElementById("close-menu");
+  const menuIcon = document.getElementById("menu-icon");
+
+  menuButton.addEventListener("click", () => {
+    mobileMenu.classList.toggle("hidden");
+    mobileMenu.classList.toggle("translate-x-0");
+    mobileMenu.classList.toggle("translate-x-full");
+    menuIcon.setAttribute(
+      "d",
+      mobileMenu.classList.contains("translate-x-0")
+        ? "M6 18L18 6M6 6l12 12"
+        : "M4 6h16M4 12h16m-7 6h7"
+    );
+  });
+
+  closeMenu.addEventListener("click", () => {
+    mobileMenu.classList.add("translate-x-full");
+    mobileMenu.classList.add("hidden");
+    menuIcon.setAttribute("d", "M4 6h16M4 12h16m-7 6h7");
+  });
+
+  const header = document.getElementById("main-header");
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 50) {
+      header.classList.add("shadow-lg", "py-2");
+      header.classList.remove("py-3");
+    } else {
+      header.classList.remove("shadow-lg", "py-2");
+      header.classList.add("py-3");
+    }
+  });
+
+  function toggleDropdown(button, dropdown, arrow) {
+    button.addEventListener("click", (e) => {
+      e.stopPropagation();
+      const isOpen = !dropdown.classList.contains("opacity-0");
+      if (isOpen) {
+        dropdown.classList.add("opacity-0", "scale-95", "pointer-events-none");
+        dropdown.classList.remove(
+          "opacity-100",
+          "scale-100",
+          "pointer-events-auto"
+        );
+        arrow.classList.remove("rotate-180");
+      } else {
+        dropdown.classList.remove(
+          "opacity-0",
+          "scale-95",
+          "pointer-events-none"
+        );
+        dropdown.classList.add(
+          "opacity-100",
+          "scale-100",
+          "pointer-events-auto"
+        );
+        arrow.classList.add("rotate-180");
+      }
+    });
+  }
+
+  // کاربران وارد شده
+  const userButton = document.getElementById("userMenuButton");
+  const userDropdown = document.getElementById("userDropdown");
+  const userArrow = document.getElementById("dropdownArrow");
+  if (userButton) toggleDropdown(userButton, userDropdown, userArrow);
+
+  // کاربران مهمان
+  const guestButton = document.getElementById("guestMenuButton");
+  const guestDropdown = document.getElementById("guestDropdown");
+  const guestArrow = document.getElementById("guestDropdownArrow");
+  if (guestButton) toggleDropdown(guestButton, guestDropdown, guestArrow);
+
+  // بستن منو با کلیک بیرون
+  window.addEventListener("click", function (e) {
+    [
+      [userDropdown, userButton, userArrow],
+      [guestDropdown, guestButton, guestArrow],
+    ].forEach(([dropdown, button, arrow]) => {
+      if (
+        dropdown &&
+        !button.contains(e.target) &&
+        !dropdown.contains(e.target)
+      ) {
+        dropdown.classList.add("opacity-0", "scale-95", "pointer-events-none");
+        dropdown.classList.remove(
+          "opacity-100",
+          "scale-100",
+          "pointer-events-auto"
+        );
+        arrow.classList.remove("rotate-180");
+      }
+    });
+  });
+</script>

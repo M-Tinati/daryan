@@ -1,0 +1,107 @@
+{% extends 'base.html' %}
+
+{% block title %}تماس با ما | کارخانه لوله پلی اتیلن{% endblock %}
+
+{% block content %}
+<body class="font-vazirmatn bg-blue-50 text-black">
+
+<!-- ===== Hero Section ===== -->
+<section class="relative overflow-hidden h-96 md:h-[500px] lg:h-[400px] bg-gradient-to-b from-blue-700 to-blue-500">
+  <div class="absolute inset-0 flex flex-col items-center justify-center text-center text-white px-4 z-10">
+    <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
+      با ما در ارتباط باشید
+    </h1>
+    <p class="mb-6 text-base sm:text-lg md:text-xl">
+      تیم پشتیبانی و فروش ما آماده پاسخگویی به سوالات و درخواست‌های شماست.
+    </p>
+    <a href="#contactFormSection" class="bg-orange-400 hover:bg-orange-300 text-black px-6 py-3 rounded-lg font-semibold shadow-lg">
+      ارسال پیام
+    </a>
+  </div>
+</section>
+
+<!-- ===== About Us Section ===== -->
+<section id="about" class="container mx-auto my-16 px-4 flex flex-col md:flex-row items-center">
+  <div class="md:w-1/2 text-center md:text-right pr-4 animate-fadeIn">
+    <h2 class="text-3xl font-bold mb-4 text-blue-800">درباره ما</h2>
+    <p class="text-black leading-relaxed mb-6">
+      کارخانه لوله پلی‌اتیلن ما با بیش از ۲۰ سال تجربه در صنعت، یکی از معتبرترین تولیدکنندگان در ایران است.
+      ما با بهره‌گیری از <span class="font-bold text-blue-800">ماشین‌آلات پیشرفته</span> و <span class="font-bold text-green-600">مواد اولیه درجه یک</span>، محصولاتی با کیفیت بالا ارائه می‌دهیم.
+      هدف ما ایجاد <span class="font-bold text-orange-500">اعتماد و رضایت بلندمدت</span> مشتریان است.
+    </p>
+
+    <ul class="text-black space-y-3 mb-6">
+      <li class="flex items-center justify-center md:justify-end"><span class="ml-2 text-green-600">✔</span> محصولات با استانداردهای بین‌المللی</li>
+      <li class="flex items-center justify-center md:justify-end"><span class="ml-2 text-green-600">✔</span> پشتیبانی و خدمات پس از فروش حرفه‌ای</li>
+      <li class="flex items-center justify-center md:justify-end"><span class="ml-2 text-green-600">✔</span> بیش از ۲۰ سال تجربه تخصصی</li>
+    </ul>
+  </div>
+
+  <div class="md:w-1/2 mt-6 md:mt-0 animate-slideUp">
+    <img src="https://picsum.photos/1280/720?random=5" alt="factory" class="w-full h-auto rounded-lg shadow-lg">
+  </div>
+</section>
+
+<!-- ===== Contact Form Section ===== -->
+<section id="contactFormSection" class="container mx-auto my-16 px-4 py-12 bg-white rounded-lg shadow-lg">
+  <h2 class="text-3xl font-bold mb-6 text-center text-blue-800">فرم تماس با ما</h2>
+  <p class="text-center text-gray-600 mb-8">لطفاً اطلاعات خود را وارد کنید تا کارشناسان ما در اسرع وقت با شما تماس بگیرند.</p>
+
+  <form id="contactForm" class="max-w-2xl mx-auto space-y-4">
+    <div class="relative">
+      <input type="text" id="name" required class="peer w-full px-3 py-2 border-b-2 border-gray-300 focus:outline-none focus:border-blue-600 placeholder-transparent">
+      <label for="name" class="absolute right-3 -top-2.5 text-gray-500 text-sm transition-all peer-placeholder-shown:top-2 peer-placeholder-shown:text-gray-400 peer-placeholder-shown:text-base">نام و نام خانوادگی</label>
+    </div>
+
+    <div class="relative">
+      <input type="tel" id="phone" required class="peer w-full px-3 py-2 border-b-2 border-gray-300 focus:outline-none focus:border-blue-600 placeholder-transparent">
+      <label for="phone" class="absolute right-3 -top-2.5 text-gray-500 text-sm transition-all peer-placeholder-shown:top-2 peer-placeholder-shown:text-gray-400 peer-placeholder-shown:text-base">شماره تماس</label>
+    </div>
+
+    <div class="relative">
+      <input type="email" id="email" class="peer w-full px-3 py-2 border-b-2 border-gray-300 focus:outline-none focus:border-blue-600 placeholder-transparent">
+      <label for="email" class="absolute right-3 -top-2.5 text-gray-500 text-sm transition-all peer-placeholder-shown:top-2 peer-placeholder-shown:text-gray-400 peer-placeholder-shown:text-base">ایمیل (اختیاری)</label>
+    </div>
+
+    <div class="relative">
+      <select id="subject" class="w-full px-3 py-2 border-b-2 border-gray-300 focus:outline-none focus:border-blue-600">
+        <option>سفارش محصول</option>
+        <option>مشاوره فنی</option>
+        <option>پشتیبانی</option>
+        <option>سایر</option>
+      </select>
+      <label for="subject" class="absolute right-3 -top-2.5 text-gray-500 text-sm">موضوع</label>
+    </div>
+
+    <div class="relative">
+      <textarea id="message" rows="4" class="peer w-full px-3 py-2 border-b-2 border-gray-300 focus:outline-none focus:border-blue-600 placeholder-transparent"></textarea>
+      <label for="message" class="absolute right-3 -top-2.5 text-gray-500 text-sm transition-all peer-placeholder-shown:top-2 peer-placeholder-shown:text-gray-400 peer-placeholder-shown:text-base">پیام شما</label>
+    </div>
+
+    <button type="submit" class="w-full bg-blue-600 hover:bg-blue-500 text-white py-3 rounded-lg font-semibold transition-all duration-300">
+      ارسال پیام
+    </button>
+  </form>
+
+  <div id="successMsg" class="hidden mt-6 text-center">
+    <div class="bg-green-100 border border-green-300 text-green-700 px-4 py-3 rounded-lg">
+      ✅ پیام شما با موفقیت ارسال شد. تیم ما در اسرع وقت با شما تماس خواهد گرفت.
+    </div>
+  </div>
+</section>
+
+</body>
+{% endblock %}
+
+{% block scripts %}
+<script>
+  const contactForm = document.getElementById('contactForm');
+  const successMsg = document.getElementById('successMsg');
+
+  contactForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    contactForm.classList.add('hidden');
+    successMsg.classList.remove('hidden');
+  });
+</script>
+{% endblock %}
