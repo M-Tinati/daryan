@@ -9,6 +9,8 @@ urlpatterns = [
     path('blog/', include('blog.urls', namespace='blog')),
     path('accounts/', include(('accounts.urls', 'accounts'), namespace='accounts')),
     path('products/', include(('shop.urls', 'shop'), namespace='shop')),
+    path('orders/', include('orders.urls', namespace='orders')),
+
 ]
 
 if settings.DEBUG:  # فقط وقتی DEBUG=True باشه (یعنی در حالت توسعه)

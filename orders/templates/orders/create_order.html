@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+{% block title %}ثبت سفارش{% endblock %}
+
+{% block content %}
+<section class="container mx-auto my-12 px-4 max-w-2xl">
+  <div class="bg-white shadow-md rounded-2xl p-6">
+    <h2 class="text-2xl font-bold mb-6 text-blue-700 text-center">ثبت سفارش {{ product.name }}</h2>
+    <form method="post" class="space-y-4">
+      {% csrf_token %}
+
+      <!-- تعداد -->
+      <div>
+        <label class="block font-medium text-gray-700">تعداد</label>
+        {{ form.quantity }}
+        {% if form.quantity.errors %}<p class="text-red-500 text-xs">{{ form.quantity.errors|first }}</p>{% endif %}
+      </div>
+
+      <!-- متراژ -->
+      <div>
+        <label class="block font-medium text-gray-700">متراژ (متر)</label>
+        {{ form.length }}
+        {% if form.length.errors %}<p class="text-red-500 text-xs">{{ form.length.errors|first }}</p>{% endif %}
+      </div>
+
+      <!-- نام و نام خانوادگی -->
+      <div>
+        <label class="block font-medium text-gray-700">نام و نام خانوادگی</label>
+        {{ form.full_name }}
+        {% if form.full_name.errors %}<p class="text-red-500 text-xs">{{ form.full_name.errors|first }}</p>{% endif %}
+      </div>
+
+      <!-- شماره تلفن -->
+      <div>
+        <label class="block font-medium text-gray-700">شماره تلفن</label>
+        {{ form.phone }}
+        {% if form.phone.errors %}<p class="text-red-500 text-xs">{{ form.phone.errors|first }}</p>{% endif %}
+      </div>
+
+      <!-- کد ملی -->
+      <div>
+        <label class="block font-medium text-gray-700">کد ملی</label>
+        {{ form.national_code }}
+        {% if form.national_code.errors %}<p class="text-red-500 text-xs">{{ form.national_code.errors|first }}</p>{% endif %}
+      </div>
+
+      <!-- آدرس -->
+      <div>
+        <label class="block font-medium text-gray-700">آدرس</label>
+        {{ form.address }}
+        {% if form.address.errors %}<p class="text-red-500 text-xs">{{ form.address.errors|first }}</p>{% endif %}
+      </div>
+
+      <button type="submit" class="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition">
+        ثبت سفارش
+      </button>
+    </form>
+  </div>
+</section>
+{% endblock %}

@@ -14,6 +14,7 @@ class CustomUserManager(BaseUserManager):
         extra_fields.setdefault('is_staff', True)
         extra_fields.setdefault('is_superuser', True)
         return self.create_user(phone, username, password, **extra_fields)
+
 class CustomUser(AbstractBaseUser, PermissionsMixin):
     phone = models.CharField(max_length=11, unique=True, verbose_name="شماره تلفن")
     username = models.CharField(max_length=50, unique=True, verbose_name="نام کاربری")
@@ -34,13 +35,7 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
         ("اسکو", "اسکو"),
         ("بستان‌آباد", "بستان‌آباد"),
     ]
-    city = models.CharField(
-        max_length=30,
-        choices=CITY_CHOICES,
-        blank=True,
-        null=True,
-        verbose_name="شهر"
-    )
+    city = models.CharField(max_length=30, choices=CITY_CHOICES, blank=True, null=True, verbose_name="شهر")
 
     is_active = models.BooleanField(default=True)
     is_staff = models.BooleanField(default=False)
@@ -52,3 +47,10 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
 
     def __str__(self):
         return f"{self.username} ({self.phone})"
+
+class Profile(models.Model):
+    user = models.OneToOneField(CustomUser, on_delete=models.CASCADE, related_name="profile")
+    address = models.TextField(blank=True, null=True, verbose_name="آدرس کامل")
+
+    def __str__(self):
+        return f"{self.user.username} Profile"

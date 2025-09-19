@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'accounts.apps.AccountsConfig',
     'blog.apps.BlogConfig',
     'shop.apps.ShopConfig',
+    'orders.apps.OrdersConfig',
     "widget_tweaks",
 ]
 
@@ -141,4 +142,12 @@ MEDIA_ROOT = BASE_DIR / 'media'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-AUTH_USER_MODEL = "accounts.CustomUser"
+AUTH_USER_MODEL = 'accounts.CustomUser'
+
+AUTHENTICATION_BACKENDS = [
+    'accounts.backends.PhoneBackend',               # کاربران معمولی با phone
+    'django.contrib.auth.backends.ModelBackend',    # ادمین با username
+]
+
+LOGIN_URL = 'accounts:login'
+LOGOUT_REDIRECT_URL = 'accounts:login'

@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% load widget_tweaks %}
+
+{% block title %}ویرایش پروفایل{% endblock %}
+
+{% block content %}
+<section class="container mx-auto my-12 px-4 max-w-2xl">
+  <div class="bg-white shadow-md rounded-2xl p-6">
+    <h2 class="text-2xl font-bold mb-6 text-blue-700 text-center">ویرایش پروفایل</h2>
+
+    <form method="post" class="space-y-4">
+      {% csrf_token %}
+
+      <!-- فرم اطلاعات کاربر -->
+      <div class="grid grid-cols-1 gap-4">
+        <label class="block font-medium text-gray-700">نام</label>
+        {{ user_form.first_name|add_class:"w-full p-2 border rounded-lg focus:ring-2 focus:ring-blue-500" }}
+
+        <label class="block font-medium text-gray-700">نام خانوادگی</label>
+        {{ user_form.last_name|add_class:"w-full p-2 border rounded-lg focus:ring-2 focus:ring-blue-500" }}
+
+        <label class="block font-medium text-gray-700">شهر</label>
+        {{ user_form.city|add_class:"w-full p-2 border rounded-lg focus:ring-2 focus:ring-blue-500" }}
+      </div>
+
+      <!-- فرم آدرس -->
+      <div class="mt-4">
+        <label class="block font-medium text-gray-700">آدرس کامل</label>
+        {{ profile_form.address|add_class:"w-full p-2 border rounded-lg focus:ring-2 focus:ring-blue-500" }}
+      </div>
+
+      <button type="submit" class="w-full bg-green-600 text-white py-2 rounded-lg hover:bg-green-700 transition mt-4">
+        ذخیره تغییرات
+      </button>
+    </form>
+  </div>
+</section>
+{% endblock %}

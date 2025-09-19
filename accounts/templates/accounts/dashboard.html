@@ -1,26 +1,47 @@
-<!DOCTYPE html>
-<html lang="fa">
-<head>
-    <meta charset="UTF-8">
-    <title>داشبورد</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body class="bg-gray-50 min-h-screen">
-    <div class="max-w-4xl mx-auto py-10">
-        <div class="bg-white shadow rounded-2xl p-6">
-            <h2 class="text-2xl font-bold mb-4">سلام {{ request.user.first_name }} 👋</h2>
-            <p class="text-gray-700">خوش اومدی به داشبورد کاربری‌ات.</p>
-            <div class="mt-6 flex justify-between">
-                <div>
-                    <p><span class="font-semibold">نام کاربری:</span> {{ request.user.username }}</p>
-                    <p><span class="font-semibold">شماره تلفن:</span> {{ request.user.phone }}</p>
-                    <p><span class="font-semibold">آدرس:</span> {{ request.user.address }}</p>
-                </div>
-                <a href="{% url 'accounts:logout' %}" class="bg-red-600 text-white px-4 py-2 rounded-xl hover:bg-red-700 transition">
-                    خروج
-                </a>
-            </div>
-        </div>
+{% extends "base.html" %}
+
+{% block title %}داشبورد کاربری{% endblock %}
+
+{% block content %}
+<section class="container mx-auto my-12 px-4 max-w-4xl">
+  <div class="bg-white shadow-md rounded-2xl p-6">
+    <h2 class="text-2xl font-bold mb-4">سلام {{ request.user.first_name|default:request.user.username }} 👋</h2>
+    <p class="text-gray-700">خوش اومدی به داشبورد کاربری‌ات.</p>
+
+    <!-- اطلاعات کاربر -->
+    <div class="mt-6 flex flex-col md:flex-row justify-between items-start gap-6">
+      <div class="space-y-2">
+    <p><span class="font-semibold">نام کاربری:</span> {{ request.user.username }}</p>
+    <p><span class="font-semibold">شماره تلفن:</span> {{ request.user.phone }}</p>
+    <p><span class="font-semibold">نام:</span> {{ request.user.first_name|default:"ثبت نشده" }}</p>
+    <p><span class="font-semibold">نام خانوادگی:</span> {{ request.user.last_name|default:"ثبت نشده" }}</p>
+    <p><span class="font-semibold">شهر:</span> {{ request.user.city|default:"ثبت نشده" }}</p>
+    <p><span class="font-semibold">آدرس کامل:</span>
+        {% if request.user.profile %}
+            {{ request.user.profile.address|default:"ثبت نشده" }}
+        {% else %}
+            ثبت نشده
+        {% endif %}
+    </p>
+</div>
+
+
+      <!-- دکمه‌ها -->
+      <div class="flex flex-col gap-3">
+        <a href="{% url 'orders:my_orders' %}" 
+           class="bg-blue-600 text-white px-4 py-2 rounded-xl hover:bg-blue-700 transition text-center">
+           سفارش‌های من
+        </a>
+        <a href="{% url 'accounts:edit_profile' %}" 
+           class="bg-green-600 text-white px-4 py-2 rounded-xl hover:bg-green-700 transition text-center">
+           ویرایش پروفایل
+        </a>
+        <a href="{% url 'accounts:logout' %}" 
+           class="bg-red-600 text-white px-4 py-2 rounded-xl hover:bg-red-700 transition text-center">
+           خروج
+        </a>
+      </div>
     </div>
-</body>
-</html>
+  </div>
+</section>
+{% endblock %}
