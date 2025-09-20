@@ -1,0 +1,82 @@
+{% extends "base.html" %}
+{% load pricing_filters %}
+
+{% block content %}
+<div class="container mx-auto px-4 py-8">
+    <h1 class="text-2xl md:text-3xl font-bold text-center mb-6 text-gray-800">
+        استعلام قیمت لوله‌ها
+    </h1>
+
+    <!-- نمایش جدول در دسکتاپ و تبلت -->
+    <div class="hidden sm:block overflow-x-auto">
+        <table class="min-w-full border border-gray-200 shadow-md rounded-lg">
+            <thead class="bg-gray-800 text-white">
+                <tr>
+                    <th class="px-4 py-2 text-center">سایز</th>
+                    <th class="px-4 py-2 text-center">فشار (بار)</th>
+                    <th class="px-4 py-2 text-center">نوع PE</th>
+                    <th class="px-4 py-2 text-center">وزن لوله (کیلوگرم)</th>
+                    <th class="px-4 py-2 text-center">قیمت هر کیلوگرم (تومان)</th>
+                    <th class="px-4 py-2 text-center">قیمت کل (تومان)</th>
+                </tr>
+            </thead>
+            <tbody class="bg-white divide-y divide-gray-200">
+                {% for pipe in pipes %}
+                <tr class="hover:bg-gray-50 transition-colors">
+                    <td class="px-4 py-2 text-center">{{ pipe.size }}</td>
+                    <td class="px-4 py-2 text-center">{{ pipe.pressure }}</td>
+                    <td class="px-4 py-2 text-center">{{ pipe.pe_type }}</td>
+                    <td class="px-4 py-2 text-center">{{ pipe.weight|floatformat:2 }}</td>
+                    <td class="px-4 py-2 text-center">{{ pipe.price_per_kg|floatformat:0 }}</td>
+                    <td class="px-4 py-2 text-center font-semibold text-gray-700">
+                        {{ pipe.price_per_kg|mul:pipe.weight|floatformat:0 }}
+                    </td>
+                </tr>
+                {% empty %}
+                <tr>
+                    <td colspan="6" class="px-4 py-6 text-center text-gray-500">
+                        هیچ لوله‌ای یافت نشد.
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    <!-- نمایش جدول به صورت کارت در موبایل -->
+    <div class="sm:hidden space-y-4">
+        {% for pipe in pipes %}
+        <div class="bg-white shadow-md rounded-lg p-4 border border-gray-200">
+            <div class="flex justify-between mb-1">
+                <span class="font-semibold text-gray-700">سایز:</span>
+                <span>{{ pipe.size }}</span>
+            </div>
+            <div class="flex justify-between mb-1">
+                <span class="font-semibold text-gray-700">فشار:</span>
+                <span>{{ pipe.pressure }} بار</span>
+            </div>
+            <div class="flex justify-between mb-1">
+                <span class="font-semibold text-gray-700">نوع PE:</span>
+                <span>{{ pipe.pe_type }}</span>
+            </div>
+            <div class="flex justify-between mb-1">
+                <span class="font-semibold text-gray-700">وزن لوله:</span>
+                <span>{{ pipe.weight|floatformat:2 }} کیلوگرم</span>
+            </div>
+            <!-- <div class="flex justify-between mb-1">
+                <span class="font-semibold text-gray-700">قیمت هر کیلوگرم:</span>
+                <span>{{ pipe.price_per_kg|floatformat:0 }} تومان</span>
+            </div> -->
+            <div class="flex justify-between mt-2 border-t pt-2">
+                <span class="font-semibold text-gray-800">قیمت کل:</span>
+                <span class="font-bold text-gray-900">
+                    {{ pipe.price_per_kg|mul:pipe.weight|floatformat:0 }} تومان
+                </span>
+            </div>
+        </div>
+        {% empty %}
+        <div class="text-center text-gray-500">هیچ لوله‌ای یافت نشد.</div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

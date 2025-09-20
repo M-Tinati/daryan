@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'blog.apps.BlogConfig',
     'shop.apps.ShopConfig',
     'orders.apps.OrdersConfig',
+    'pricing.apps.PricingConfig',
     "widget_tweaks",
 ]
 

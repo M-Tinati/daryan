@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-
+{% load widget_tweaks %}
 {% block title %}صفحه اصلی | کارخانه لوله پلی اتیلن{% endblock %}
 
 {% block content %}
@@ -23,7 +23,7 @@
        id="heroText">
       کیفیت تضمینی، قیمت رقابتی و ارسال سریع برای پروژه‌های شما
     </p>
-    <a href="#products"
+    <a href="{% url 'pricing:price_inquiry' %}"
        class="relative bg-orange-400 hover:bg-orange-300 text-black px-6 py-3 rounded-lg font-semibold opacity-0 transform scale-95 transition-all duration-1000 ease-in-out flex items-center shadow-lg hover:shadow-xl animate-cta"
        id="heroButton">
       ثبت سفارش فوری
