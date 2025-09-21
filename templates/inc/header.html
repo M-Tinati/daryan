@@ -5,12 +5,18 @@
   <div class="container mx-auto px-4">
     <!-- ردیف بالا: لوگو، منوی کاربر، انتخاب زبان، دکمه CTA -->
     <div class="py-3 flex flex-row-reverse items-center justify-between">
-      <!-- لوگو -->
+      
+      <!-- لوگو + نام سایت -->
       <a
         href="{% url 'home:main' %}"
-        class="text-2xl md:text-3xl font-bold text-blue-800 hover:text-blue-600 transition-colors duration-300"
+        class="flex items-center gap-2 text-2xl md:text-3xl font-bold text-blue-800 hover:text-blue-600 transition-colors duration-300"
       >
-        کارخانه پلی‌اتیلن
+        <img
+          src="https://ippfa.ir/wp-content/uploads/2024/11/IMG_20241208_094817_166.jpg"
+          alt="لوگو کارخانه پلی‌اتیلن"
+          class="h-10 w-auto rounded-md border border-gray-300 shadow-sm"
+        />
+        <span>کارخانه پلی‌اتیلن</span>
       </a>
 
       <!-- بخش‌های سمت راست دسکتاپ -->
@@ -203,13 +209,22 @@
           </div>
         </div>
 
-        <!-- دکمه CTA سریع -->
+        <!-- دکمه CTA سریع: ثبت سفارش -->
         <a
           href="#contact"
           class="bg-blue-600 hover:bg-blue-500 text-white px-4 py-2 rounded-lg font-semibold transition transform hover:scale-105 duration-200"
         >
           🛒 ثبت سفارش
         </a>
+
+        <!-- دکمه CTA سریع: کاتالوگ -->
+        <!-- <a
+          href="/static/catalog.pdf"
+          target="_blank"
+          class="bg-blue-600 hover:bg-blue-500 text-white px-4 py-2 rounded-lg font-semibold transition transform hover:scale-105 duration-200"
+        >
+          📖 کاتالوگ
+        </a> -->
       </div>
 
       <!-- دکمه موبایل -->
@@ -264,6 +279,13 @@
           class="absolute bottom-0 left-0 w-0.5 bg-blue-600 transition-all group-hover:w-full"
         ></span>
       </a>
+              <a
+          href="/static/catalog.pdf"
+          target="_blank"
+          class="hover:text-blue-600 transition relative group flex items-center gap-1"
+        >
+          📖 کاتالوگ
+        </a>
     </nav>
   </div>
 
@@ -298,6 +320,15 @@
         class="hover:text-blue-600 transition flex items-center gap-2"
         >☎️ تماس با ما</a
       >
+
+      <!-- دکمه CTA موبایل: کاتالوگ -->
+      <a
+        href="/static/catalog.pdf"
+        target="_blank"
+        class="bg-blue-600 hover:bg-blue-500 text-white px-4 py-2 rounded-md transition transform hover:scale-105 duration-200 w-full text-center"
+      >
+        📖 کاتالوگ
+      </a>
 
       <!-- فرم ورود/ثبت نام یا خروج موبایل -->
       <div class="pt-4 border-t border-gray-200 w-full flex flex-col gap-2">
@@ -374,100 +405,101 @@
     </nav>
   </div>
 </header>
-<script>
-  const menuButton = document.getElementById("mobile-menu-button");
-  const mobileMenu = document.getElementById("mobile-menu");
-  const closeMenu = document.getElementById("close-menu");
-  const menuIcon = document.getElementById("menu-icon");
 
-  menuButton.addEventListener("click", () => {
-    mobileMenu.classList.toggle("hidden");
-    mobileMenu.classList.toggle("translate-x-0");
-    mobileMenu.classList.toggle("translate-x-full");
-    menuIcon.setAttribute(
-      "d",
-      mobileMenu.classList.contains("translate-x-0")
-        ? "M6 18L18 6M6 6l12 12"
-        : "M4 6h16M4 12h16m-7 6h7"
-    );
-  });
+  <script>
+    const menuButton = document.getElementById("mobile-menu-button");
+    const mobileMenu = document.getElementById("mobile-menu");
+    const closeMenu = document.getElementById("close-menu");
+    const menuIcon = document.getElementById("menu-icon");
 
-  closeMenu.addEventListener("click", () => {
-    mobileMenu.classList.add("translate-x-full");
-    mobileMenu.classList.add("hidden");
-    menuIcon.setAttribute("d", "M4 6h16M4 12h16m-7 6h7");
-  });
+    menuButton.addEventListener("click", () => {
+      mobileMenu.classList.toggle("hidden");
+      mobileMenu.classList.toggle("translate-x-0");
+      mobileMenu.classList.toggle("translate-x-full");
+      menuIcon.setAttribute(
+        "d",
+        mobileMenu.classList.contains("translate-x-0")
+          ? "M6 18L18 6M6 6l12 12"
+          : "M4 6h16M4 12h16m-7 6h7"
+      );
+    });
 
-  const header = document.getElementById("main-header");
-  window.addEventListener("scroll", () => {
-    if (window.scrollY > 50) {
-      header.classList.add("shadow-lg", "py-2");
-      header.classList.remove("py-3");
-    } else {
-      header.classList.remove("shadow-lg", "py-2");
-      header.classList.add("py-3");
-    }
-  });
+    closeMenu.addEventListener("click", () => {
+      mobileMenu.classList.add("translate-x-full");
+      mobileMenu.classList.add("hidden");
+      menuIcon.setAttribute("d", "M4 6h16M4 12h16m-7 6h7");
+    });
 
-  function toggleDropdown(button, dropdown, arrow) {
-    button.addEventListener("click", (e) => {
-      e.stopPropagation();
-      const isOpen = !dropdown.classList.contains("opacity-0");
-      if (isOpen) {
-        dropdown.classList.add("opacity-0", "scale-95", "pointer-events-none");
-        dropdown.classList.remove(
-          "opacity-100",
-          "scale-100",
-          "pointer-events-auto"
-        );
-        arrow.classList.remove("rotate-180");
+    const header = document.getElementById("main-header");
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 50) {
+        header.classList.add("shadow-lg", "py-2");
+        header.classList.remove("py-3");
       } else {
-        dropdown.classList.remove(
-          "opacity-0",
-          "scale-95",
-          "pointer-events-none"
-        );
-        dropdown.classList.add(
-          "opacity-100",
-          "scale-100",
-          "pointer-events-auto"
-        );
-        arrow.classList.add("rotate-180");
+        header.classList.remove("shadow-lg", "py-2");
+        header.classList.add("py-3");
       }
     });
-  }
 
-  // کاربران وارد شده
-  const userButton = document.getElementById("userMenuButton");
-  const userDropdown = document.getElementById("userDropdown");
-  const userArrow = document.getElementById("dropdownArrow");
-  if (userButton) toggleDropdown(userButton, userDropdown, userArrow);
+    function toggleDropdown(button, dropdown, arrow) {
+      button.addEventListener("click", (e) => {
+        e.stopPropagation();
+        const isOpen = !dropdown.classList.contains("opacity-0");
+        if (isOpen) {
+          dropdown.classList.add("opacity-0", "scale-95", "pointer-events-none");
+          dropdown.classList.remove(
+            "opacity-100",
+            "scale-100",
+            "pointer-events-auto"
+          );
+          arrow.classList.remove("rotate-180");
+        } else {
+          dropdown.classList.remove(
+            "opacity-0",
+            "scale-95",
+            "pointer-events-none"
+          );
+          dropdown.classList.add(
+            "opacity-100",
+            "scale-100",
+            "pointer-events-auto"
+          );
+          arrow.classList.add("rotate-180");
+        }
+      });
+    }
 
-  // کاربران مهمان
-  const guestButton = document.getElementById("guestMenuButton");
-  const guestDropdown = document.getElementById("guestDropdown");
-  const guestArrow = document.getElementById("guestDropdownArrow");
-  if (guestButton) toggleDropdown(guestButton, guestDropdown, guestArrow);
+    // کاربران وارد شده
+    const userButton = document.getElementById("userMenuButton");
+    const userDropdown = document.getElementById("userDropdown");
+    const userArrow = document.getElementById("dropdownArrow");
+    if (userButton) toggleDropdown(userButton, userDropdown, userArrow);
 
-  // بستن منو با کلیک بیرون
-  window.addEventListener("click", function (e) {
-    [
-      [userDropdown, userButton, userArrow],
-      [guestDropdown, guestButton, guestArrow],
-    ].forEach(([dropdown, button, arrow]) => {
-      if (
-        dropdown &&
-        !button.contains(e.target) &&
-        !dropdown.contains(e.target)
-      ) {
-        dropdown.classList.add("opacity-0", "scale-95", "pointer-events-none");
-        dropdown.classList.remove(
-          "opacity-100",
-          "scale-100",
-          "pointer-events-auto"
-        );
-        arrow.classList.remove("rotate-180");
-      }
+    // کاربران مهمان
+    const guestButton = document.getElementById("guestMenuButton");
+    const guestDropdown = document.getElementById("guestDropdown");
+    const guestArrow = document.getElementById("guestDropdownArrow");
+    if (guestButton) toggleDropdown(guestButton, guestDropdown, guestArrow);
+
+    // بستن منو با کلیک بیرون
+    window.addEventListener("click", function (e) {
+      [
+        [userDropdown, userButton, userArrow],
+        [guestDropdown, guestButton, guestArrow],
+      ].forEach(([dropdown, button, arrow]) => {
+        if (
+          dropdown &&
+          !button.contains(e.target) &&
+          !dropdown.contains(e.target)
+        ) {
+          dropdown.classList.add("opacity-0", "scale-95", "pointer-events-none");
+          dropdown.classList.remove(
+            "opacity-100",
+            "scale-100",
+            "pointer-events-auto"
+          );
+          arrow.classList.remove("rotate-180");
+        }
+      });
     });
-  });
-</script>
+  </script>

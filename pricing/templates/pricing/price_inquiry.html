@@ -1,40 +1,50 @@
 {% extends "base.html" %}
-{% load pricing_filters %}
+{% load humanize %}
+
+{% block extra_head %}
+    <!-- لود فونت Vazir برای فارسی -->
+    <link href="https://cdn.jsdelivr.net/npm/vazir-font@33.0.3/dist/font-face.css" rel="stylesheet">
+    <style>
+        body, table, th, td, h1, span {
+            font-family: 'Vazir', sans-serif !important;
+            direction: rtl;
+            text-align: right;
+        }
+    </style>
+{% endblock %}
 
 {% block content %}
 <div class="container mx-auto px-4 py-8">
-    <h1 class="text-2xl md:text-3xl font-bold text-center mb-6 text-gray-800">
+    <h1 class="text-3xl md:text-4xl font-bold text-center mb-8 text-gray-900">
         استعلام قیمت لوله‌ها
     </h1>
 
     <!-- نمایش جدول در دسکتاپ و تبلت -->
-    <div class="hidden sm:block overflow-x-auto">
-        <table class="min-w-full border border-gray-200 shadow-md rounded-lg">
-            <thead class="bg-gray-800 text-white">
+    <div class="hidden sm:block overflow-x-auto rounded-xl shadow-lg">
+        <table class="min-w-full bg-white border border-gray-200 rounded-xl">
+            <thead class="bg-gradient-to-r from-blue-700 to-blue-500 text-white">
                 <tr>
-                    <th class="px-4 py-2 text-center">سایز</th>
-                    <th class="px-4 py-2 text-center">فشار (بار)</th>
-                    <th class="px-4 py-2 text-center">نوع PE</th>
-                    <th class="px-4 py-2 text-center">وزن لوله (کیلوگرم)</th>
-                    <th class="px-4 py-2 text-center">قیمت هر کیلوگرم (تومان)</th>
-                    <th class="px-4 py-2 text-center">قیمت کل (تومان)</th>
+                    <th class="px-6 py-4 text-right font-semibold">سایز</th>
+                    <th class="px-6 py-4 text-right font-semibold">فشار (بار)</th>
+                    <th class="px-6 py-4 text-right font-semibold">نوع PE</th>
+                    <th class="px-6 py-4 text-right font-semibold">وزن لوله (کیلوگرم)</th>
+                    <th class="px-6 py-4 text-right font-semibold">قیمت کل (تومان)</th>
                 </tr>
             </thead>
-            <tbody class="bg-white divide-y divide-gray-200">
+            <tbody class="divide-y divide-gray-200">
                 {% for pipe in pipes %}
-                <tr class="hover:bg-gray-50 transition-colors">
-                    <td class="px-4 py-2 text-center">{{ pipe.size }}</td>
-                    <td class="px-4 py-2 text-center">{{ pipe.pressure }}</td>
-                    <td class="px-4 py-2 text-center">{{ pipe.pe_type }}</td>
-                    <td class="px-4 py-2 text-center">{{ pipe.weight|floatformat:2 }}</td>
-                    <td class="px-4 py-2 text-center">{{ pipe.price_per_kg|floatformat:0 }}</td>
-                    <td class="px-4 py-2 text-center font-semibold text-gray-700">
-                        {{ pipe.price_per_kg|mul:pipe.weight|floatformat:0 }}
+                <tr class="hover:bg-blue-50 transition-colors duration-200">
+                    <td class="px-6 py-4 text-right text-gray-800">{{ pipe.size }}</td>
+                    <td class="px-6 py-4 text-right text-gray-800">{{ pipe.pressure }}</td>
+                    <td class="px-6 py-4 text-right text-gray-800">{{ pipe.pe_type }}</td>
+                    <td class="px-6 py-4 text-right text-gray-800">{{ pipe.weight }}</td>
+                    <td class="px-6 py-4 text-right font-bold text-blue-700">
+                        {{ pipe.total_price|intcomma }} تومان
                     </td>
                 </tr>
                 {% empty %}
                 <tr>
-                    <td colspan="6" class="px-4 py-6 text-center text-gray-500">
+                    <td colspan="5" class="px-6 py-8 text-center text-gray-500">
                         هیچ لوله‌ای یافت نشد.
                     </td>
                 </tr>
@@ -61,16 +71,16 @@
             </div>
             <div class="flex justify-between mb-1">
                 <span class="font-semibold text-gray-700">وزن لوله:</span>
-                <span>{{ pipe.weight|floatformat:2 }} کیلوگرم</span>
+                <span>{{ pipe.weight }} کیلوگرم</span>
             </div>
             <!-- <div class="flex justify-between mb-1">
                 <span class="font-semibold text-gray-700">قیمت هر کیلوگرم:</span>
-                <span>{{ pipe.price_per_kg|floatformat:0 }} تومان</span>
+                <span>{{ pipe.price_per_kg|intcomma }} تومان</span>
             </div> -->
             <div class="flex justify-between mt-2 border-t pt-2">
                 <span class="font-semibold text-gray-800">قیمت کل:</span>
                 <span class="font-bold text-gray-900">
-                    {{ pipe.price_per_kg|mul:pipe.weight|floatformat:0 }} تومان
+                    {{ pipe.total_price|intcomma }} تومان
                 </span>
             </div>
         </div>
