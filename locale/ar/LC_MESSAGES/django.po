@@ -1,0 +1,772 @@
+# Arabic translations for Polyethylene Pipe Factory
+# Copyright (C) 2025 THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Polyethylene Pipe Factory 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-09-23 20:31+0330\n"
+"PO-Revision-Date: 2025-09-23 20:31+0330\n"
+"Last-Translator: Grok Translator <grok@x.ai>\n"
+"Language-Team: Arabic <ar@li.org>\n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=(n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 04);\n"
+
+#: .\accounts\templates\accounts\dashboard.html:4
+msgid "داشبورد کاربری"
+msgstr "لوحة تحكم المستخدم"
+
+#: .\accounts\templates\accounts\dashboard.html:9
+msgid "سلام"
+msgstr "مرحبا"
+
+#: .\accounts\templates\accounts\dashboard.html:10
+msgid "خوش اومدی به داشبورد کاربری‌ات."
+msgstr "مرحبا بك في لوحة تحكم المستخدم الخاصة بك."
+
+#: .\accounts\templates\accounts\dashboard.html:15
+#: .\accounts\templates\accounts\register.html:129
+msgid "نام کاربری:"
+msgstr "اسم المستخدم:"
+
+#: .\accounts\templates\accounts\dashboard.html:16
+#: .\accounts\templates\accounts\register.html:126
+#: .\orders\templates\orders\my_orders.html:32
+msgid "شماره تلفن:"
+msgstr "رقم الهاتف:"
+
+#: .\accounts\templates\accounts\dashboard.html:17
+#: .\accounts\templates\accounts\register.html:127
+msgid "نام:"
+msgstr "الاسم:"
+
+#: .\accounts\templates\accounts\dashboard.html:18
+#: .\accounts\templates\accounts\register.html:128
+msgid "نام خانوادگی:"
+msgstr "اسم العائلة:"
+
+#: .\accounts\templates\accounts\dashboard.html:19
+#: .\accounts\templates\accounts\register.html:130
+msgid "شهر:"
+msgstr "المدينة:"
+
+#: .\accounts\templates\accounts\dashboard.html:20
+msgid "آدرس کامل:"
+msgstr "العنوان الكامل:"
+
+#: .\accounts\templates\accounts\dashboard.html:24
+msgid "ثبت نشده"
+msgstr "غير مسجل"
+
+#: .\accounts\templates\accounts\dashboard.html:33
+#: .\orders\templates\orders\my_orders.html:3
+#: .\orders\templates\orders\my_orders.html:7
+msgid "سفارش‌های من"
+msgstr "طلباتي"
+
+#: .\accounts\templates\accounts\dashboard.html:37
+#: .\accounts\templates\accounts\edit_profile.html:5
+#: .\accounts\templates\accounts\edit_profile.html:10
+msgid "ویرایش پروفایل"
+msgstr "تعديل الملف الشخصي"
+
+#: .\accounts\templates\accounts\dashboard.html:41
+#: .\templates\inc\header.html:101 .\templates\inc\header.html:320
+msgid "خروج"
+msgstr "تسجيل الخروج"
+
+#: .\accounts\templates\accounts\edit_profile.html:17
+#: .\accounts\templates\accounts\register.html:35
+msgid "نام"
+msgstr "الاسم"
+
+#: .\accounts\templates\accounts\edit_profile.html:20
+#: .\accounts\templates\accounts\register.html:49
+msgid "نام خانوادگی"
+msgstr "اسم العائلة"
+
+#: .\accounts\templates\accounts\edit_profile.html:23
+#: .\accounts\templates\accounts\register.html:77
+msgid "شهر"
+msgstr "المدينة"
+
+#: .\accounts\templates\accounts\edit_profile.html:29
+msgid "آدرس کامل"
+msgstr "العنوان الكامل"
+
+#: .\accounts\templates\accounts\edit_profile.html:34
+msgid "ذخیره تغییرات"
+msgstr "حفظ التغييرات"
+
+#: .\accounts\templates\accounts\login.html:9
+#: .\accounts\templates\accounts\login.html:31 .\templates\inc\header.html:136
+#: .\templates\inc\header.html:327
+msgid "ورود"
+msgstr "تسجيل الدخول"
+
+#: .\accounts\templates\accounts\login.html:15
+#: .\accounts\templates\accounts\register.html:21
+#: .\orders\templates\orders\create_order.html:49
+msgid "شماره تلفن"
+msgstr "رقم الهاتف"
+
+#: .\accounts\templates\accounts\login.html:23
+#: .\accounts\templates\accounts\register.html:91
+msgid "رمز عبور"
+msgstr "كلمة المرور"
+
+#: .\accounts\templates\accounts\login.html:35
+msgid "حساب ندارید؟"
+msgstr "ليس لديك حساب؟"
+
+#: .\accounts\templates\accounts\login.html:35
+msgid "ثبت نام کنید"
+msgstr "إنشاء حساب"
+
+#: .\accounts\templates\accounts\register.html:13
+#: .\accounts\templates\accounts\register.html:117
+#: .\templates\inc\header.html:143 .\templates\inc\header.html:331
+msgid "ثبت نام"
+msgstr "إنشاء حساب"
+
+#: .\accounts\templates\accounts\register.html:28
+msgid "باید دقیقاً ۱۱ رقم باشد و فقط شامل اعداد."
+msgstr "يجب أن يكون 11 رقمًا بالضبط ويتضمن أرقامًا فقط."
+
+#: .\accounts\templates\accounts\register.html:42
+#: .\accounts\templates\accounts\register.html:56
+msgid "حداقل ۲ کاراکتر، حروف فارسی یا انگلیسی."
+msgstr "على الأقل حرفين، أحرف عربية أو إنجليزية."
+
+#: .\accounts\templates\accounts\register.html:63
+msgid "نام کاربری"
+msgstr "اسم المستخدم"
+
+#: .\accounts\templates\accounts\register.html:70
+msgid "بین ۴ تا ۲۰ کاراکتر، بدون فاصله."
+msgstr "بين 4 و20 حرفًا، بدون مسافات."
+
+#: .\accounts\templates\accounts\register.html:84
+msgid "از لیست شهرهای استان آذربایجان شرقی انتخاب کنید."
+msgstr "اختر من قائمة مدن محافظة أذربيجان الشرقية."
+
+#: .\accounts\templates\accounts\register.html:98
+msgid "حداقل ۸ کاراکتر، ترکیبی از حروف و اعداد."
+msgstr "على الأقل 8 أحرف، مزيج من الأحرف والأرقام."
+
+#: .\accounts\templates\accounts\register.html:105
+msgid "تکرار رمز عبور"
+msgstr "تكرار كلمة المرور"
+
+#: .\accounts\templates\accounts\register.html:112
+msgid "مجدداً رمز عبور را وارد کنید."
+msgstr "أدخل كلمة المرور مرة أخرى."
+
+#: .\accounts\templates\accounts\register.html:124
+msgid "راهنمای ثبت‌نام"
+msgstr "دليل التسجيل"
+
+#: .\accounts\templates\accounts\register.html:126
+msgid "باید دقیقاً ۱۱ رقم باشد و فقط شامل اعداد مجاز است (بدون کاراکترهای اضافی)."
+msgstr "يجب أن يكون 11 رقمًا بالضبط ويتضمن أرقامًا فقط (بدون أحرف إضافية)."
+
+#: .\accounts\templates\accounts\register.html:127
+#: .\accounts\templates\accounts\register.html:128
+msgid "حداقل ۲ کاراکتر، می‌تواند شامل حروف فارسی یا انگلیسی باشد (بدون اعداد یا علائم خاص)."
+msgstr "على الأقل حرفين، يمكن أن يتضمن أحرفًا عربية أو إنجليزية (بدون أرقام أو رموز خاصة)."
+
+#: .\accounts\templates\accounts\register.html:129
+msgid "بین ۴ تا ۲۰ کاراکتر، بدون فاصله یا کاراکترهای خاص (فقط حروف، اعداد و زیرخط مجاز است)."
+msgstr "بين 4 و20 حرفًا، بدون مسافات أو أحرف خاصة (الأحرف والأرقام والشرطة السفلية فقط مسموح بها)."
+
+#: .\accounts\templates\accounts\register.html:130
+msgid "از لیست شهرهای استان آذربایجان شرقی انتخاب شود (اطمینان حاصل کنید که گزینه مناسب را برگزینید)."
+msgstr "يجب اختيارها من قائمة مدن محافظة أذربيجان الشرقية (تأكد من اختيار الخيار المناسب)."
+
+#: .\accounts\templates\accounts\register.html:131
+msgid "رمز عبور:"
+msgstr "كلمة المرور:"
+
+#: .\accounts\templates\accounts\register.html:131
+msgid "حداقل ۸ کاراکتر، شامل ترکیبی از حروف بزرگ و کوچک، اعداد و علائم خاص برای امنیت بیشتر."
+msgstr "على الأقل 8 أحرف، تتضمن مزيجًا من الأحرف الكبيرة والصغيرة والأرقام والرموز الخاصة لزيادة الأمان."
+
+#: .\accounts\templates\accounts\register.html:132
+msgid "تکرار رمز عبور:"
+msgstr "تكرار كلمة المرور:"
+
+#: .\accounts\templates\accounts\register.html:132
+msgid "دقیقاً همان رمز عبور وارد شده در فیلد قبلی را تکرار کنید تا مطابقت بررسی شود."
+msgstr "كرر كلمة المرور نفسها التي أدخلتها في الحقل السابق للتحقق من التطابق."
+
+#: .\blog\templates\blog\blog_list.html:7 .\templates\inc\footer.html:35
+#: .\templates\inc\header.html:243 .\templates\inc\header.html:290
+msgid "وبلاگ"
+msgstr "المدونة"
+
+#: .\home\templates\home\about.html:4
+msgid "تماس با ما | کارخانه لوله پلی اتیلن"
+msgstr "اتصل بنا | مصنع أنابيب البولي إيثيلين"
+
+#: .\home\templates\home\about.html:13
+msgid "با ما در ارتباط باشید"
+msgstr "تواصل معنا"
+
+#: .\home\templates\home\about.html:16
+msgid "تیم پشتیبانی و فروش ما آماده پاسخگویی به سوالات و درخواست‌های شماست."
+msgstr "فريق الدعم والمبيعات لدينا جاهز للإجابة على أسئلتكم وطلباتكم."
+
+#: .\home\templates\home\about.html:19 .\home\templates\home\about.html:83
+msgid "ارسال پیام"
+msgstr "إرسال رسالة"
+
+
+#: .\home\templates\home\about.html:29
+msgid "کارخانه لوله پلی‌اتیلن ما با بیش از ۲۰ سال تجربه در صنعت، یکی از معتبرترین تولیدکنندگان در ایران است."
+msgstr "مصنع أنابيب البولي إيثيلين لدينا، مع أكثر من 20 عامًا من الخبرة في الصناعة، هو واحد من أكثر المنتجين موثوقية في إيران."
+
+#: .\home\templates\home\about.html:30
+msgid "ما با بهره‌گیری از <span class=\\"
+msgstr "نحن نستفيد من <span class=\\"
+
+#: .\home\templates\home\about.html:31 .\home\templates\home\home.html:105
+msgid "هدف ما ایجاد <span class=\\"
+msgstr "هدفنا هو إنشاء <span class=\\"
+
+#: .\home\templates\home\about.html:35
+msgid "محصولات با استانداردهای بین‌المللی"
+msgstr "منتجات بمعايير دولية"
+
+#: .\home\templates\home\about.html:36
+msgid "پشتیبانی و خدمات پس از فروش حرفه‌ای"
+msgstr "دعم وخدمات ما بعد البيع احترافية"
+
+#: .\home\templates\home\about.html:37
+msgid "بیش از ۲۰ سال تجربه تخصصی"
+msgstr "أكثر من 20 عامًا من الخبرة المتخصصة"
+
+#: .\home\templates\home\about.html:48
+msgid "فرم تماس با ما"
+msgstr "نموذج التواصل معنا"
+
+#: .\home\templates\home\about.html:49 .\home\templates\home\home.html:587
+msgid "لطفاً اطلاعات خود را وارد کنید تا کارشناسان ما در اسرع وقت با شما تماس بگیرند."
+msgstr "يرجى إدخال معلوماتك حتى يتمكن خبراؤنا من التواصل معك في أقرب وقت."
+
+#: .\home\templates\home\about.html:54 .\home\templates\home\home.html:599
+#: .\orders\templates\orders\create_order.html:38
+msgid "نام و نام خانوادگی"
+msgstr "الاسم واسم العائلة"
+
+#: .\home\templates\home\about.html:59 .\home\templates\home\home.html:608
+msgid "شماره تماس"
+msgstr "رقم التواصل"
+
+#: .\home\templates\home\about.html:64 .\home\templates\home\home.html:617
+msgid "ایمیل (اختیاری)"
+msgstr "البريد الإلكتروني (اختياري)"
+
+#: .\home\templates\home\about.html:69 .\home\templates\home\home.html:624
+msgid "سفارش محصول"
+msgstr "طلب المنتج"
+
+#: .\home\templates\home\about.html:70 .\home\templates\home\home.html:625
+msgid "مشاوره فنی"
+msgstr "استشارة فنية"
+
+#: .\home\templates\home\about.html:71 .\home\templates\home\home.html:626
+msgid "پشتیبانی"
+msgstr "الدعم"
+
+#: .\home\templates\home\about.html:72 .\home\templates\home\home.html:627
+msgid "سایر"
+msgstr "أخرى"
+
+#: .\home\templates\home\about.html:74 .\home\templates\home\home.html:630
+msgid "موضوع"
+msgstr "الموضوع"
+
+#: .\home\templates\home\about.html:79
+msgid "پیام شما"
+msgstr "رسالتك"
+
+#: .\home\templates\home\about.html:89
+msgid "✅ پیام شما با موفقیت ارسال شد. تیم ما در اسرع وقت با شما تماس خواهد گرفت."
+msgstr "✅ تم إرسال رسالتك بنجاح. سيتّصل فريقنا بك في أقرب وقت."
+
+#: .\home\templates\home\home.html:4
+msgid "صفحه اصلی | کارخانه لوله پلی اتیلن"
+msgstr "الصفحة الرئيسية | مصنع أنابيب البولي إيثيلين"
+
+#: .\home\templates\home\home.html:23
+msgid "خرید لوله پلی‌اتیلن مستقیم از کارخانه"
+msgstr "شراء أنابيب البولي إيثيلين مباشرة من المصنع"
+
+#: .\home\templates\home\home.html:27
+msgid "کیفیت تضمینی، قیمت رقابتی و ارسال سریع برای پروژه‌های شما"
+msgstr "جودة مضمونة، أسعار تنافسية، وشحن سريع لمشاريعك"
+
+#: .\home\templates\home\home.html:32
+msgid "ثبت سفارش فوری"
+msgstr "تقديم طلب عاجل"
+
+#: .\home\templates\home\home.html:100
+msgid "چرا ما بهترین انتخاب شما هستیم؟"
+msgstr "لماذا نحن خيارك الأفضل؟"
+
+#: .\home\templates\home\home.html:103
+msgid "با بیش از <span class=\\"
+msgstr "مع أكثر من <span class=\\"
+
+#: .\home\templates\home\home.html:104
+msgid "استفاده از <span class=\\"
+msgstr "استخدام <span class=\\"
+
+#: .\home\templates\home\home.html:111
+msgid "کیفیت تضمین‌شده با مواد اولیه استاندارد"
+msgstr "جودة مضمونة مع مواد خام قياسية"
+
+#: .\home\templates\home\home.html:114
+msgid "گواهینامه‌های بین‌المللی"
+msgstr "شهادات دولية"
+
+#: .\home\templates\home\home.html:117
+msgid "۲۰ سال تخصص در صنعت"
+msgstr "20 عامًا من التخصص في الصناعة"
+
+#: .\home\templates\home\home.html:120
+msgid "پشتیبانی تمام‌وقت و خدمات پس از فروش"
+msgstr "دعم مستمر وخدمات ما بعد البيع"
+
+#: .\home\templates\home\home.html:128
+msgid "سال تجربه"
+msgstr "سنوات من الخبرة"
+
+#: .\home\templates\home\home.html:132
+msgid "پروژه موفق"
+msgstr "مشاريع ناجحة"
+
+#: .\home\templates\home\home.html:136
+msgid "شهر تحت پوشش"
+msgstr "مدن مشمولة"
+
+#: .\home\templates\home\home.html:142
+msgid "مشاوره"
+msgstr "استشارة"
+
+#: .\home\templates\home\home.html:197
+msgid "رضایت مشتریان ما"
+msgstr "رضا عملائنا"
+
+#: .\home\templates\home\home.html:200
+msgid "تجربه مشتریان نشان‌دهنده کیفیت محصولات و خدمات کارخانه پلی‌اتیلن است."
+msgstr "تجربة العملاء تعكس جودة منتجات وخدمات مصنع البولي إيثيلين."
+
+#: .\home\templates\home\home.html:201
+msgid "ما همیشه تلاش می‌کنیم رضایت شما را جلب کنیم."
+msgstr "نحن نسعى دائمًا لكسب رضاكم."
+
+#: .\home\templates\home\home.html:210 .\home\templates\home\home.html:220
+#: .\home\templates\home\home.html:226 .\home\templates\home\home.html:232
+#: .\home\templates\home\home.html:237 .\home\templates\home\home.html:253
+#: .\home\templates\home\home.html:259 .\home\templates\home\home.html:265
+#: .\home\templates\home\home.html:271 .\home\templates\home\home.html:280
+#: .\home\templates\home\home.html:286 .\home\templates\home\home.html:292
+#: .\home\templates\home\home.html:298 .\home\templates\home\home.html:307
+msgid "مهسا کریمی: تجربه خرید عالی! محصولات با کیفیت و بسته‌بندی حرفه‌ای دریافت شد."
+msgstr "مهسا كريمي: تجربة شراء ممتازة! تم استلام منتجات عالية الجودة وتغليف احترافي."
+
+#: .\home\templates\home\home.html:211 .\home\templates\home\home.html:221
+#: .\home\templates\home\home.html:227 .\home\templates\home\home.html:233
+#: .\home\templates\home\home.html:238 .\home\templates\home\home.html:254
+#: .\home\templates\home\home.html:260 .\home\templates\home\home.html:266
+#: .\home\templates\home\home.html:272 .\home\templates\home\home.html:281
+#: .\home\templates\home\home.html:287 .\home\templates\home\home.html:293
+#: .\home\templates\home\home.html:299 .\home\templates\home\home.html:308
+msgid "علی رضایی: تحویل سریع و خدمات پس از فروش فوق‌العاده. مطمئناً دوباره خرید می‌کنم."
+msgstr "علي رضائي: توصيل سريع وخدمات ما بعد البيع ممتازة. بالتأكيد سأشتري مرة أخرى."
+
+#: .\home\templates\home\home.html:212 .\home\templates\home\home.html:239
+#: .\home\templates\home\home.html:309
+msgid "سمیه احمدی: پشتیبانی تیم بسیار حرفه‌ای بود. خریدی راحت و رضایت‌بخش."
+msgstr "سمية أحمدي: دعم الفريق كان احترافيًا جدًا. تجربة شراء مريحة ومرضية."
+
+#: .\home\templates\home\home.html:213 .\home\templates\home\home.html:240
+#: .\home\templates\home\home.html:310
+msgid "رضا موسوی: کیفیت محصولات عالی و قیمت مناسب. تجربه خرید بی‌نظیر."
+msgstr "رضا موسوي: جودة المنتجات ممتازة والسعر مناسب. تجربة شراء لا مثيل لها."
+
+#: .\home\templates\home\home.html:214 .\home\templates\home\home.html:241
+#: .\home\templates\home\home.html:311
+msgid "نازیلا کیانی: بسته‌بندی عالی و تحویل به موقع. تیم حرفه‌ای و پاسخگو."
+msgstr "نازيلا كياني: تغليف ممتاز وتوصيل في الوقت المحدد. فريق احترافي ومتجاوب."
+
+#: .\home\templates\home\home.html:215 .\home\templates\home\home.html:242
+#: .\home\templates\home\home.html:312
+msgid "حسین عباسی: محصولات با کیفیت و ارسال سریع. خریدی رضایت‌بخش و مطمئن."
+msgstr "حسين عباسي: منتجات عالية الجودة وشحن سريع. تجربة شراء مرضية وموثوقة."
+
+#: .\home\templates\home\home.html:216 .\home\templates\home\home.html:222
+#: .\home\templates\home\home.html:228 .\home\templates\home\home.html:249
+#: .\home\templates\home\home.html:255 .\home\templates\home\home.html:261
+#: .\home\templates\home\home.html:267 .\home\templates\home\home.html:276
+#: .\home\templates\home\home.html:282 .\home\templates\home\home.html:288
+#: .\home\templates\home\home.html:294 .\home\templates\home\home.html:313
+msgid "مریم احمدی: کیفیت عالی و تجربه خرید آسان. توصیه می‌کنم به همه."
+msgstr "مريم أحمدي: جودة ممتازة وتجربة شراء سهلة. أوصي بها للجميع."
+
+#: .\home\templates\home\home.html:217 .\home\templates\home\home.html:223
+#: .\home\templates\home\home.html:229 .\home\templates\home\home.html:250
+#: .\home\templates\home\home.html:256 .\home\templates\home\home.html:262
+#: .\home\templates\home\home.html:268 .\home\templates\home\home.html:277
+#: .\home\templates\home\home.html:283 .\home\templates\home\home.html:289
+#: .\home\templates\home\home.html:295 .\home\templates\home\home.html:314
+msgid "امیر رضا شفیعی: تجربه خرید راحت و خدمات پشتیبانی عالی. خیلی راضی هستم."
+msgstr "أمير رضا شفيعي: تجربة شراء مريحة وخدمات دعم ممتازة. راضٍ جدًا."
+
+#: .\home\templates\home\home.html:218 .\home\templates\home\home.html:224
+#: .\home\templates\home\home.html:230 .\home\templates\home\home.html:251
+#: .\home\templates\home\home.html:257 .\home\templates\home\home.html:263
+#: .\home\templates\home\home.html:269 .\home\templates\home\home.html:278
+#: .\home\templates\home\home.html:284 .\home\templates\home\home.html:290
+#: .\home\templates\home\home.html:296 .\home\templates\home\home.html:315
+msgid "الهام فرجی: خرید مطمئن و سریع. کیفیت محصول و بسته‌بندی عالی بود."
+msgstr "إلهام فرجي: شراء موثوق وسريع. جودة المنتج والتغليف ممتازة."
+
+#: .\home\templates\home\home.html:219 .\home\templates\home\home.html:225
+#: .\home\templates\home\home.html:231 .\home\templates\home\home.html:252
+#: .\home\templates\home\home.html:258 .\home\templates\home\home.html:264
+#: .\home\templates\home\home.html:270 .\home\templates\home\home.html:279
+#: .\home\templates\home\home.html:285 .\home\templates\home\home.html:291
+#: .\home\templates\home\home.html:297 .\home\templates\home\home.html:316
+msgid "سعید نجفی: تجربه عالی و رضایت‌بخش. قیمت مناسب و ارسال سریع."
+msgstr "سعيد نجفي: تجربة ممتازة ومرضية. سعر مناسب وشحن سريع."
+
+#: .\home\templates\home\home.html:427
+msgid "قبلی"
+msgstr "السابق"
+
+#: .\home\templates\home\home.html:436
+msgid "بعدی"
+msgstr "التالي"
+
+#: .\home\templates\home\home.html:469
+msgid "اخبار و اطلاعیه‌های صنعت پلی‌اتیلن"
+msgstr "أخبار وإعلانات صناعة البولي إيثيلين"
+
+#: .\home\templates\home\home.html:576
+msgid "مشاوره آنلاین"
+msgstr "استشارة عبر الإنترنت"
+
+#: .\home\templates\home\home.html:585
+msgid "فرم مشاوره و تماس"
+msgstr "نموذج الاستشارة والتواصل"
+
+#: .\home\templates\home\home.html:639
+msgid "توضیحات (اختیاری)"
+msgstr "تفاصيل (اختياري)"
+
+#: .\home\templates\home\home.html:645
+msgid "ارسال درخواست"
+msgstr "إرسال الطلب"
+
+#: .\home\templates\home\home.html:652
+msgid "✅ درخواست شما با موفقیت ارسال شد. کارشناسان ما به زودی تماس خواهند گرفت."
+msgstr "✅ تم إرسال طلبك بنجاح. سيتّصل خبراؤنا بك قريبًا."
+
+#: .\orders\templates\orders\create_order.html:3
+#: .\orders\templates\orders\create_order.html:9
+#: .\orders\templates\orders\create_order.html:81
+#: .\shop\templates\shop\product_list.html:151
+msgid "ثبت سفارش"
+msgstr "تقديم الطلب"
+
+#: .\orders\templates\orders\create_order.html:16
+#: .\orders\templates\orders\my_orders.html:43
+msgid "تعداد"
+msgstr "الكمية"
+
+#: .\orders\templates\orders\create_order.html:27
+msgid "متراژ (متر)"
+msgstr "الطول (متر)"
+
+#: .\orders\templates\orders\create_order.html:60
+msgid "کد ملی"
+msgstr "الرقم الوطني"
+
+#: .\orders\templates\orders\create_order.html:71
+msgid "آدرس"
+msgstr "العنوان"
+
+#: .\orders\templates\orders\my_orders.html:14
+msgid "سفارش #"
+msgstr "الطلب #"
+
+#: .\orders\templates\orders\my_orders.html:20
+msgid "وضعیت:"
+msgstr "الحالة:"
+
+#: .\orders\templates\orders\my_orders.html:31
+msgid "نام و نام خانوادگی:"
+msgstr "الاسم واسم العائلة:"
+
+#: .\orders\templates\orders\my_orders.html:33
+msgid "کد ملی:"
+msgstr "الرقم الوطني:"
+
+#: .\orders\templates\orders\my_orders.html:34 .\templates\inc\footer.html:28
+msgid "آدرس:"
+msgstr "العنوان:"
+
+#: .\orders\templates\orders\my_orders.html:37
+msgid "محصولات سفارش"
+msgstr "منتجات الطلب"
+
+#: .\orders\templates\orders\my_orders.html:42
+msgid "نام محصول"
+msgstr "اسم المنتج"
+
+#: .\orders\templates\orders\my_orders.html:44
+msgid "متراژ"
+msgstr "الطول"
+
+#: .\orders\templates\orders\my_orders.html:52
+msgid "متر"
+msgstr "متر"
+
+#: .\orders\templates\orders\my_orders.html:63
+msgid "هیچ سفارشی ثبت نشده است."
+msgstr "لم يتم تسجيل أي طلبات."
+
+#: .\pricing\templates\pricing\price_inquiry.html:20
+msgid "استعلام قیمت لوله‌ها"
+msgstr "استعلام عن أسعار الأنابيب"
+
+#: .\pricing\templates\pricing\price_inquiry.html:28
+msgid "سایز"
+msgstr "الحجم"
+
+#: .\pricing\templates\pricing\price_inquiry.html:29
+msgid "فشار (بار)"
+msgstr "الضغط (بار)"
+
+#: .\pricing\templates\pricing\price_inquiry.html:30
+msgid "نوع PE"
+msgstr "نوع PE"
+
+#: .\pricing\templates\pricing\price_inquiry.html:31
+msgid "وزن لوله (کیلوگرم)"
+msgstr "وزن الأنبوب (كيلوغرام)"
+
+#: .\pricing\templates\pricing\price_inquiry.html:32
+msgid "قیمت کل (تومان)"
+msgstr "السعر الإجمالي (تومان)"
+
+#: .\pricing\templates\pricing\price_inquiry.html:39
+#: .\pricing\templates\pricing\price_inquiry.html:67
+#: .\shop\templates\shop\product_list.html:93
+#: .\shop\templates\shop\product_list.html:135
+msgid "بار"
+msgstr "بار"
+
+#: .\pricing\templates\pricing\price_inquiry.html:41
+#: .\pricing\templates\pricing\price_inquiry.html:75
+msgid "کیلوگرم"
+msgstr "كيلوغرام"
+
+#: .\pricing\templates\pricing\price_inquiry.html:43
+#: .\pricing\templates\pricing\price_inquiry.html:80
+#: .\shop\templates\shop\product_list.html:145
+msgid "تومان"
+msgstr "تومان"
+
+#: .\pricing\templates\pricing\price_inquiry.html:49
+#: .\pricing\templates\pricing\price_inquiry.html:85
+msgid "هیچ لوله‌ای یافت نشد."
+msgstr "لم يتم العثور على أي أنابيب."
+
+#: .\pricing\templates\pricing\price_inquiry.html:62
+#: .\shop\templates\shop\product_list.html:130
+msgid "سایز:"
+msgstr "الحجم:"
+
+#: .\pricing\templates\pricing\price_inquiry.html:66
+#: .\shop\templates\shop\product_list.html:134
+msgid "فشار:"
+msgstr "الضغط:"
+
+#: .\pricing\templates\pricing\price_inquiry.html:70
+#: .\shop\templates\shop\product_list.html:138
+msgid "نوع PE:"
+msgstr "نوع PE:"
+
+#: .\pricing\templates\pricing\price_inquiry.html:74
+msgid "وزن لوله:"
+msgstr "وزن الأنبوب:"
+
+#: .\pricing\templates\pricing\price_inquiry.html:78
+msgid "قیمت کل:"
+msgstr "السعر الإجمالي:"
+
+#: .\shop\templates\shop\product_list.html:78
+msgid "محصولات ویژه"
+msgstr "منتجات مميزة"
+
+#: .\shop\templates\shop\product_list.html:84
+msgid "همه سایزها"
+msgstr "جميع الأحجام"
+
+#: .\shop\templates\shop\product_list.html:91
+msgid "همه بارها"
+msgstr "جميع الضغوط"
+
+#: .\shop\templates\shop\product_list.html:98
+msgid "همه نوع‌ها"
+msgstr "جميع الأنواع"
+
+#: .\shop\templates\shop\product_list.html:105
+msgid "فیلتر"
+msgstr "تصفية"
+
+#: .\shop\templates\shop\product_list.html:145
+msgid "قیمت:"
+msgstr "السعر:"
+
+#: .\shop\templates\shop\product_list.html:158
+msgid "هیچ محصولی یافت نشد."
+msgstr "لم يتم العثور على أي منتج."
+
+#: .\templates\base.html:7
+msgid "کارخانه لوله پلی اتیلن"
+msgstr "مصنع أنابيب البولي إيثيلين"
+
+#: .\templates\inc\footer.html:10
+msgid "کارخانه لوله پلی‌اتیلن"
+msgstr "مصنع أنابيب البولي إيثيلين"
+
+#: .\templates\inc\footer.html:12
+msgid "تولید کننده انواع لوله‌های پلی‌اتیلن با کیفیت بالا و استانداردهای بین‌المللی."
+msgstr "منتج لأنواع مختلفة من أنابيب البولي إيثيلين بجودة عالية ومعايير دولية."
+
+#: .\templates\inc\footer.html:13
+msgid "ارائه خدمات مشاوره و نصب برای پروژه‌های صنعتی و شهری."
+msgstr "تقديم خدمات استشارية وتركيب للمشاريع الصناعية والحضرية."
+
+#: .\templates\inc\footer.html:25
+msgid "اطلاعات تماس"
+msgstr "معلومات التواصل"
+
+#: .\templates\inc\footer.html:26
+msgid "تلفن:"
+msgstr "الهاتف:"
+
+#: .\templates\inc\footer.html:27
+msgid "ایمیل:"
+msgstr "البريد الإلكتروني:"
+
+#: .\templates\inc\footer.html:28
+msgid "تهران، خیابان مثال، پلاک ۱۲۳"
+msgstr "طهران، شارع المثال، رقم 123"
+
+#: .\templates\inc\footer.html:33
+msgid "لینک‌های مفید"
+msgstr "روابط مفيدة"
+
+#: .\templates\inc\footer.html:34 .\templates\inc\header.html:234
+#: .\templates\inc\header.html:286
+msgid "محصولات"
+msgstr "المنتجات"
+
+#: .\templates\inc\footer.html:36
+msgid "درباره ما"
+msgstr "من نحن"
+
+#: .\templates\inc\footer.html:37
+msgid "سیاست حریم خصوصی"
+msgstr "سياسة الخصوصية"
+
+#: .\templates\inc\footer.html:44
+msgid "کارخانه لوله پلی‌اتیلن. همه حقوق محفوظ است."
+msgstr "مصنع أنابيب البولي إيثيلين. جميع الحقوق محفوظة."
+
+#: .\templates\inc\header.html:17
+msgid "لوگو کارخانه پلی‌اتیلن"
+msgstr "شعار مصنع البولي إيثيلين"
+
+#: .\templates\inc\header.html:20
+msgid "کارخانه پلی‌اتیلن"
+msgstr "مصنع البولي إيثيلين"
+
+#: .\templates\inc\header.html:39 .\templates\inc\header.html:309
+#, python-format
+msgid "سلام، %(user.username)s"
+msgstr "مرحبا، %(user.username)s"
+
+#: .\templates\inc\header.html:79 .\templates\inc\header.html:313
+msgid "پنل کاربری"
+msgstr "لوحة التحكم"
+
+#: .\templates\inc\header.html:111
+msgid "حساب کاربری"
+msgstr "الحساب"
+
+#: .\templates\inc\header.html:155
+msgid "🌍 زبان"
+msgstr "🌍 اللغة"
+
+#: .\templates\inc\header.html:201
+msgid "🛒 ثبت سفارش"
+msgstr "🛒 تقديم الطلب"
+
+#: .\templates\inc\header.html:252 .\templates\inc\header.html:294
+msgid "تماس با ما"
+msgstr "اتصل بنا"
+
+#: .\templates\inc\header.html:262 .\templates\inc\header.html:302
+msgid "کاتالوگ"
+msgstr "الكتالوج"
+
+#: .\templates\inc\header.html:275
+msgid "منو"
+msgstr "القائمة"
+
+#: .\templates\inc\header.html:337
+msgid "🌍 زبان:"
+msgstr "🌍 اللغة:"
+
+#: .\templates\inc\header.html:339
+msgid "فارسی"
+msgstr "الفارسية"
+
+#: .\templates\inc\header.html:340
+msgid "English"
+msgstr "الإنجليزية"
+
+#: .\templates\inc\header.html:341
+msgid "العربية"
+msgstr "العربية"
+
+#: .\templates\inc\header.html:342
+msgid "Türkçe"
+msgstr "التركية"
+
+#: .\templates\inc\header.html:343
+msgid "Русский"
+msgstr "الروسية"
+
+#: .\templates\inc\header.html:344
+msgid "Français"
+msgstr "الفرنسية"
+
+#: .\templates\inc\header.html:345
+msgid "Deutsch"
+msgstr "الألمانية"
+
+#: .\templates\inc\header.html:346
+msgid "Español"
+msgstr "الإسبانية"

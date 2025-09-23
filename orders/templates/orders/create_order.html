@@ -1,18 +1,19 @@
 {% extends "base.html" %}
-{% block title %}ثبت سفارش{% endblock %}
+{% load i18n %}
+{% block title %}{% trans "ثبت سفارش" %}{% endblock %}
 
 {% block content %}
 <section class="container mx-auto my-12 px-4 max-w-3xl animate-fadeIn">
   <div class="bg-white shadow-xl rounded-2xl p-6 sm:p-8 md:p-10 hover:shadow-2xl transition-shadow duration-300 ease-in-out border border-gray-100">
     <h2 class="text-3xl md:text-4xl font-bold mb-8 text-blue-700 text-center drop-shadow-lg animate-slideUp">
-      ثبت سفارش {{ product.name }}
+      {% trans "ثبت سفارش" %} {{ product.name }}
     </h2>
     <form method="post" class="space-y-6">
       {% csrf_token %}
 
       <!-- تعداد -->
       <div class="relative">
-        <label class="block font-medium text-gray-700 mb-2">تعداد</label>
+        <label class="block font-medium text-gray-700 mb-2">{% trans "تعداد" %}</label>
         <div class="relative">
           {{ form.quantity }}
           {% if form.quantity.errors %}
@@ -23,7 +24,7 @@
 
       <!-- متراژ -->
       <div class="relative">
-        <label class="block font-medium text-gray-700 mb-2">متراژ (متر)</label>
+        <label class="block font-medium text-gray-700 mb-2">{% trans "متراژ (متر)" %}</label>
         <div class="relative">
           {{ form.length }}
           {% if form.length.errors %}
@@ -34,7 +35,7 @@
 
       <!-- نام و نام خانوادگی -->
       <div class="relative">
-        <label class="block font-medium text-gray-700 mb-2">نام و نام خانوادگی</label>
+        <label class="block font-medium text-gray-700 mb-2">{% trans "نام و نام خانوادگی" %}</label>
         <div class="relative">
           {{ form.full_name }}
           {% if form.full_name.errors %}
@@ -45,7 +46,7 @@
 
       <!-- شماره تلفن -->
       <div class="relative">
-        <label class="block font-medium text-gray-700 mb-2">شماره تلفن</label>
+        <label class="block font-medium text-gray-700 mb-2">{% trans "شماره تلفن" %}</label>
         <div class="relative">
           {{ form.phone }}
           {% if form.phone.errors %}
@@ -56,7 +57,7 @@
 
       <!-- کد ملی -->
       <div class="relative">
-        <label class="block font-medium text-gray-700 mb-2">کد ملی</label>
+        <label class="block font-medium text-gray-700 mb-2">{% trans "کد ملی" %}</label>
         <div class="relative">
           {{ form.national_code }}
           {% if form.national_code.errors %}
@@ -67,7 +68,7 @@
 
       <!-- آدرس -->
       <div class="relative">
-        <label class="block font-medium text-gray-700 mb-2">آدرس</label>
+        <label class="block font-medium text-gray-700 mb-2">{% trans "آدرس" %}</label>
         <div class="relative">
           {{ form.address }}
           {% if form.address.errors %}
@@ -77,7 +78,7 @@
       </div>
 
       <button type="submit" class="w-full bg-gradient-to-r from-blue-600 to-blue-800 text-white py-3 rounded-lg hover:from-blue-700 hover:to-blue-900 transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
-        ثبت سفارش
+        {% trans "ثبت سفارش" %}
       </button>
     </form>
   </div>

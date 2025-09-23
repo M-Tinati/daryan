@@ -41,19 +41,21 @@ INSTALLED_APPS = [
     'pricing.apps.PricingConfig',
     "widget_tweaks",
     'django.contrib.humanize',
+    'price',
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
-    'django.middleware.locale.LocaleMiddleware', 
-    'django.middleware.common.CommonMiddleware',
+    'django.middleware.common.CommonMiddleware',   # 👈 اول این
+    'django.middleware.locale.LocaleMiddleware',   # 👈 بعد این
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
 
 ROOT_URLCONF = 'poly.urls'
 
@@ -105,28 +107,35 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
-
-
-# Internationalization
-# https://docs.djangoproject.com/en/5.1/topics/i18n/
-
-LANGUAGE_CODE = 'en-us'
-
-TIME_ZONE = 'UTC'
-
-USE_I18N = True
-
 USE_TZ = True
-
+USE_I18N = True
+USE_L10N = True
+LANGUAGE_CODE = 'en-us'
+LANGUAGE_BIDI = True  # برای RTL (fa, ar, he)
 
 LANGUAGES = [
     ('fa', 'فارسی'),
+    ('ps', 'پشتو'),
+    ('ur', 'اردو'),
+    ('ar', 'عربی'),
+    ('ku', 'کردی'),
+    ('tr', 'ترکی'),
+    ('az', 'آذربایجانی'),
+    ('hy', 'ارمنی'),
+    ('tk', 'ترکمنی'),
+    ('he', 'عبری'),
     ('en', 'English'),
+    ('zh-hans', 'Chinese (Simplified)'),
+    ('es', 'Spanish'),
+    ('ru', 'Russian'),
+    ('de', 'German'),
+    ('fr', 'French'),
+    ('ja', 'Japanese'),
+    ('hi', 'Hindi'),
 ]
 
-LOCALE_PATHS = [
-    BASE_DIR / 'locale',   # مسیر ذخیره ترجمه‌ها
-]
+LOCALE_PATHS = [BASE_DIR / 'locale']  # مسیر فایل‌های .po/.mo
+
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 

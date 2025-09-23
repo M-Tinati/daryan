@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load i18n %}
 {% load humanize %}
 
 {% block extra_head %}
@@ -16,7 +17,7 @@
 {% block content %}
 <div class="container mx-auto px-4 py-8">
     <h1 class="text-3xl md:text-4xl font-bold text-center mb-8 text-gray-900">
-        استعلام قیمت لوله‌ها
+        {% trans "استعلام قیمت لوله‌ها" %}
     </h1>
 
     <!-- نمایش جدول در دسکتاپ و تبلت -->
@@ -24,28 +25,28 @@
         <table class="min-w-full bg-white border border-gray-200 rounded-xl">
             <thead class="bg-gradient-to-r from-blue-700 to-blue-500 text-white">
                 <tr>
-                    <th class="px-6 py-4 text-right font-semibold">سایز</th>
-                    <th class="px-6 py-4 text-right font-semibold">فشار (بار)</th>
-                    <th class="px-6 py-4 text-right font-semibold">نوع PE</th>
-                    <th class="px-6 py-4 text-right font-semibold">وزن لوله (کیلوگرم)</th>
-                    <th class="px-6 py-4 text-right font-semibold">قیمت کل (تومان)</th>
+                    <th class="px-6 py-4 text-right font-semibold">{% trans "سایز" %}</th>
+                    <th class="px-6 py-4 text-right font-semibold">{% trans "فشار (بار)" %}</th>
+                    <th class="px-6 py-4 text-right font-semibold">{% trans "نوع PE" %}</th>
+                    <th class="px-6 py-4 text-right font-semibold">{% trans "وزن لوله (کیلوگرم)" %}</th>
+                    <th class="px-6 py-4 text-right font-semibold">{% trans "قیمت کل (تومان)" %}</th>
                 </tr>
             </thead>
             <tbody class="divide-y divide-gray-200">
                 {% for pipe in pipes %}
                 <tr class="hover:bg-blue-50 transition-colors duration-200">
                     <td class="px-6 py-4 text-right text-gray-800">{{ pipe.size }}</td>
-                    <td class="px-6 py-4 text-right text-gray-800">{{ pipe.pressure }}</td>
+                    <td class="px-6 py-4 text-right text-gray-800">{{ pipe.pressure }} {% trans "بار" %}</td>
                     <td class="px-6 py-4 text-right text-gray-800">{{ pipe.pe_type }}</td>
-                    <td class="px-6 py-4 text-right text-gray-800">{{ pipe.weight }}</td>
+                    <td class="px-6 py-4 text-right text-gray-800">{{ pipe.weight }} {% trans "کیلوگرم" %}</td>
                     <td class="px-6 py-4 text-right font-bold text-blue-700">
-                        {{ pipe.total_price|intcomma }} تومان
+                        {{ pipe.total_price|intcomma }} {% trans "تومان" %}
                     </td>
                 </tr>
                 {% empty %}
                 <tr>
                     <td colspan="5" class="px-6 py-8 text-center text-gray-500">
-                        هیچ لوله‌ای یافت نشد.
+                        {% trans "هیچ لوله‌ای یافت نشد." %}
                     </td>
                 </tr>
                 {% endfor %}
@@ -58,34 +59,30 @@
         {% for pipe in pipes %}
         <div class="bg-white shadow-md rounded-lg p-4 border border-gray-200">
             <div class="flex justify-between mb-1">
-                <span class="font-semibold text-gray-700">سایز:</span>
+                <span class="font-semibold text-gray-700">{% trans "سایز:" %}</span>
                 <span>{{ pipe.size }}</span>
             </div>
             <div class="flex justify-between mb-1">
-                <span class="font-semibold text-gray-700">فشار:</span>
-                <span>{{ pipe.pressure }} بار</span>
+                <span class="font-semibold text-gray-700">{% trans "فشار:" %}</span>
+                <span>{{ pipe.pressure }} {% trans "بار" %}</span>
             </div>
             <div class="flex justify-between mb-1">
-                <span class="font-semibold text-gray-700">نوع PE:</span>
+                <span class="font-semibold text-gray-700">{% trans "نوع PE:" %}</span>
                 <span>{{ pipe.pe_type }}</span>
             </div>
             <div class="flex justify-between mb-1">
-                <span class="font-semibold text-gray-700">وزن لوله:</span>
-                <span>{{ pipe.weight }} کیلوگرم</span>
+                <span class="font-semibold text-gray-700">{% trans "وزن لوله:" %}</span>
+                <span>{{ pipe.weight }} {% trans "کیلوگرم" %}</span>
             </div>
-            <!-- <div class="flex justify-between mb-1">
-                <span class="font-semibold text-gray-700">قیمت هر کیلوگرم:</span>
-                <span>{{ pipe.price_per_kg|intcomma }} تومان</span>
-            </div> -->
             <div class="flex justify-between mt-2 border-t pt-2">
-                <span class="font-semibold text-gray-800">قیمت کل:</span>
+                <span class="font-semibold text-gray-800">{% trans "قیمت کل:" %}</span>
                 <span class="font-bold text-gray-900">
-                    {{ pipe.total_price|intcomma }} تومان
+                    {{ pipe.total_price|intcomma }} {% trans "تومان" %}
                 </span>
             </div>
         </div>
         {% empty %}
-        <div class="text-center text-gray-500">هیچ لوله‌ای یافت نشد.</div>
+        <div class="text-center text-gray-500">{% trans "هیچ لوله‌ای یافت نشد." %}</div>
         {% endfor %}
     </div>
 </div>

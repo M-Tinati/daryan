@@ -1,9 +1,10 @@
 {% extends "base.html" %}
+{% load i18n %}
 {% load static %}
 
 {% block content %}
 <section class="container mx-auto my-16 px-4">
-  <h2 class="text-3xl font-bold mb-8 text-center text-blue-800">وبلاگ</h2>
+  <h2 class="text-3xl font-bold mb-8 text-center text-blue-800">{% trans "وبلاگ" %}</h2>
 
   <!-- Grid ریسپانسیو: موبایل 2 ستون، دسکتاپ 3 ستون -->
   <div class="grid grid-cols-2 md:grid-cols-4 gap-6">

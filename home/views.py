@@ -8,6 +8,9 @@ from django.core.mail import send_mail
 from django.conf import settings
 from django.http import JsonResponse
 from .forms import ConsultationRequestForm
+# no need to create custom view
+
+
 
 class HomeView(View):
     template_name = 'home/home.html'

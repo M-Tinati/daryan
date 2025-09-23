@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load i18n %}
 {% load widget_tweaks %}
 {% load static %}
 {% load humanize %}
@@ -74,34 +75,34 @@
 
   <!-- سرتیتر -->
   <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-12 text-center text-blue-900 drop-shadow-lg animate-slideUp">
-    محصولات ویژه
+    {% trans "محصولات ویژه" %}
   </h2>
 
   <!-- نوار فیلتر -->
   <form method="get" class="flex flex-wrap justify-center gap-4 mb-10">
     <select name="size" class="px-4 py-2 rounded-lg bg-gray-50 border border-gray-200 text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-600 transition-all duration-200">
-      <option value="">همه سایزها</option>
+      <option value="">{% trans "همه سایزها" %}</option>
       {% for s in sizes %}
       <option value="{{ s }}" {% if s == selected_size %}selected{% endif %}>{{ s }}</option>
       {% endfor %}
     </select>
 
     <select name="pressure" class="px-4 py-2 rounded-lg bg-gray-50 border border-gray-200 text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-600 transition-all duration-200">
-      <option value="">همه بارها</option>
+      <option value="">{% trans "همه بارها" %}</option>
       {% for p in pressures %}
-      <option value="{{ p }}" {% if p|stringformat:"s" == selected_pressure|stringformat:"s" %}selected{% endif %}>{{ p }} بار</option>
+      <option value="{{ p }}" {% if p|stringformat:"s" == selected_pressure|stringformat:"s" %}selected{% endif %}>{{ p }} {% trans "بار" %}</option>
       {% endfor %}
     </select>
 
     <select name="pe_type" class="px-4 py-2 rounded-lg bg-gray-50 border border-gray-200 text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-600 transition-all duration-200">
-      <option value="">همه نوع‌ها</option>
+      <option value="">{% trans "همه نوع‌ها" %}</option>
       {% for pe in pe_types %}
       <option value="{{ pe }}" {% if pe == selected_pe_type %}selected{% endif %}>{{ pe }}</option>
       {% endfor %}
     </select>
 
-    <button type="submit" class="bg-blue-700 text-white px-5 py-2 rounded-lg hover:bg-blue-800 transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-600">
-      فیلتر
+    <button type="submit" class="bg-blue-700 text-white px-5 py-2 rounded-lg hover:bg-blue-800 transition-all duration-200 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-600">
+      {% trans "فیلتر" %}
     </button>
   </form>
 
@@ -126,35 +127,41 @@
         <!-- مشخصات فنی -->
         <div class="flex justify-center gap-4 mb-4 text-sm lg:text-base text-gray-600">
           <div>
-            <span class="font-semibold">سایز: </span>
+            <span class="font-semibold">{% trans "سایز:" %}</span>
             <span>{{ product.size }}</span>
           </div>
           <div>
-            <span class="font-semibold">فشار: </span>
-            <span>{{ product.pressure }} بار</span>
+            <span class="font-semibold">{% trans "فشار:" %}</span>
+            <span>{{ product.pressure }} {% trans "بار" %}</span>
           </div>
           <div>
-            <span class="font-semibold">نوع PE: </span>
+            <span class="font-semibold">{% trans "نوع PE:" %}</span>
             <span>{{ product.pe_type }}</span>
           </div>
         </div>
 
         <!-- قیمت -->
-        <div class="text-lg font-bold text-black-600 mb-4">
-          قیمت: <span class="counter" data-target="{{ product.total_price }}">{{ product.total_price|intcomma }}</span> تومان
-        </div>
+      <!-- قیمت -->
+      <div class="text-lg font-bold text-black-600 mb-4">
+        {% trans "قیمت:" %} 
+        <span class="counter" data-target="{{ product.price.price|default:0 }}">
+          {{ product.price.price|intcomma|default:"-" }}
+        </span> 
+        {% trans "تومان" %}
+      </div>
+
 
         <!-- دکمه -->
         <div class="flex justify-center">
           <a href="{% url 'orders:create_order' product.id %}" class="inline-block bg-gradient-to-r from-blue-700 to-blue-900 text-white px-5 py-2.5 rounded-lg hover:from-blue-800 hover:to-blue-950 transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-600">
-            ثبت سفارش
+            {% trans "ثبت سفارش" %}
           </a>
         </div>
       </div>
     </div>
     {% empty %}
     <div class="col-span-full text-center text-gray-500 py-8">
-      هیچ محصولی یافت نشد.
+      {% trans "هیچ محصولی یافت نشد." %}
     </div>
     {% endfor %}
   </div>
