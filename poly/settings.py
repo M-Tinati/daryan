@@ -141,7 +141,9 @@ LOCALE_PATHS = [BASE_DIR / 'locale']  # مسیر فایل‌های .po/.mo
 
 # MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # Static files
+
 STATIC_URL = '/static/'
+STATICFILES_DIRS = [ BASE_DIR / "static" ]  # مسیر واقعی روی دیسک
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 
 # Media files

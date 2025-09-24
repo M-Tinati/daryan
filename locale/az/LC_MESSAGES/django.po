@@ -9,384 +9,371 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-09-23 20:31+0330\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"PO-Revision-Date: 2025-09-24 19:40+0200\n"
+"Last-Translator: Grok Translator <grok@x.ai>\n"
+"Language-Team: Azerbaijani <az@li.org>\n"
+"Language: az\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
 #: .\accounts\templates\accounts\dashboard.html:4
 msgid "داشبورد کاربری"
-msgstr ""
+msgstr "İstifadəçi Paneli"
 
 #: .\accounts\templates\accounts\dashboard.html:9
 msgid "سلام"
-msgstr ""
+msgstr "Salam"
 
 #: .\accounts\templates\accounts\dashboard.html:10
 msgid "خوش اومدی به داشبورد کاربری‌ات."
-msgstr ""
+msgstr "İstifadəçi panelinə xoş gəldiniz."
 
 #: .\accounts\templates\accounts\dashboard.html:15
 #: .\accounts\templates\accounts\register.html:129
 msgid "نام کاربری:"
-msgstr ""
+msgstr "İstifadəçi adı:"
 
 #: .\accounts\templates\accounts\dashboard.html:16
 #: .\accounts\templates\accounts\register.html:126
 #: .\orders\templates\orders\my_orders.html:32
 msgid "شماره تلفن:"
-msgstr ""
+msgstr "Telefon nömrəsi:"
 
 #: .\accounts\templates\accounts\dashboard.html:17
 #: .\accounts\templates\accounts\register.html:127
 msgid "نام:"
-msgstr ""
+msgstr "Ad:"
 
 #: .\accounts\templates\accounts\dashboard.html:18
 #: .\accounts\templates\accounts\register.html:128
 msgid "نام خانوادگی:"
-msgstr ""
+msgstr "Soyad:"
 
 #: .\accounts\templates\accounts\dashboard.html:19
 #: .\accounts\templates\accounts\register.html:130
 msgid "شهر:"
-msgstr ""
+msgstr "Şəhər:"
 
 #: .\accounts\templates\accounts\dashboard.html:20
 msgid "آدرس کامل:"
-msgstr ""
+msgstr "Tam ünvan:"
 
 #: .\accounts\templates\accounts\dashboard.html:24
 msgid "ثبت نشده"
-msgstr ""
+msgstr "Qeydiyyatdan keçməyib"
 
 #: .\accounts\templates\accounts\dashboard.html:33
 #: .\orders\templates\orders\my_orders.html:3
 #: .\orders\templates\orders\my_orders.html:7
 msgid "سفارش‌های من"
-msgstr ""
+msgstr "Mənim sifarişlərim"
 
 #: .\accounts\templates\accounts\dashboard.html:37
 #: .\accounts\templates\accounts\edit_profile.html:5
 #: .\accounts\templates\accounts\edit_profile.html:10
 msgid "ویرایش پروفایل"
-msgstr ""
+msgstr "Profil redaktəsi"
 
 #: .\accounts\templates\accounts\dashboard.html:41
 #: .\templates\inc\header.html:101 .\templates\inc\header.html:320
 msgid "خروج"
-msgstr ""
+msgstr "Çıxış"
 
 #: .\accounts\templates\accounts\edit_profile.html:17
 #: .\accounts\templates\accounts\register.html:35
 msgid "نام"
-msgstr ""
+msgstr "Ad"
 
 #: .\accounts\templates\accounts\edit_profile.html:20
 #: .\accounts\templates\accounts\register.html:49
 msgid "نام خانوادگی"
-msgstr ""
+msgstr "Soyad"
 
 #: .\accounts\templates\accounts\edit_profile.html:23
 #: .\accounts\templates\accounts\register.html:77
 msgid "شهر"
-msgstr ""
+msgstr "Şəhər"
 
 #: .\accounts\templates\accounts\edit_profile.html:29
 msgid "آدرس کامل"
-msgstr ""
+msgstr "Tam ünvan"
 
 #: .\accounts\templates\accounts\edit_profile.html:34
 msgid "ذخیره تغییرات"
-msgstr ""
+msgstr "Dəyişiklikləri yadda saxla"
 
 #: .\accounts\templates\accounts\login.html:9
 #: .\accounts\templates\accounts\login.html:31 .\templates\inc\header.html:136
 #: .\templates\inc\header.html:327
 msgid "ورود"
-msgstr ""
+msgstr "Daxil ol"
 
 #: .\accounts\templates\accounts\login.html:15
 #: .\accounts\templates\accounts\register.html:21
 #: .\orders\templates\orders\create_order.html:49
 msgid "شماره تلفن"
-msgstr ""
+msgstr "Telefon nömrəsi"
 
 #: .\accounts\templates\accounts\login.html:23
 #: .\accounts\templates\accounts\register.html:91
 msgid "رمز عبور"
-msgstr ""
+msgstr "Şifrə"
 
 #: .\accounts\templates\accounts\login.html:35
 msgid "حساب ندارید؟"
-msgstr ""
+msgstr "Hesabınız yoxdur?"
 
 #: .\accounts\templates\accounts\login.html:35
 msgid "ثبت نام کنید"
-msgstr ""
+msgstr "Qeydiyyatdan keç"
 
 #: .\accounts\templates\accounts\register.html:13
 #: .\accounts\templates\accounts\register.html:117
 #: .\templates\inc\header.html:143 .\templates\inc\header.html:331
 msgid "ثبت نام"
-msgstr ""
+msgstr "Qeydiyyat"
 
 #: .\accounts\templates\accounts\register.html:28
 msgid "باید دقیقاً ۱۱ رقم باشد و فقط شامل اعداد."
-msgstr ""
+msgstr "Tam olaraq 11 rəqəm olmalı və yalnız rəqəmlərdən ibarət olmalıdır."
 
 #: .\accounts\templates\accounts\register.html:42
 #: .\accounts\templates\accounts\register.html:56
 msgid "حداقل ۲ کاراکتر، حروف فارسی یا انگلیسی."
-msgstr ""
+msgstr "Ən az 2 simvol, Azərbaycan və ya ingilis hərfləri."
 
 #: .\accounts\templates\accounts\register.html:63
 msgid "نام کاربری"
-msgstr ""
+msgstr "İstifadəçi adı"
 
 #: .\accounts\templates\accounts\register.html:70
 msgid "بین ۴ تا ۲۰ کاراکتر، بدون فاصله."
-msgstr ""
+msgstr "4 ilə 20 simvol arasında, boşluqsuz."
 
 #: .\accounts\templates\accounts\register.html:84
 msgid "از لیست شهرهای استان آذربایجان شرقی انتخاب کنید."
-msgstr ""
+msgstr "Şərqi Azərbaycan vilayətinin şəhərlər siyahısından seçin."
 
 #: .\accounts\templates\accounts\register.html:98
 msgid "حداقل ۸ کاراکتر، ترکیبی از حروف و اعداد."
-msgstr ""
+msgstr "Ən az 8 simvol, hərflər və rəqəmlərin kombinasiyası."
 
 #: .\accounts\templates\accounts\register.html:105
 msgid "تکرار رمز عبور"
-msgstr ""
+msgstr "Şifrəni təkrar et"
 
 #: .\accounts\templates\accounts\register.html:112
 msgid "مجدداً رمز عبور را وارد کنید."
-msgstr ""
+msgstr "Şifrəni yenidən daxil edin."
 
 #: .\accounts\templates\accounts\register.html:124
 msgid "راهنمای ثبت‌نام"
-msgstr ""
+msgstr "Qeydiyyat təlimatı"
 
 #: .\accounts\templates\accounts\register.html:126
-msgid ""
-"باید دقیقاً ۱۱ رقم باشد و فقط شامل اعداد مجاز است (بدون کاراکترهای اضافی)."
-msgstr ""
+msgid "باید دقیقاً ۱۱ رقم باشد و فقط شامل اعداد مجاز است (بدون کاراکترهای اضافی)."
+msgstr "Tam olaraq 11 rəqəm olmalı və yalnız icazəli rəqəmlərdən ibarət olmalıdır (əlavə simvollar olmadan)."
 
 #: .\accounts\templates\accounts\register.html:127
 #: .\accounts\templates\accounts\register.html:128
-msgid ""
-"حداقل ۲ کاراکتر، می‌تواند شامل حروف فارسی یا انگلیسی باشد (بدون اعداد یا "
-"علائم خاص)."
-msgstr ""
+msgid "حداقل ۲ کاراکتر، می‌تواند شامل حروف فارسی یا انگلیسی باشد (بدون اعداد یا علائم خاص)."
+msgstr "Ən az 2 simvol, Azərbaycan və ya ingilis hərflərindən ibarət ola bilər (rəqəmlər və ya xüsusi işarələr olmadan)."
 
 #: .\accounts\templates\accounts\register.html:129
-msgid ""
-"بین ۴ تا ۲۰ کاراکتر، بدون فاصله یا کاراکترهای خاص (فقط حروف، اعداد و زیرخط "
-"مجاز است)."
-msgstr ""
+msgid "بین ۴ تا ۲۰ کاراکتر، بدون فاصله یا کاراکترهای خاص (فقط حروف، اعداد و زیرخط مجاز است)."
+msgstr "4 ilə 20 simvol arasında, boşluq və ya xüsusi simvollar olmadan (yalnız hərflər, rəqəmlər və alt xətt icazəlidir)."
 
 #: .\accounts\templates\accounts\register.html:130
-msgid ""
-"از لیست شهرهای استان آذربایجان شرقی انتخاب شود (اطمینان حاصل کنید که گزینه "
-"مناسب را برگزینید)."
-msgstr ""
+msgid "از لیست شهرهای استان آذربایجان شرقی انتخاب شود (اطمینان حاصل کنید که گزینه مناسب را برگزینید)."
+msgstr "Şərqi Azərbaycan vilayətinin şəhərlər siyahısından seçilməlidir (uyğun seçimi etdiyinizə əmin olun)."
 
 #: .\accounts\templates\accounts\register.html:131
 msgid "رمز عبور:"
-msgstr ""
+msgstr "Şifrə:"
 
 #: .\accounts\templates\accounts\register.html:131
-msgid ""
-"حداقل ۸ کاراکتر، شامل ترکیبی از حروف بزرگ و کوچک، اعداد و علائم خاص برای "
-"امنیت بیشتر."
-msgstr ""
+msgid "حداقل ۸ کاراکتر، شامل ترکیبی از حروف بزرگ و کوچک، اعداد و علائم خاص برای امنیت بیشتر."
+msgstr "Ən az 8 simvol, böyük və kiçik hərflər, rəqəmlər və xüsusi işarələrin kombinasiyasından ibarət olmalıdır."
 
 #: .\accounts\templates\accounts\register.html:132
 msgid "تکرار رمز عبور:"
-msgstr ""
+msgstr "Şifrəni təkrar et:"
 
 #: .\accounts\templates\accounts\register.html:132
-msgid ""
-"دقیقاً همان رمز عبور وارد شده در فیلد قبلی را تکرار کنید تا مطابقت بررسی شود."
-msgstr ""
+msgid "دقیقاً همان رمز عبور وارد شده در فیلد قبلی را تکرار کنید تا مطابقت بررسی شود."
+msgstr "Əvvəlki sahədə daxil edilmiş şifrəni tam olaraq təkrar edin ki, uyğunluq yoxlanılsın."
 
 #: .\blog\templates\blog\blog_list.html:7 .\templates\inc\footer.html:35
 #: .\templates\inc\header.html:243 .\templates\inc\header.html:290
 msgid "وبلاگ"
-msgstr ""
+msgstr "Bloq"
 
 #: .\home\templates\home\about.html:4
 msgid "تماس با ما | کارخانه لوله پلی اتیلن"
-msgstr ""
+msgstr "Bizimlə əlaqə | Polietilen Boru Fabriki"
 
 #: .\home\templates\home\about.html:13
 msgid "با ما در ارتباط باشید"
-msgstr ""
+msgstr "Bizimlə əlaqə saxlayın"
 
 #: .\home\templates\home\about.html:16
 msgid "تیم پشتیبانی و فروش ما آماده پاسخگویی به سوالات و درخواست‌های شماست."
-msgstr ""
+msgstr "Dəstək və satış komandamız suallarınıza və istəklərinizə cavab verməyə hazırdır."
 
 #: .\home\templates\home\about.html:19 .\home\templates\home\about.html:83
 msgid "ارسال پیام"
-msgstr ""
+msgstr "Mesaj göndər"
 
 #: .\home\templates\home\about.html:27 .\templates\inc\footer.html:36
 msgid "درباره ما"
-msgstr ""
+msgstr "Haqqımızda"
 
 #: .\home\templates\home\about.html:29
-msgid ""
-"کارخانه لوله پلی‌اتیلن ما با بیش از ۲۰ سال تجربه در صنعت، یکی از معتبرترین "
-"تولیدکنندگان در ایران است."
-msgstr ""
+msgid "کارخانه لوله پلی‌اتیلن ما با بیش از ۲۰ سال تجربه در صنعت، یکی از معتبرترین تولیدکنندگان در ایران است."
+msgstr "Polietilen boru fabrikimiz 20 ildən çox təcrübə ilə İranda ən nüfuzlu istehsalçılardan biridir."
 
 #: .\home\templates\home\about.html:30
 msgid "ما با بهره‌گیری از <span class=\\"
-msgstr ""
+msgstr "Biz <span class=\\"
 
 #: .\home\templates\home\about.html:31 .\home\templates\home\home.html:105
 msgid "هدف ما ایجاد <span class=\\"
-msgstr ""
+msgstr "Məqsədimiz <span class=\\"
 
 #: .\home\templates\home\about.html:35
 msgid "محصولات با استانداردهای بین‌المللی"
-msgstr ""
+msgstr "Beynəlxalq standartlara uyğun məhsullar"
 
 #: .\home\templates\home\about.html:36
 msgid "پشتیبانی و خدمات پس از فروش حرفه‌ای"
-msgstr ""
+msgstr "Peşəkar dəstək və satışdan sonrakı xidmətlər"
 
 #: .\home\templates\home\about.html:37
 msgid "بیش از ۲۰ سال تجربه تخصصی"
-msgstr ""
+msgstr "20 ildən çox ixtisaslaşmış təcrübə"
 
 #: .\home\templates\home\about.html:48
 msgid "فرم تماس با ما"
-msgstr ""
+msgstr "Bizimlə əlaqə forması"
 
 #: .\home\templates\home\about.html:49 .\home\templates\home\home.html:587
-msgid ""
-"لطفاً اطلاعات خود را وارد کنید تا کارشناسان ما در اسرع وقت با شما تماس بگیرند."
-msgstr ""
+msgid "لطفاً اطلاعات خود را وارد کنید تا کارشناسان ما در اسرع وقت با شما تماس بگیرند."
+msgstr "Zəhmət olmasa məlumatlarınızı daxil edin ki, mütəxəssislərimiz tezliklə sizinlə əlaqə saxlasın."
 
 #: .\home\templates\home\about.html:54 .\home\templates\home\home.html:599
 #: .\orders\templates\orders\create_order.html:38
 msgid "نام و نام خانوادگی"
-msgstr ""
+msgstr "Ad və soyad"
 
 #: .\home\templates\home\about.html:59 .\home\templates\home\home.html:608
 msgid "شماره تماس"
-msgstr ""
+msgstr "Əlaqə nömrəsi"
 
 #: .\home\templates\home\about.html:64 .\home\templates\home\home.html:617
 msgid "ایمیل (اختیاری)"
-msgstr ""
+msgstr "E-poçt (istəyə bağlı)"
 
 #: .\home\templates\home\about.html:69 .\home\templates\home\home.html:624
 msgid "سفارش محصول"
-msgstr ""
+msgstr "Məhsul sifarişi"
 
 #: .\home\templates\home\about.html:70 .\home\templates\home\home.html:625
 msgid "مشاوره فنی"
-msgstr ""
+msgstr "Texniki məsləhət"
 
 #: .\home\templates\home\about.html:71 .\home\templates\home\home.html:626
 msgid "پشتیبانی"
-msgstr ""
+msgstr "Dəstək"
 
 #: .\home\templates\home\about.html:72 .\home\templates\home\home.html:627
 msgid "سایر"
-msgstr ""
+msgstr "Digər"
 
 #: .\home\templates\home\about.html:74 .\home\templates\home\home.html:630
 msgid "موضوع"
-msgstr ""
+msgstr "Mövzu"
 
 #: .\home\templates\home\about.html:79
 msgid "پیام شما"
-msgstr ""
+msgstr "Sizin mesajınız"
 
 #: .\home\templates\home\about.html:89
-msgid ""
-"✅ پیام شما با موفقیت ارسال شد. تیم ما در اسرع وقت با شما تماس خواهد گرفت."
-msgstr ""
+msgid "✅ پیام شما با موفقیت ارسال شد. تیم ما در اسرع وقت با شما تماس خواهد گرفت."
+msgstr "✅ Mesajınız uğurla göndərildi. Komandamız tezliklə sizinlə əlaqə saxlayacaq."
 
 #: .\home\templates\home\home.html:4
 msgid "صفحه اصلی | کارخانه لوله پلی اتیلن"
-msgstr ""
+msgstr "Ana səhifə | Polietilen Boru Fabriki"
 
 #: .\home\templates\home\home.html:23
 msgid "خرید لوله پلی‌اتیلن مستقیم از کارخانه"
-msgstr ""
+msgstr "Polietilen boruların birbaşa fabrikdən alınması"
 
 #: .\home\templates\home\home.html:27
 msgid "کیفیت تضمینی، قیمت رقابتی و ارسال سریع برای پروژه‌های شما"
-msgstr ""
+msgstr "Zəmanətli keyfiyyət, rəqabətli qiymət və layihələriniz üçün sürətli çatdırılma"
 
 #: .\home\templates\home\home.html:32
 msgid "ثبت سفارش فوری"
-msgstr ""
+msgstr "Təcili sifariş"
 
 #: .\home\templates\home\home.html:100
 msgid "چرا ما بهترین انتخاب شما هستیم؟"
-msgstr ""
+msgstr "Niyə biz sizin ən yaxşı seçiminizik?"
 
 #: .\home\templates\home\home.html:103
 msgid "با بیش از <span class=\\"
-msgstr ""
+msgstr "20 ildən çox <span class=\\"
 
 #: .\home\templates\home\home.html:104
 msgid "استفاده از <span class=\\"
-msgstr ""
+msgstr "İstifadə <span class=\\"
 
 #: .\home\templates\home\home.html:111
 msgid "کیفیت تضمین‌شده با مواد اولیه استاندارد"
-msgstr ""
+msgstr "Standart xammallarla zəmanətli keyfiyyət"
 
 #: .\home\templates\home\home.html:114
 msgid "گواهینامه‌های بین‌المللی"
-msgstr ""
+msgstr "Beynəlxalq sertifikatlar"
 
 #: .\home\templates\home\home.html:117
 msgid "۲۰ سال تخصص در صنعت"
-msgstr ""
+msgstr "Sənayedə 20 illik ixtisas"
 
 #: .\home\templates\home\home.html:120
 msgid "پشتیبانی تمام‌وقت و خدمات پس از فروش"
-msgstr ""
+msgstr "Daimi dəstək və satışdan sonrakı xidmətlər"
 
 #: .\home\templates\home\home.html:128
 msgid "سال تجربه"
-msgstr ""
+msgstr "İllik təcrübə"
 
 #: .\home\templates\home\home.html:132
 msgid "پروژه موفق"
-msgstr ""
+msgstr "Uğurlu layihə"
 
 #: .\home\templates\home\home.html:136
 msgid "شهر تحت پوشش"
-msgstr ""
+msgstr "Əhatə olunan şəhər"
 
 #: .\home\templates\home\home.html:142
 msgid "مشاوره"
-msgstr ""
+msgstr "Məsləhət"
 
 #: .\home\templates\home\home.html:197
 msgid "رضایت مشتریان ما"
-msgstr ""
+msgstr "Müştərilərimizin məmnuniyyəti"
 
 #: .\home\templates\home\home.html:200
 msgid "تجربه مشتریان نشان‌دهنده کیفیت محصولات و خدمات کارخانه پلی‌اتیلن است."
-msgstr ""
+msgstr "Müştərilərin təcrübəsi polietilen fabrikinin məhsul və xidmətlərinin keyfiyyətini göstərir."
 
 #: .\home\templates\home\home.html:201
 msgid "ما همیشه تلاش می‌کنیم رضایت شما را جلب کنیم."
-msgstr ""
+msgstr "Biz həmişə sizin məmnuniyyətinizi qazanmağa çalışırıq."
 
 #: .\home\templates\home\home.html:210 .\home\templates\home\home.html:220
 #: .\home\templates\home\home.html:226 .\home\templates\home\home.html:232
@@ -395,9 +382,8 @@ msgstr ""
 #: .\home\templates\home\home.html:271 .\home\templates\home\home.html:280
 #: .\home\templates\home\home.html:286 .\home\templates\home\home.html:292
 #: .\home\templates\home\home.html:298 .\home\templates\home\home.html:307
-msgid ""
-"مهسا کریمی: تجربه خرید عالی! محصولات با کیفیت و بسته‌بندی حرفه‌ای دریافت شد."
-msgstr ""
+msgid "مهسا کریمی: تجربه خرید عالی! محصولات با کیفیت و بسته‌بندی حرفه‌ای دریافت شد."
+msgstr "Mahsa Kərimi: Əla alış təcrübəsi! Yüksək keyfiyyətli məhsullar və peşəkar qablaşdırma alındı."
 
 #: .\home\templates\home\home.html:211 .\home\templates\home\home.html:221
 #: .\home\templates\home\home.html:227 .\home\templates\home\home.html:233
@@ -406,29 +392,28 @@ msgstr ""
 #: .\home\templates\home\home.html:272 .\home\templates\home\home.html:281
 #: .\home\templates\home\home.html:287 .\home\templates\home\home.html:293
 #: .\home\templates\home\home.html:299 .\home\templates\home\home.html:308
-msgid ""
-"علی رضایی: تحویل سریع و خدمات پس از فروش فوق‌العاده. مطمئناً دوباره خرید می‌کنم."
-msgstr ""
+msgid "علی رضایی: تحویل سریع و خدمات پس از فروش فوق‌العاده. مطمئناً دوباره خرید می‌کنم."
+msgstr "Əli Rzayi: Sürətli çatdırılma və əla satışdan sonrakı xidmətlər. Mütləq yenidən alacağam."
 
 #: .\home\templates\home\home.html:212 .\home\templates\home\home.html:239
 #: .\home\templates\home\home.html:309
 msgid "سمیه احمدی: پشتیبانی تیم بسیار حرفه‌ای بود. خریدی راحت و رضایت‌بخش."
-msgstr ""
+msgstr "Sümeyyə Əhmədi: Komandanın dəstəyi çox peşəkar idi. Rahat və məmnunedici alış."
 
 #: .\home\templates\home\home.html:213 .\home\templates\home\home.html:240
 #: .\home\templates\home\home.html:310
 msgid "رضا موسوی: کیفیت محصولات عالی و قیمت مناسب. تجربه خرید بی‌نظیر."
-msgstr ""
+msgstr "Rza Musavi: Məhsulların keyfiyyəti əla və qiyməti münasibdir. Misilsiz alış təcrübəsi."
 
 #: .\home\templates\home\home.html:214 .\home\templates\home\home.html:241
 #: .\home\templates\home\home.html:311
 msgid "نازیلا کیانی: بسته‌بندی عالی و تحویل به موقع. تیم حرفه‌ای و پاسخگو."
-msgstr ""
+msgstr "Nazila Kiyani: Əla qablaşdırma və vaxtında çatdırılma. Peşəkar və cavabdeh komanda."
 
 #: .\home\templates\home\home.html:215 .\home\templates\home\home.html:242
 #: .\home\templates\home\home.html:312
 msgid "حسین عباسی: محصولات با کیفیت و ارسال سریع. خریدی رضایت‌بخش و مطمئن."
-msgstr ""
+msgstr "Hüseyn Abbasi: Yüksək keyfiyyətli məhsullar və sürətli çatdırılma. Məmnunedici və etibarlı alış."
 
 #: .\home\templates\home\home.html:216 .\home\templates\home\home.html:222
 #: .\home\templates\home\home.html:228 .\home\templates\home\home.html:249
@@ -437,7 +422,7 @@ msgstr ""
 #: .\home\templates\home\home.html:282 .\home\templates\home\home.html:288
 #: .\home\templates\home\home.html:294 .\home\templates\home\home.html:313
 msgid "مریم احمدی: کیفیت عالی و تجربه خرید آسان. توصیه می‌کنم به همه."
-msgstr ""
+msgstr "Məryəm Əhmədi: Əla keyfiyyət və asan alış təcrübəsi. Hamıya tövsiyə edirəm."
 
 #: .\home\templates\home\home.html:217 .\home\templates\home\home.html:223
 #: .\home\templates\home\home.html:229 .\home\templates\home\home.html:250
@@ -446,7 +431,7 @@ msgstr ""
 #: .\home\templates\home\home.html:283 .\home\templates\home\home.html:289
 #: .\home\templates\home\home.html:295 .\home\templates\home\home.html:314
 msgid "امیر رضا شفیعی: تجربه خرید راحت و خدمات پشتیبانی عالی. خیلی راضی هستم."
-msgstr ""
+msgstr "Əmir Rza Şəfiei: Rahat alış təcrübəsi və əla dəstək xidmətləri. Çox məmnunam."
 
 #: .\home\templates\home\home.html:218 .\home\templates\home\home.html:224
 #: .\home\templates\home\home.html:230 .\home\templates\home\home.html:251
@@ -455,7 +440,7 @@ msgstr ""
 #: .\home\templates\home\home.html:284 .\home\templates\home\home.html:290
 #: .\home\templates\home\home.html:296 .\home\templates\home\home.html:315
 msgid "الهام فرجی: خرید مطمئن و سریع. کیفیت محصول و بسته‌بندی عالی بود."
-msgstr ""
+msgstr "Elham Fərci: Etibarlı və sürətli alış. Məhsul keyfiyyəti və qablaşdırma əla idi."
 
 #: .\home\templates\home\home.html:219 .\home\templates\home\home.html:225
 #: .\home\templates\home\home.html:231 .\home\templates\home\home.html:252
@@ -464,294 +449,292 @@ msgstr ""
 #: .\home\templates\home\home.html:285 .\home\templates\home\home.html:291
 #: .\home\templates\home\home.html:297 .\home\templates\home\home.html:316
 msgid "سعید نجفی: تجربه عالی و رضایت‌بخش. قیمت مناسب و ارسال سریع."
-msgstr ""
+msgstr "Səid Nəcəfi: Əla və məmnunedici təcrübə. Münasib qiymət və sürətli çatdırılma."
 
 #: .\home\templates\home\home.html:427
 msgid "قبلی"
-msgstr ""
+msgstr "Əvvəlki"
 
 #: .\home\templates\home\home.html:436
 msgid "بعدی"
-msgstr ""
+msgstr "Növbəti"
 
 #: .\home\templates\home\home.html:469
 msgid "اخبار و اطلاعیه‌های صنعت پلی‌اتیلن"
-msgstr ""
+msgstr "Polietilen sənayesinin xəbərləri və elanları"
 
 #: .\home\templates\home\home.html:576
 msgid "مشاوره آنلاین"
-msgstr ""
+msgstr "Onlayn məsləhət"
 
 #: .\home\templates\home\home.html:585
 msgid "فرم مشاوره و تماس"
-msgstr ""
+msgstr "Məsləhət və əlaqə forması"
 
 #: .\home\templates\home\home.html:639
 msgid "توضیحات (اختیاری)"
-msgstr ""
+msgstr "Şərhlər (istəyə bağlı)"
 
 #: .\home\templates\home\home.html:645
 msgid "ارسال درخواست"
-msgstr ""
+msgstr "Sorğu göndər"
 
 #: .\home\templates\home\home.html:652
-msgid ""
-"✅ درخواست شما با موفقیت ارسال شد. کارشناسان ما به زودی تماس خواهند گرفت."
-msgstr ""
+msgid "✅ درخواست شما با موفقیت ارسال شد. کارشناسان ما به زودی تماس خواهند گرفت."
+msgstr "✅ Sorğunuz uğurla göndərildi. Mütəxəssislərimiz tezliklə sizinlə əlaqə saxlayacaq."
 
 #: .\orders\templates\orders\create_order.html:3
 #: .\orders\templates\orders\create_order.html:9
 #: .\orders\templates\orders\create_order.html:81
 #: .\shop\templates\shop\product_list.html:151
 msgid "ثبت سفارش"
-msgstr ""
+msgstr "Sifariş ver"
 
 #: .\orders\templates\orders\create_order.html:16
 #: .\orders\templates\orders\my_orders.html:43
 msgid "تعداد"
-msgstr ""
+msgstr "Say"
 
 #: .\orders\templates\orders\create_order.html:27
 msgid "متراژ (متر)"
-msgstr ""
+msgstr "Metraj (metr)"
 
 #: .\orders\templates\orders\create_order.html:60
 msgid "کد ملی"
-msgstr ""
+msgstr "Şəxsiyyət vəsiqəsinin nömrəsi"
 
 #: .\orders\templates\orders\create_order.html:71
 msgid "آدرس"
-msgstr ""
+msgstr "Ünvan"
 
 #: .\orders\templates\orders\my_orders.html:14
 msgid "سفارش #"
-msgstr ""
+msgstr "Sifariş #"
 
 #: .\orders\templates\orders\my_orders.html:20
 msgid "وضعیت:"
-msgstr ""
+msgstr "Status:"
 
 #: .\orders\templates\orders\my_orders.html:31
 msgid "نام و نام خانوادگی:"
-msgstr ""
+msgstr "Ad və soyad:"
 
 #: .\orders\templates\orders\my_orders.html:33
 msgid "کد ملی:"
-msgstr ""
+msgstr "Şəxsiyyət vəsiqəsinin nömrəsi:"
 
 #: .\orders\templates\orders\my_orders.html:34 .\templates\inc\footer.html:28
 msgid "آدرس:"
-msgstr ""
+msgstr "Ünvan:"
 
 #: .\orders\templates\orders\my_orders.html:37
 msgid "محصولات سفارش"
-msgstr ""
+msgstr "Sifariş edilmiş məhsullar"
 
 #: .\orders\templates\orders\my_orders.html:42
 msgid "نام محصول"
-msgstr ""
+msgstr "Məhsulun adı"
 
 #: .\orders\templates\orders\my_orders.html:44
 msgid "متراژ"
-msgstr ""
+msgstr "Metraj"
 
 #: .\orders\templates\orders\my_orders.html:52
 msgid "متر"
-msgstr ""
+msgstr "Metr"
 
 #: .\orders\templates\orders\my_orders.html:63
 msgid "هیچ سفارشی ثبت نشده است."
-msgstr ""
+msgstr "Heç bir sifariş qeydə alınmayıb."
 
 #: .\pricing\templates\pricing\price_inquiry.html:20
 msgid "استعلام قیمت لوله‌ها"
-msgstr ""
+msgstr "Boru qiymətləri sorğusu"
 
 #: .\pricing\templates\pricing\price_inquiry.html:28
 msgid "سایز"
-msgstr ""
+msgstr "Ölçü"
 
 #: .\pricing\templates\pricing\price_inquiry.html:29
 msgid "فشار (بار)"
-msgstr ""
+msgstr "Təzyiq (bar)"
 
 #: .\pricing\templates\pricing\price_inquiry.html:30
 msgid "نوع PE"
-msgstr ""
+msgstr "PE növü"
 
 #: .\pricing\templates\pricing\price_inquiry.html:31
 msgid "وزن لوله (کیلوگرم)"
-msgstr ""
+msgstr "Boru çəkisi (kiloqram)"
 
 #: .\pricing\templates\pricing\price_inquiry.html:32
 msgid "قیمت کل (تومان)"
-msgstr ""
+msgstr "Ümumi qiymət (toman)"
 
 #: .\pricing\templates\pricing\price_inquiry.html:39
 #: .\pricing\templates\pricing\price_inquiry.html:67
 #: .\shop\templates\shop\product_list.html:93
 #: .\shop\templates\shop\product_list.html:135
 msgid "بار"
-msgstr ""
+msgstr "Bar"
 
 #: .\pricing\templates\pricing\price_inquiry.html:41
 #: .\pricing\templates\pricing\price_inquiry.html:75
 msgid "کیلوگرم"
-msgstr ""
+msgstr "Kiloqram"
 
 #: .\pricing\templates\pricing\price_inquiry.html:43
 #: .\pricing\templates\pricing\price_inquiry.html:80
 #: .\shop\templates\shop\product_list.html:145
 msgid "تومان"
-msgstr ""
+msgstr "Toman"
 
 #: .\pricing\templates\pricing\price_inquiry.html:49
 #: .\pricing\templates\pricing\price_inquiry.html:85
 msgid "هیچ لوله‌ای یافت نشد."
-msgstr ""
+msgstr "Heç bir boru tapılmadı."
 
 #: .\pricing\templates\pricing\price_inquiry.html:62
 #: .\shop\templates\shop\product_list.html:130
 msgid "سایز:"
-msgstr ""
+msgstr "Ölçü:"
 
 #: .\pricing\templates\pricing\price_inquiry.html:66
 #: .\shop\templates\shop\product_list.html:134
 msgid "فشار:"
-msgstr ""
+msgstr "Təzyiq:"
 
 #: .\pricing\templates\pricing\price_inquiry.html:70
 #: .\shop\templates\shop\product_list.html:138
 msgid "نوع PE:"
-msgstr ""
+msgstr "PE növü:"
 
 #: .\pricing\templates\pricing\price_inquiry.html:74
 msgid "وزن لوله:"
-msgstr ""
+msgstr "Boru çəkisi:"
 
 #: .\pricing\templates\pricing\price_inquiry.html:78
 msgid "قیمت کل:"
-msgstr ""
+msgstr "Ümumi qiymət:"
 
 #: .\shop\templates\shop\product_list.html:78
 msgid "محصولات ویژه"
-msgstr ""
+msgstr "Xüsusi məhsullar"
 
 #: .\shop\templates\shop\product_list.html:84
 msgid "همه سایزها"
-msgstr ""
+msgstr "Bütün ölçülər"
 
 #: .\shop\templates\shop\product_list.html:91
 msgid "همه بارها"
-msgstr ""
+msgstr "Bütün təzyiqlər"
 
 #: .\shop\templates\shop\product_list.html:98
 msgid "همه نوع‌ها"
-msgstr ""
+msgstr "Bütün növlər"
 
 #: .\shop\templates\shop\product_list.html:105
 msgid "فیلتر"
-msgstr ""
+msgstr "Filtr"
 
 #: .\shop\templates\shop\product_list.html:145
 msgid "قیمت:"
-msgstr ""
+msgstr "Qiymət:"
 
 #: .\shop\templates\shop\product_list.html:158
 msgid "هیچ محصولی یافت نشد."
-msgstr ""
+msgstr "Heç bir məhsul tapılmadı."
 
 #: .\templates\base.html:7
 msgid "کارخانه لوله پلی اتیلن"
-msgstr ""
+msgstr "Polietilen Boru Fabriki"
 
 #: .\templates\inc\footer.html:10
 msgid "کارخانه لوله پلی‌اتیلن"
-msgstr ""
+msgstr "Polietilen Boru Fabriki"
 
 #: .\templates\inc\footer.html:12
-msgid ""
-"تولید کننده انواع لوله‌های پلی‌اتیلن با کیفیت بالا و استانداردهای بین‌المللی."
-msgstr ""
+msgid "تولید کننده انواع لوله‌های پلی‌اتیلن با کیفیت بالا و استانداردهای بین‌المللی."
+msgstr "Yüksək keyfiyyətli və beynəlxalq standartlara uyğun polietilen boruların istehsalçısı."
 
 #: .\templates\inc\footer.html:13
 msgid "ارائه خدمات مشاوره و نصب برای پروژه‌های صنعتی و شهری."
-msgstr ""
+msgstr "Sənaye və şəhər layihələri üçün məsləhət və quraşdırma xidmətləri."
 
 #: .\templates\inc\footer.html:25
 msgid "اطلاعات تماس"
-msgstr ""
+msgstr "Əlaqə məlumatları"
 
 #: .\templates\inc\footer.html:26
 msgid "تلفن:"
-msgstr ""
+msgstr "Telefon:"
 
 #: .\templates\inc\footer.html:27
 msgid "ایمیل:"
-msgstr ""
+msgstr "E-poçt:"
 
 #: .\templates\inc\footer.html:28
 msgid "تهران، خیابان مثال، پلاک ۱۲۳"
-msgstr ""
+msgstr "Tehran, Nümunə küçəsi, 123"
 
 #: .\templates\inc\footer.html:33
 msgid "لینک‌های مفید"
-msgstr ""
+msgstr "Faydalı keçidlər"
 
 #: .\templates\inc\footer.html:34 .\templates\inc\header.html:234
 #: .\templates\inc\header.html:286
 msgid "محصولات"
-msgstr ""
+msgstr "Məhsullar"
 
 #: .\templates\inc\footer.html:37
 msgid "سیاست حریم خصوصی"
-msgstr ""
+msgstr "Məxfilik siyasəti"
 
 #: .\templates\inc\footer.html:44
 msgid "کارخانه لوله پلی‌اتیلن. همه حقوق محفوظ است."
-msgstr ""
+msgstr "Polietilen Boru Fabriki. Bütün hüquqlar qorunur."
 
 #: .\templates\inc\header.html:17
 msgid "لوگو کارخانه پلی‌اتیلن"
-msgstr ""
+msgstr "Polietilen Fabriki loqosu"
 
 #: .\templates\inc\header.html:20
 msgid "کارخانه پلی‌اتیلن"
-msgstr ""
+msgstr "Polietilen Fabriki"
 
 #: .\templates\inc\header.html:39 .\templates\inc\header.html:309
 #, python-format
 msgid "سلام، %(user.username)s"
-msgstr ""
+msgstr "Salam, %(user.username)s"
 
 #: .\templates\inc\header.html:79 .\templates\inc\header.html:313
 msgid "پنل کاربری"
-msgstr ""
+msgstr "İstifadəçi paneli"
 
 #: .\templates\inc\header.html:111
 msgid "حساب کاربری"
-msgstr ""
+msgstr "Hesab"
 
 #: .\templates\inc\header.html:155
 msgid "🌍 زبان"
-msgstr ""
+msgstr "🌍 Dil"
 
 #: .\templates\inc\header.html:201
 msgid "🛒 ثبت سفارش"
-msgstr ""
+msgstr "🛒 Sifariş ver"
 
 #: .\templates\inc\header.html:252 .\templates\inc\header.html:294
 msgid "تماس با ما"
-msgstr ""
+msgstr "Bizimlə əlaqə"
 
 #: .\templates\inc\header.html:262 .\templates\inc\header.html:302
 msgid "کاتالوگ"
-msgstr ""
+msgstr "Kataloq"
 
 #: .\templates\inc\header.html:275
 msgid "منو"
-msgstr ""
+msgstr "Menyu"
 
 #: .\templates\inc\header.html:337
 msgid "🌍 زبان:"
-msgstr ""
+msgstr "🌍 Dil:"

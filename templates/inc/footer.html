@@ -1,51 +1,57 @@
 {% load i18n %}
-<footer class="bg-gray-900 text-white pt-12 pb-6 relative z-50">
-  <div class="container mx-auto px-4">
+<footer class="bg-gray-100 text-black pt-12 pb-6 relative z-50">
+  <div class="container mx-auto px-6 py-6">
 
-    <!-- بخش اصلی فوتر -->
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+    <!-- گرید اصلی فوتر -->
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-10 md:gap-12">
 
       <!-- لوگو و معرفی -->
       <div class="flex flex-col space-y-4">
-        <h2 class="text-2xl font-bold text-yellow-400">{% trans "کارخانه لوله پلی‌اتیلن" %}</h2>
-        <p class="text-gray-300 max-w-sm">
+        <h2 class="text-2xl md:text-3xl font-extrabold text-black tracking-wide">{% trans "کارخانه لوله پلی‌اتیلن" %}</h2>
+        <p class="text-black leading-relaxed text-sm md:text-base max-w-xs">
           {% trans "تولید کننده انواع لوله‌های پلی‌اتیلن با کیفیت بالا و استانداردهای بین‌المللی." %}
+          <br>
           {% trans "ارائه خدمات مشاوره و نصب برای پروژه‌های صنعتی و شهری." %}
         </p>
-        <div class="flex space-x-4 space-x-reverse">
-          <a href="#" class="text-gray-300 hover:text-yellow-400 transition"><i class="fab fa-facebook-f"></i></a>
-          <a href="#" class="text-gray-300 hover:text-yellow-400 transition"><i class="fab fa-twitter"></i></a>
-          <a href="#" class="text-gray-300 hover:text-yellow-400 transition"><i class="fab fa-instagram"></i></a>
-          <a href="#" class="text-gray-300 hover:text-yellow-400 transition"><i class="fab fa-linkedin-in"></i></a>
+        <div class="flex space-x-4 space-x-reverse mt-2">
+          <a href="#" class="text-black hover:text-yellow-600 transition-transform transform hover:scale-110 duration-300"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="text-black hover:text-yellow-600 transition-transform transform hover:scale-110 duration-300"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="text-black hover:text-yellow-600 transition-transform transform hover:scale-110 duration-300"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="text-black hover:text-yellow-600 transition-transform transform hover:scale-110 duration-300"><i class="fab fa-linkedin-in"></i></a>
         </div>
       </div>
 
       <!-- اطلاعات تماس -->
       <div class="flex flex-col space-y-3">
-        <h3 class="text-xl font-semibold text-yellow-400 mb-2">{% trans "اطلاعات تماس" %}</h3>
-        <p class="text-gray-300">📞 {% trans "تلفن:" %} <a href="tel:+982112345678" class="hover:text-yellow-400">+98 21 1234 5678</a></p>
-        <p class="text-gray-300">📧 {% trans "ایمیل:" %} <a href="mailto:info@polyethylene.com" class="hover:text-yellow-400">info@polyethylene.com</a></p>
-        <p class="text-gray-300">🏢 {% trans "آدرس:" %} {% trans "تهران، خیابان مثال، پلاک ۱۲۳" %}</p>
+        <h3 class="text-lg md:text-xl font-semibold text-black mb-2">{% trans "اطلاعات تماس" %}</h3>
+        <p class="flex items-center text-black text-sm md:text-base gap-2">📞 <span>{% trans "تلفن:" %}</span> <a href="tel:+982112345678" class="hover:text-black transition-colors">+98 21 1234 5678</a></p>
+        <p class="flex items-center text-black text-sm md:text-base gap-2">📧 <span>{% trans "ایمیل:" %}</span> <a href="mailto:info@polyethylene.com" class="hover:text-black transition-colors">info@polyethylene.com</a></p>
+        <p class="flex items-center text-black text-sm md:text-base gap-2">🏢 <span>{% trans "آدرس:" %}</span> {% trans "تبریز خیابان  پلاک ۱۲۳" %}</p>
       </div>
 
       <!-- لینک‌های مفید -->
       <div class="flex flex-col space-y-3">
-        <h3 class="text-xl font-semibold text-yellow-400 mb-2">{% trans "لینک‌های مفید" %}</h3>
-        <a href="#" class="text-gray-300 hover:text-yellow-400 transition">{% trans "محصولات" %}</a>
-        <a href="#" class="text-gray-300 hover:text-yellow-400 transition">{% trans "وبلاگ" %}</a>
-        <a href="#" class="text-gray-300 hover:text-yellow-400 transition">{% trans "درباره ما" %}</a>
-        <a href="#" class="text-gray-300 hover:text-yellow-400 transition">{% trans "سیاست حریم خصوصی" %}</a>
+        <h3 class="text-lg md:text-xl font-semibold text-black mb-2">{% trans "لینک‌های مفید" %}</h3>
+        <a href="#" class="text-black hover:text-black transition-colors duration-300 hover:underline">{% trans "محصولات" %}</a>
+        <a href="#" class="text-black hover:text-black transition-colors duration-300 hover:underline">{% trans "وبلاگ" %}</a>
+        <a href="#" class="text-black hover:text-black transition-colors duration-300 hover:underline">{% trans "درباره ما" %}</a>
+        <a href="#" class="text-black hover:text-black transition-colors duration-300 hover:underline">{% trans "سیاست حریم خصوصی" %}</a>
       </div>
 
+      <!-- خبرنامه / عضویت -->
+      <div class="flex flex-col space-y-3">
+        <h3 class="text-lg md:text-xl font-semibold text-black mb-2">{% trans "خبرنامه" %}</h3>
+        <p class="text-black text-sm md:text-base">{% trans "برای دریافت اخبار و تخفیف‌ها، ایمیل خود را وارد کنید:" %}</p>
+        <form class="flex flex-col sm:flex-row gap-3 mt-2">
+          <input type="email" placeholder="{% trans 'ایمیل شما' %}" class="px-4 py-2 rounded-md border border-gray-300 bg-gray-50 text-gray-800 focus:outline-none focus:ring-2 focus:ring-black w-full"/>
+          <button type="submit" class="bg-black hover:bg-black text-white px-4 py-2 rounded-md transition-transform transform hover:scale-105 w-full sm:w-auto">{% trans "عضویت" %}</button>
+        </form>
+      </div>
     </div>
-
     <!-- خط جداکننده -->
-    <div class="border-t border-gray-700 mt-8 pt-4 text-center text-gray-500 text-sm">
+    <div class="border-t border-gray-300 mt-10 pt-6 text-center text-black text-xs md:text-sm">
       &copy; 2025 {% trans "کارخانه لوله پلی‌اتیلن. همه حقوق محفوظ است." %}
     </div>
-
   </div>
 </footer>
 
-<!-- نکته: اگر میخوای آیکون شبکه‌های اجتماعی فعال شوند، کتابخانه FontAwesome اضافه کن -->
-<!-- <script src="https://kit.fontawesome.com/your-kit-id.js" crossorigin="anonymous"></script> -->

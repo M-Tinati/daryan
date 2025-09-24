@@ -118,7 +118,7 @@
             id="languageMenuButton"
             class="flex items-center gap-2 bg-gray-100 hover:bg-gray-200 px-3 py-2 rounded-md focus:outline-none transition"
           >
-            <span class="text-gray-700 font-semibold">{% trans "🌍 زبان" %}</span>
+            <span class="text-gray-700 font-semibold">🌍 Language / تغییر زبان</span>
             <svg
               class="w-4 h-4 transition-transform duration-200"
               id="languageDropdownArrow"
@@ -224,7 +224,7 @@
   <!-- منوی موبایل -->
   <div
     id="mobile-menu"
-    class="hidden fixed top-0 right-0 w-72 h-full bg-gradient-to-b from-white to-blue-50 shadow-lg border-l border-gray-200 z-40 transition-transform transform translate-x-full"
+    class="hidden fixed top-0 right-0 w-72 h-full overflow-y-auto bg-gradient-to-b from-white to-blue-50 shadow-lg border-l border-gray-200 z-40 transition-transform transform translate-x-full"
   >
     <div
       class="flex justify-between items-center px-6 py-4 border-b border-gray-200"
@@ -288,19 +288,27 @@
         {% endif %}
       </div>
 
-      <!-- انتخاب زبان موبایل -->
+      <!-- انتخاب زبان موبایل با کشویی -->
       <div class="pt-4 border-t border-gray-200 w-full">
-        <span class="text-sm text-gray-600 block mb-2">{% trans "🌍 زبان:" %}</span>
-        <div class="flex flex-col gap-2">
+        <button
+          id="mobileLanguageButton"
+          class="w-full flex justify-between items-center px-4 py-2 text-gray-700 bg-gray-100 rounded-md hover:bg-gray-200 font-semibold"
+        >
+          🌍 Language / تغییر زبان
+          <svg class="w-4 h-4 transition-transform duration-200" id="mobileLanguageArrow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+          </svg>
+        </button>
+        <div id="mobileLanguageDropdown" class="hidden flex-col gap-2 mt-2">
           {% for code, name in LANGUAGES %}
-            <form action="{% url 'set_language' %}" method="post" class="inline">
+            <form action="{% url 'set_language' %}" method="post" class="w-full">
               {% csrf_token %}
               <input name="next" type="hidden" value="{{ request.get_full_path }}" />
               <button
                 name="language"
                 value="{{ code }}"
                 type="submit"
-                class="px-3 py-1 text-sm border rounded border-gray-300 hover:bg-blue-100 flex items-center gap-1 w-full text-center"
+                class="px-3 py-1 text-sm border rounded border-gray-300 hover:bg-blue-100 w-full text-center"
               >
                 {{ name }}
               </button>
@@ -407,11 +415,33 @@
     }
   });
 
+  // موبایل: کشویی زبان
+  const mobileLanguageButton = document.getElementById("mobileLanguageButton");
+  const mobileLanguageDropdown = document.getElementById("mobileLanguageDropdown");
+  const mobileLanguageArrow = document.getElementById("mobileLanguageArrow");
+
+  if (mobileLanguageButton && mobileLanguageDropdown && mobileLanguageArrow) {
+    mobileLanguageButton.addEventListener("click", (e) => {
+      e.stopPropagation();
+      mobileLanguageDropdown.classList.toggle("hidden");
+      mobileLanguageArrow.classList.toggle("rotate-180");
+    });
+  }
+
+  window.addEventListener("click", () => {
+    if (mobileLanguageDropdown && !mobileLanguageDropdown.classList.contains("hidden")) {
+      mobileLanguageDropdown.classList.add("hidden");
+      mobileLanguageArrow.classList.remove("rotate-180");
+    }
+  });
+
+  mobileLanguageDropdown.addEventListener("click", (e) => e.stopPropagation());
+
   // پیشنهاد زبان مرورگر برای کاربران خارجی
   document.addEventListener("DOMContentLoaded", () => {
     const userLang = navigator.language || navigator.userLanguage;
     const langCode = userLang.split("-")[0];
-    const langButtons = document.querySelectorAll('#languageDropdown button, #mobile-menu button[name="language"]');
+    const langButtons = document.querySelectorAll('#languageDropdown button, #mobileLanguageDropdown button[name="language"]');
 
     langButtons.forEach(btn => {
       if (btn.value === langCode) {
