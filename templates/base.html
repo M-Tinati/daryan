@@ -4,9 +4,38 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{% block title %}{% trans "کارخانه لوله پلی اتیلن" %}{% endblock %}</title>
-  <!-- Tailwind CDN -->
+  
+  <!-- عنوان صفحه -->
+  <title>{% block title %}{% trans "تولید کننده لوله پلی اتیلن" %}{% endblock %}</title>
+  
+  <!-- توضیحات برای گوگل -->
+  <meta name="description" content="{% block meta_description %}{% trans "تولید کننده انواع لوله پلی اتیلن با کیفیت بالا، مناسب برای مصارف صنعتی و ساختمانی." %}{% endblock %}">
+  
+  <!-- کلمات کلیدی -->
+  <meta name="keywords" content="لوله پلی اتیلن, تولید لوله, لوله صنعتی, لوله ساختمانی">
+  
+  <!-- Structured Data برای گوگل -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://daryan.onrender.com",
+    "@type": "Organization",
+    "name": "{% trans 'تولید کننده لوله پلی اتیلن' %}",
+    "url": "{{ request.build_absolute_uri }}",
+    "sameAs": [
+      "https://www.instagram.com/yourpage",
+      "https://www.linkedin.com/company/yourpage"
+    ],
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+98-21-xxxxxxx",
+      "contactType": "customer service"
+    }
+  }
+  </script>
+  
+  <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
+  
   {% block extra_head %}{% endblock %}
 </head>
 <body class="bg-gray-50 text-gray-800">
@@ -23,6 +52,5 @@
   {% include 'inc/footer.html' %}
 
   {% block scripts %}{% endblock %}
-  
 </body>
 </html>

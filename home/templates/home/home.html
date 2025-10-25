@@ -13,7 +13,7 @@
   <img
     src="{% static '/images/shutterstock_1785976883.jpg' %}"
     alt="polyethylene factory"
-    class="w-full h-full object-cover transition-transform duration-1000 ease-in-out hover:scale-105 opacity-95"
+    class="w-full h-full object-cover transition-transform duration-1000 ease-in-out hover:scale-105 "
     id="heroImage"
   >
   <div class="absolute inset-0 flex flex-col items-center justify-center text-center text-gray-900 px-4 sm:px-6 lg:px-8 z-20">
@@ -116,165 +116,137 @@
   </div>
 </section>
 
-<!-- ===== Customer Reviews Section ===== -->
-<section class="bg-gradient-to-b from-white to-blue-50 dark:from-gray-800 dark:to-blue-900 py-12 sm:py-16">
-  <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="text-center mb-10">
-      <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-blue-700 dark:text-blue-300 tracking-tight font-vazir">
-        {% trans "نظرات مشتریان ما" %}
-      </h2>
-      <p class="text-gray-600 dark:text-gray-300 text-sm sm:text-base max-w-md mx-auto mt-2 font-vazir">
-        {% trans "تجربه مشتریان از کیفیت لوله‌های پلی‌اتیلن و خدمات ما" %}
-      </p>
+
+
+<style>
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f3f4f6;
+  }
+
+  @keyframes scroll-right {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+  }
+
+  @keyframes scroll-left {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
+  }
+
+  .scrolling-track-right {
+    display: flex;
+    gap: 1rem;
+    animation: scroll-right 70s linear infinite;
+  }
+
+  .scrolling-track-left {
+    display: flex;
+    gap: 1rem;
+    animation: scroll-left 70s linear infinite;
+  }
+
+  .scrolling-wrapper {
+    overflow: hidden;
+    white-space: nowrap;
+    padding: 0.5rem 0;
+  }
+
+  .testimonial-card {
+    min-width: 280px;
+    max-width: 300px;
+    border-radius: 16px;
+    background: linear-gradient(135deg, #ffffff, #fefefe);
+    padding: 1rem 1.5rem;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    flex-shrink: 0;
+    word-wrap: break-word;
+    border-left: 4px solid #6366f1; /* رنگ مدرن */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .testimonial-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 24px rgba(0,0,0,0.12);
+  }
+
+  .testimonial-name {
+    font-weight: 600;
+    color: #4b5563; /* خاکستری مدرن */
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+  }
+
+  .testimonial-text {
+    font-size: 0.95rem;
+    color: #1f2937; /* متن اصلی */
+  }
+
+  @media (max-width: 768px) {
+    .testimonial-card {
+      min-width: 220px;
+      padding: 0.75rem 1rem;
+    }
+  }
+</style>
+</head>
+<body>
+
+<h2 class="text-2xl font-bold mb-6 text-center text-gray-700">نظرات مشتریان</h2>
+
+<!-- طبقه بالایی: حرکت به راست -->
+<div class="scrolling-wrapper mb-4">
+  <div class="scrolling-track-right">
+    <div class="testimonial-card">
+      <div class="testimonial-text">کیفیت لوله‌ها عالی بود.</div>
+      <div class="testimonial-name">— علی رضایی</div>
     </div>
-    <div class="overflow-hidden">
-      <!-- ردیف بالا: حرکت به چپ -->
-      <div class="flex animate-marquee whitespace-nowrap gap-4 sm:gap-6 mb-6">
-        <div class="flex gap-4 sm:gap-6">
-          <div class="customer-card border-2 border-blue-500 dark:border-blue-400">
-            <span class="quote-icon">“</span>
-            <p class="text-gray-700 dark:text-gray-200 text-sm sm:text-base font-vazir">مهسا کریمی: لوله‌های پلی‌اتیلن کیفیت عالی داشتند، بسته‌بندی حرفه‌ای و تحویل به‌موقع.</p>
-          </div>
-          <div class="customer-card border-2 border-green-500 dark:border-green-400">
-            <span class="quote-icon">“</span>
-            <p class="text-gray-700 dark:text-gray-200 text-sm sm:text-base font-vazir">علی رضایی: لوله‌ها بسیار مقاوم و با استاندارد بالا. خدمات پس از فروش فوق‌العاده بود.</p>
-          </div>
-          <div class="customer-card border-2 border-orange-500 dark:border-orange-400">
-            <span class="quote-icon">“</span>
-            <p class="text-gray-700 dark:text-gray-200 text-sm sm:text-base font-vazir">سمیه احمدی: خرید لوله‌های پلی‌اتیلن بسیار رضایت‌بخش بود. تیم پشتیبانی حرفه‌ای عمل کرد.</p>
-          </div>
-          <div class="customer-card border-2 border-purple-500 dark:border-purple-400">
-            <span class="quote-icon">“</span>
-            <p class="text-gray-700 dark:text-gray-200 text-sm sm:text-base font-vazir">رضا موسوی: کیفیت لوله‌ها بی‌نظیر و قیمت مناسب بود. حتماً دوباره خرید می‌کنم.</p>
-          </div>
-          <div class="customer-card border-2 border-blue-500 dark:border-blue-400">
-            <span class="quote-icon">“</span>
-            <p class="text-gray-700 dark:text-gray-200 text-sm sm:text-base font-vazir">نازیلا کیانی: لوله‌های پلی‌اتیلن با دوام و بسته‌بندی عالی. تیم بسیار پاسخگو بود.</p>
-          </div>
-          <div class="customer-card border-2 border-green-500 dark:border-green-400">
-            <span class="quote-icon">“</span>
-            <p class="text-gray-700 dark:text-gray-200 text-sm sm:text-base font-vazir">حسین عباسی: لوله‌ها کیفیت بالایی داشتند و ارسال سریع بود. تجربه‌ای عالی.</p>
-          </div>
-          <div class="customer-card border-2 border-orange-500 dark:border-orange-400">
-            <span class="quote-icon">“</span>
-            <p class="text-gray-700 dark:text-gray-200 text-sm sm:text-base font-vazir">مریم احمدی: لوله‌های پلی‌اتیلن استاندارد و باکیفیت. خریدی آسان و مطمئن.</p>
-          </div>
-          <div class="customer-card border-2 border-purple-500 dark:border-purple-400">
-            <span class="quote-icon">“</span>
-            <p class="text-gray-700 dark:text-gray-200 text-sm sm:text-base font-vazir">امیر رضا شفیعی: کیفیت لوله‌ها و خدمات پشتیبانی عالی بود. بسیار راضی‌ام.</p>
-          </div>
-          <div class="customer-card border-2 border-blue-500 dark:border-blue-400">
-            <span class="quote-icon">“</span>
-            <p class="text-gray-700 dark:text-gray-200 text-sm sm:text-base font-vazir">الهام فرجی: لوله‌های پلی‌اتیلن با کیفیت و تحویل سریع. خریدی مطمئن.</p>
-          </div>
-          <div class="customer-card border-2 border-green-500 dark:border-green-400">
-            <span class="quote-icon">“</span>
-            <p class="text-gray-700 dark:text-gray-200 text-sm sm:text-base font-vazir">سعید نجفی: لوله‌ها با کیفیت و قیمت مناسب. تجربه خریدی رضایت‌بخش.</p>
-          </div>
-          <div class="customer-card border-2 border-orange-500 dark:border-orange-400">
-            <span class="quote-icon">“</span>
-            <p class="text-gray-700 dark:text-gray-200 text-sm sm:text-base font-vazir">محمد حسینی: لوله‌های پلی‌اتیلن بسیار مقاوم و باکیفیت. تحویل به‌موقع بود.</p>
-          </div>
-          <div class="customer-card border-2 border-purple-500 dark:border-purple-400">
-            <span class="quote-icon">“</span>
-            <p class="text-gray-700 dark:text-gray-200 text-sm sm:text-base font-vazir">زهرا رحیمی: کیفیت لوله‌ها عالی و خدمات مشتری بی‌نظیر. حتماً توصیه می‌کنم.</p>
-          </div>
-        </div>
-        <!-- تکرار برای انیمیشن بی‌نهایت -->
-        <div class="flex gap-4 sm:gap-6">
-          <div class="customer-card border-2 border-blue-500 dark:border-blue-400">
-            <span class="quote-icon">“</span>
-            <p class="text-gray-700 dark:text-gray-200 text-sm sm:text-base font-vazir">مهسا کریمی: لوله‌های پلی‌اتیلن کیفیت عالی داشتند، بسته‌بندی حرفه‌ای و تحویل به‌موقع.</p>
-          </div>
-          <div class="customer-card border-2 border-green-500 dark:border-green-400">
-            <span class="quote-icon">“</span>
-            <p class="text-gray-700 dark:text-gray-200 text-sm sm:text-base font-vazir">علی رضایی: لوله‌ها بسیار مقاوم و با استاندارد بالا. خدمات پس از فروش فوق‌العاده بود.</p>
-          </div>
-          <div class="customer-card border-2 border-orange-500 dark:border-orange-400">
-            <span class="quote-icon">“</span>
-            <p class="text-gray-700 dark:text-gray-200 text-sm sm:text-base font-vazir">سمیه احمدی: خرید لوله‌های پلی‌اتیلن بسیار رضایت‌بخش بود. تیم پشتیبانی حرفه‌ای عمل کرد.</p>
-          </div>
-          <div class="customer-card border-2 border-purple-500 dark:border-purple-400">
-            <span class="quote-icon">“</span>
-            <p class="text-gray-700 dark:text-gray-200 text-sm sm:text-base font-vazir">رضا موسوی: کیفیت لوله‌ها بی‌نظیر و قیمت مناسب بود. حتماً دوباره خرید می‌کنم.</p>
-          </div>
-          <div class="customer-card border-2 border-blue-500 dark:border-blue-400">
-            <span class="quote-icon">“</span>
-            <p class="text-gray-700 dark:text-gray-200 text-sm sm:text-base font-vazir">نازیلا کیانی: لوله‌های پلی‌اتیلن با دوام و بسته‌بندی عالی. تیم بسیار پاسخگو بود.</p>
-          </div>
-          <div class="customer-card border-2 border-green-500 dark:border-green-400">
-            <span class="quote-icon">“</span>
-            <p class="text-gray-700 dark:text-gray-200 text-sm sm:text-base font-vazir">حسین عباسی: لوله‌ها کیفیت بالایی داشتند و ارسال سریع بود. تجربه‌ای عالی.</p>
-          </div>
-          <div class="customer-card border-2 border-orange-500 dark:border-orange-400">
-            <span class="quote-icon">“</span>
-            <p class="text-gray-700 dark:text-gray-200 text-sm sm:text-base font-vazir">مریم احمدی: لوله‌های پلی‌اتیلن استاندارد و باکیفیت. خریدی آسان و مطمئن.</p>
-          </div>
-          <div class="customer-card border-2 border-purple-500 dark:border-purple-400">
-            <span class="quote-icon">“</span>
-            <p class="text-gray-700 dark:text-gray-200 text-sm sm:text-base font-vazir">امیر رضا شفیعی: کیفیت لوله‌ها و خدمات پشتیبانی عالی بود. بسیار راضی‌ام.</p>
-          </div>
-        </div>
-      </div>
-      <!-- ردیف پایین: حرکت به راست -->
-      <div class="flex animate-marquee-reverse whitespace-nowrap gap-4 sm:gap-6">
-        <div class="flex gap-4 sm:gap-6">
-          <div class="customer-card border-2 border-orange-500 dark:border-orange-400">
-            <span class="quote-icon">“</span>
-            <p class="text-gray-700 dark:text-gray-200 text-sm sm:text-base font-vazir">مریم احمدی: لوله‌های پلی‌اتیلن استاندارد و باکیفیت. خریدی آسان و مطمئن.</p>
-          </div>
-          <div class="customer-card border-2 border-purple-500 dark:border-purple-400">
-            <span class="quote-icon">“</span>
-            <p class="text-gray-700 dark:text-gray-200 text-sm sm:text-base font-vazir">امیر رضا شفیعی: کیفیت لوله‌ها و خدمات پشتیبانی عالی بود. بسیار راضی‌ام.</p>
-          </div>
-          <div class="customer-card border-2 border-blue-500 dark:border-blue-400">
-            <span class="quote-icon">“</span>
-            <p class="text-gray-700 dark:text-gray-200 text-sm sm:text-base font-vazir">الهام فرجی: لوله‌های پلی‌اتیلن با کیفیت و تحویل سریع. خریدی مطمئن.</p>
-          </div>
-          <div class="customer-card border-2 border-green-500 dark:border-green-400">
-            <span class="quote-icon">“</span>
-            <p class="text-gray-700 dark:text-gray-200 text-sm sm:text-base font-vazir">سعید نجفی: لوله‌ها با کیفیت و قیمت مناسب. تجربه خریدی رضایت‌بخش.</p>
-          </div>
-          <div class="customer-card border-2 border-orange-500 dark:border-orange-400">
-            <span class="quote-icon">“</span>
-            <p class="text-gray-700 dark:text-gray-200 text-sm sm:text-base font-vazir">محمد حسینی: لوله‌های پلی‌اتیلن بسیار مقاوم و باکیفیت. تحویل به‌موقع بود.</p>
-          </div>
-          <div class="customer-card border-2 border-purple-500 dark:border-purple-400">
-            <span class="quote-icon">“</span>
-            <p class="text-gray-700 dark:text-gray-200 text-sm sm:text-base font-vazir">زهرا رحیمی: کیفیت لوله‌ها عالی و خدمات مشتری بی‌نظیر. حتماً توصیه می‌کنم.</p>
-          </div>
-          <div class="customer-card border-2 border-blue-500 dark:border-blue-400">
-            <span class="quote-icon">“</span>
-            <p class="text-gray-700 dark:text-gray-200 text-sm sm:text-base font-vazir">مهسا کریمی: لوله‌های پلی‌اتیلن کیفیت عالی داشتند، بسته‌بندی حرفه‌ای و تحویل به‌موقع.</p>
-          </div>
-          <div class="customer-card border-2 border-green-500 dark:border-green-400">
-            <span class="quote-icon">“</span>
-            <p class="text-gray-700 dark:text-gray-200 text-sm sm:text-base font-vazir">علی رضایی: لوله‌ها بسیار مقاوم و با استاندارد بالا. خدمات پس از فروش فوق‌العاده بود.</p>
-          </div>
-        </div>
-        <!-- تکرار برای انیمیشن بی‌نهایت -->
-        <div class="flex gap-4 sm:gap-6">
-          <div class="customer-card border-2 border-orange-500 dark:border-orange-400">
-            <span class="quote-icon">“</span>
-            <p class="text-gray-700 dark:text-gray-200 text-sm sm:text-base font-vazir">مریم احمدی: لوله‌های پلی‌اتیلن استاندارد و باکیفیت. خریدی آسان و مطمئن.</p>
-          </div>
-          <div class="customer-card border-2 border-purple-500 dark:border-purple-400">
-            <span class="quote-icon">“</span>
-            <p class="text-gray-700 dark:text-gray-200 text-sm sm:text-base font-vazir">امیر رضا شفیعی: کیفیت لوله‌ها و خدمات پشتیبانی عالی بود. بسیار راضی‌ام.</p>
-          </div>
-          <div class="customer-card border-2 border-blue-500 dark:border-blue-400">
-            <span class="quote-icon">“</span>
-            <p class="text-gray-700 dark:text-gray-200 text-sm sm:text-base font-vazir">الهام فرجی: لوله‌های پلی‌اتیلن با کیفیت و تحویل سریع. خریدی مطمئن.</p>
-          </div>
-          <div class="customer-card border-2 border-green-500 dark:border-green-400">
-            <span class="quote-icon">“</span>
-            <p class="text-gray-700 dark:text-gray-200 text-sm sm:text-base font-vazir">سعید نجفی: لوله‌ها با کیفیت و قیمت مناسب. تجربه خریدی رضایت‌بخش.</p>
-          </div>
-        </div>
-      </div>
+    <div class="testimonial-card">
+      <div class="testimonial-text">نصب بسیار راحت و بدون دردسر.</div>
+      <div class="testimonial-name">— سارا موسوی</div>
+    </div>
+    <div class="testimonial-card">
+      <div class="testimonial-text">دوام و مقاومت فوق‌العاده.</div>
+      <div class="testimonial-name">— امیرحسین کریمی</div>
+    </div>
+    <div class="testimonial-card">
+      <div class="testimonial-text">ارسال سریع و بسته‌بندی عالی.</div>
+      <div class="testimonial-name">— نرگس احمدی</div>
+    </div>
+    <div class="testimonial-card">
+      <div class="testimonial-text">قیمت مناسب نسبت به کیفیت.</div>
+      <div class="testimonial-name">— محمد حیدری</div>
     </div>
   </div>
-</section>
+</div>
+
+<!-- طبقه پایینی: حرکت به چپ -->
+<div class="scrolling-wrapper">
+  <div class="scrolling-track-left">
+    <div class="testimonial-card">
+      <div class="testimonial-text">پشتیبانی فوق‌العاده و پاسخگو.</div>
+      <div class="testimonial-name">— نگار صفایی</div>
+    </div>
+    <div class="testimonial-card">
+      <div class="testimonial-text">تجربه خرید راحت و مطمئن.</div>
+      <div class="testimonial-name">— رضا اکبری</div>
+    </div>
+    <div class="testimonial-card">
+      <div class="testimonial-text">نصب بدون مشکل انجام شد.</div>
+      <div class="testimonial-name">— هانا محمدی</div>
+    </div>
+    <div class="testimonial-card">
+      <div class="testimonial-text">لوله‌ها مطابق استاندارد بود.</div>
+      <div class="testimonial-name">— کیان رستمی</div>
+    </div>
+    <div class="testimonial-card">
+      <div class="testimonial-text">کیفیت و ظاهر عالی، کاملاً راضی هستم.</div>
+      <div class="testimonial-name">— الهام مرادی</div>
+    </div>
+  </div>
+</div>
+
+
 
 <!-- ===== Gallery Section ===== -->
 <div id="gallery" class="relative w-full container mx-auto my-16 px-4 sm:px-6 lg:px-8">
@@ -428,128 +400,129 @@
   }
 </style>
 <!-- فونت Vazirmatn -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vazirmatn@33.0.3/Vazirmatn-font-face.css">
 
 {% endblock %}
 
 {% block scripts %}
 <script>
-  document.addEventListener('DOMContentLoaded', () => {
-    // انیمیشن هیرو
-    const heroElements = document.querySelectorAll('.hero-animate');
-    heroElements.forEach((el, index) => {
-      setTimeout(() => {
-        el.classList.add('opacity-100', 'translate-y-0');
-      }, 100 * index);
-    });
+document.addEventListener('DOMContentLoaded', () => {
+  // ===== انیمیشن هیرو =====
+  const heroElements = document.querySelectorAll('.hero-animate');
+  heroElements.forEach((el, index) => {
+    setTimeout(() => {
+      el.classList.add('opacity-100', 'translate-y-0');
+    }, 100 * index);
+  });
 
-    // انیمیشن کانتر
-    const counters = document.querySelectorAll('.counter');
-    counters.forEach(counter => {
-      const updateCounter = () => {
-        const target = +counter.getAttribute('data-target');
-        const count = +counter.innerText;
-        const increment = target / 200;
-        if (count < target) {
-          counter.innerText = Math.ceil(count + increment);
-          setTimeout(updateCounter, 30);
-        } else {
-          counter.innerText = target;
-        }
-      };
-      updateCounter();
-    });
-
-    // انیمیشن ورود محتوا و تصویر
-    const elements = document.querySelectorAll('.animate-fadeIn, .animate-slideUp');
-    elements.forEach((el, index) => {
-      setTimeout(() => {
-        el.classList.add('opacity-100', 'translate-y-0');
-      }, 100 * index);
-    });
-
-    // گالری carousel
-    const items = document.querySelectorAll('[data-carousel-item]');
-    let current = 0;
-    const updateSlides = (next) => {
-      items.forEach(item => {
-        item.classList.add('translate-x-full');
-        item.classList.remove('translate-x-0');
-      });
-      items[next].classList.remove('translate-x-full');
-      items[next].classList.add('translate-x-0');
-      current = next;
+  // ===== کانتر =====
+  const counters = document.querySelectorAll('.counter');
+  counters.forEach(counter => {
+    const updateCounter = () => {
+      const target = +counter.getAttribute('data-target');
+      const count = +counter.innerText;
+      const increment = target / 200;
+      if (count < target) {
+        counter.innerText = Math.ceil(count + increment);
+        setTimeout(updateCounter, 30);
+      } else {
+        counter.innerText = target;
+      }
     };
-    document.querySelector('[data-carousel-next]').addEventListener('click', () => {
-      let next = (current + 1) % items.length;
-      updateSlides(next);
-    });
-    document.querySelector('[data-carousel-prev]').addEventListener('click', () => {
-      let next = (current - 1 + items.length) % items.length;
-      updateSlides(next);
-    });
-  document.addEventListener('DOMContentLoaded', () => {
-    const chatBtn = document.getElementById('chatBtn');
-    const chatModal = document.getElementById('chatModal');
-    const chatBox = document.getElementById('chatBox');
-    const closeModal = document.getElementById('closeModal');
-    const contactForm = document.getElementById('contactForm');
-    const successMsg = document.getElementById('successMsg');
+    updateCounter();
+  });
 
-    chatBtn.addEventListener('click', () => {
-      chatModal.classList.remove('hidden');
-      setTimeout(() => {
-        chatModal.classList.add('show');
-        chatBox.classList.remove('scale-95', 'opacity-0');
-        chatBox.classList.add('scale-100', 'opacity-100');
-      }, 10);
-    });
+  // ===== انیمیشن ورود محتوا و تصویر =====
+  const elements = document.querySelectorAll('.animate-fadeIn, .animate-slideUp');
+  elements.forEach((el, index) => {
+    setTimeout(() => {
+      el.classList.add('opacity-100', 'translate-y-0');
+    }, 100 * index);
+  });
 
-    closeModal.addEventListener('click', () => {
+  // ===== گالری carousel =====
+  const items = document.querySelectorAll('[data-carousel-item]');
+  let current = 0;
+  const updateSlides = (next) => {
+    items.forEach(item => {
+      item.classList.add('translate-x-full');
+      item.classList.remove('translate-x-0');
+    });
+    items[next].classList.remove('translate-x-full');
+    items[next].classList.add('translate-x-0');
+    current = next;
+  };
+  document.querySelector('[data-carousel-next]').addEventListener('click', () => {
+    let next = (current + 1) % items.length;
+    updateSlides(next);
+  });
+  document.querySelector('[data-carousel-prev]').addEventListener('click', () => {
+    let next = (current - 1 + items.length) % items.length;
+    updateSlides(next);
+  });
+
+  // ===== چت مودال =====
+  const chatBtn = document.getElementById('chatBtn');
+  const chatModal = document.getElementById('chatModal');
+  const chatBox = document.getElementById('chatBox');
+  const closeModal = document.getElementById('closeModal');
+  const contactForm = document.getElementById('contactForm');
+  const successMsg = document.getElementById('successMsg');
+
+  chatBtn.addEventListener('click', () => {
+    chatModal.classList.remove('hidden');
+    setTimeout(() => {
+      chatModal.classList.add('show');
+      chatBox.classList.remove('scale-95', 'opacity-0');
+      chatBox.classList.add('scale-100', 'opacity-100');
+    }, 10);
+  });
+
+  closeModal.addEventListener('click', () => {
+    chatModal.classList.remove('show');
+    chatBox.classList.remove('scale-100', 'opacity-100');
+    chatBox.classList.add('scale-95', 'opacity-0');
+    setTimeout(() => {
+      chatModal.classList.add('hidden');
+    }, 400);
+  });
+
+  chatModal.addEventListener('click', (e) => {
+    if (e.target === chatModal) {
       chatModal.classList.remove('show');
       chatBox.classList.remove('scale-100', 'opacity-100');
       chatBox.classList.add('scale-95', 'opacity-0');
       setTimeout(() => {
         chatModal.classList.add('hidden');
       }, 400);
-    });
+    }
+  });
 
-    chatModal.addEventListener('click', (e) => {
-      if (e.target === chatModal) {
-        chatModal.classList.remove('show');
-        chatBox.classList.remove('scale-100', 'opacity-100');
-        chatBox.classList.add('scale-95', 'opacity-0');
-        setTimeout(() => {
-          chatModal.classList.add('hidden');
-        }, 400);
+  contactForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const formData = new FormData(contactForm);
+    fetch('/submit-consultation/', {
+      method: 'POST',
+      headers: {
+        'X-CSRFToken': document.querySelector('[name=csrfmiddlewaretoken]').value
+      },
+      body: formData
+    })
+    .then(response => response.json())
+    .then(data => {
+      if (data.success) {
+        contactForm.classList.add('hidden');
+        successMsg.classList.remove('hidden');
       }
-    });
-
-    contactForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const formData = new FormData(contactForm);
-      fetch('/submit-consultation/', {
-        method: 'POST',
-        headers: {
-          'X-CSRFToken': document.querySelector('[name=csrfmiddlewaretoken]').value
-        },
-        body: formData
-      })
-      .then(response => response.json())
-      .then(data => {
-        if (data.success) {
-          contactForm.classList.add('hidden');
-          successMsg.classList.remove('hidden');
-        }
-      });
     });
   });
 
-  // افکت پارالاکس ساده
+  // ===== افکت پارالاکس =====
   const heroSection = document.querySelector('section.relative');
   window.addEventListener('scroll', () => {
     const offset = window.scrollY * 0.2;
     heroSection.querySelector('img').style.transform = `translateY(${offset}px) scale(1.05)`;
   });
+});
 </script>
+
 {% endblock %}
