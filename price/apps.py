@@ -1,4 +1,3 @@
-# price/apps.py
 from django.apps import AppConfig
 
 class PriceConfig(AppConfig):
@@ -6,4 +5,4 @@ class PriceConfig(AppConfig):
     name = 'price'
 
     def ready(self):
-        import price.signals
+        import price.signals  # این خط رو اضافه کن

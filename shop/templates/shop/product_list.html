@@ -6,185 +6,167 @@
 {% load custom_filters %}
 
 {% block content %}
-<section id="products" class="container mx-auto my-16 px-4 max-w-6xl lg:max-w-7xl xl:max-w-8xl animate-fadeIn">
-  <!-- استایل‌های اضافی -->
+<section id="products" class="container mx-auto my-16 px-4 max-w-7xl animate-fadeIn bg-gray-50 rounded-xl py-8">
   <style>
-    @import url('https://cdn.jsdelivr.net/npm/vazir-font@33.0.3/dist/font-face.css');
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
     body, h2, h3, p, a, span, select, button {
-      font-family: 'Vazir', sans-serif !important;
+      font-family: 'Inter', sans-serif !important;
       direction: rtl;
       text-align: right;
     }
+
+    /* کارت محصولات - Glassmorphism */
     .product-card {
-      transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
+      border-radius: 1.25rem;
+      background: rgba(255, 255, 255, 0.6);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+      transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
     }
     .product-card:hover {
       transform: translateY(-8px);
-      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+      box-shadow: 0 16px 40px rgba(0,0,0,0.15);
+      background: rgba(255, 255, 255, 0.8);
     }
+
     .line-clamp-2 {
       display: -webkit-box;
       -webkit-line-clamp: 2;
       -webkit-box-orient: vertical;
       overflow: hidden;
     }
-    /* انیمیشن‌ها */
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
+
+    @keyframes fadeIn { from {opacity:0;} to{opacity:1;} }
+    .animate-fadeIn { animation: fadeIn 1s ease-in-out; }
+    @keyframes slideUp { from{transform:translateY(20px);opacity:0;} to{transform:translateY(0);opacity:1;} }
+    .animate-slideUp { animation: slideUp 0.6s ease-out; }
+
+    /* فیلترها */
+    select, button {
+      border-radius: 0.75rem;
+      border: 1px solid #d1d5db;
+      padding: 0.5rem 1rem;
+      background-color: #fefcf5;
+      color: #374151;
+      font-weight: 500;
+      transition: all 0.2s ease;
     }
-    .animate-fadeIn {
-      animation: fadeIn 1s ease-in-out;
+    select:focus, button:focus {
+      outline: none;
+      ring: 2px solid #3b82f6;
+      border-color: #3b82f6;
     }
-    @keyframes slideUp {
-      from { transform: translateY(20px); opacity: 0; }
-      to { transform: translateY(0); opacity: 1; }
+    button:hover { background: #3b82f6; color:#fff; transform: scale(1.05); }
+
+    /* گرید ریسپانسیو */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
     }
-    .animate-slideUp {
-      animation: slideUp 0.6s ease-out;
+    @media (max-width: 1535px) { .grid { grid-template-columns: repeat(3, 1fr); gap: 1.5rem; } }
+    @media (max-width: 1024px) { .grid { grid-template-columns: repeat(2, 1fr); gap: 1rem; } } /* تبلت */
+    @media (max-width: 640px) { .grid { grid-template-columns: repeat(2, 1fr); gap: 0.75rem; } } /* موبایل */
+
+    /* فونت و تصاویر */
+    h2 { color: #1e3a8a; font-weight:700; text-shadow:0 2px 6px rgba(0,0,0,0.05); }
+    .product-card img {
+      border-top-left-radius: 1.25rem;
+      border-top-right-radius: 1.25rem;
+      transition: transform 0.5s ease;
+      width: 100%;
+      object-fit: contain;
     }
-    /* ریسپانسیو */
-    @media (max-width: 640px) { /* موبایل */
-      .grid { grid-template-columns: repeat(2, 1fr); } /* 2 کارت در موبایل */
-      h2 { font-size: 1.75rem; }
-      .p-6 { padding: 1rem; }
-      img { height: 8rem; }
-      a, button { font-size: 0.9rem; padding: 0.5rem 1rem; }
-      h3 { font-size: 1.1rem; }
-      p, .text-sm { font-size: 0.75rem; }
-      .gap-4 { gap: 0.5rem; }
-      select, button { font-size: 0.9rem; padding: 0.5rem; }
+    .product-card img:hover { transform: scale(1.05); }
+
+    .order-btn {
+      background: linear-gradient(90deg, #2563eb, #1d4ed8);
+      color: #fff; font-weight:600; padding:0.625rem 1.25rem; border-radius:0.75rem;
+      transition: all 0.3s ease;
     }
-    @media (min-width: 641px) and (max-width: 1024px) { /* تبلت */
-      .grid { grid-template-columns: repeat(2, 1fr); }
-      h2 { font-size: 2.25rem; }
-      img { height: 12rem; }
-    }
-    @media (min-width: 1280px) { /* دسکتاپ */
-      .grid { grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
-      h2 { font-size: 3rem; }
-      img { height: 14rem; }
-    }
-    @media (min-width: 1536px) { /* صفحات بزرگ‌تر */
-      .container { max-width: 80rem; }
-      .grid { grid-template-columns: repeat(4, 1fr); gap: 2rem; }
-      h2 { font-size: 3.5rem; }
-      img { height: 16rem; }
-    }
+    .order-btn:hover { background: linear-gradient(90deg,#1e40af,#1e3a8a); transform: scale(1.05); }
   </style>
 
   <!-- سرتیتر -->
-  <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-12 text-center text-blue-900 drop-shadow-lg animate-slideUp">
+  <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-12 text-center drop-shadow-lg animate-slideUp">
     {% trans "محصولات ویژه" %}
   </h2>
 
-  <!-- نوار فیلتر -->
+  <!-- فیلتر -->
   <form method="get" class="flex flex-wrap justify-center gap-4 mb-10">
-    <select name="size" class="px-4 py-2 rounded-lg bg-gray-50 border border-gray-200 text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-600 transition-all duration-200">
+    <select name="size">
       <option value="">{% trans "همه سایزها" %}</option>
       {% for s in sizes %}
       <option value="{{ s }}" {% if s == selected_size %}selected{% endif %}>{{ s }}</option>
       {% endfor %}
     </select>
 
-    <select name="pressure" class="px-4 py-2 rounded-lg bg-gray-50 border border-gray-200 text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-600 transition-all duration-200">
+    <select name="pressure">
       <option value="">{% trans "همه بارها" %}</option>
       {% for p in pressures %}
       <option value="{{ p }}" {% if p|stringformat:"s" == selected_pressure|stringformat:"s" %}selected{% endif %}>{{ p }} {% trans "بار" %}</option>
       {% endfor %}
     </select>
 
-    <select name="pe_type" class="px-4 py-2 rounded-lg bg-gray-50 border border-gray-200 text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-600 transition-all duration-200">
+    <select name="pe_type">
       <option value="">{% trans "همه نوع‌ها" %}</option>
       {% for pe in pe_types %}
       <option value="{{ pe }}" {% if pe == selected_pe_type %}selected{% endif %}>{{ pe }}</option>
       {% endfor %}
     </select>
 
-    <button type="submit" class="bg-blue-700 text-white px-5 py-2 rounded-lg hover:bg-blue-800 transition-all duration-200 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-600">
-      {% trans "فیلتر" %}
-    </button>
+    <button type="submit">{% trans "فیلتر" %}</button>
   </form>
 
-  <!-- کارت‌های محصولات -->
-  <div class="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 lg:gap-8 xl:gap-10">
+  <!-- کارت‌ها -->
+  <div class="grid">
     {% for product in products %}
-    <div class="product-card bg-white shadow-lg rounded-2xl overflow-hidden animate-slideUp" style="animation-delay: {{ forloop.counter0|div:10 }}s;">
-      <!-- تصویر محصول -->
+    <div class="product-card animate-slideUp" style="animation-delay: {{ forloop.counter0|div:10 }}s;">
       <div class="relative">
-        <img src="{{ product.image.url|default:'/static/images/default-product.jpg' }}"
-             class="w-full h-48 lg:h-56 xl:h-64 object-contain bg-gray-50 transition-transform duration-500 hover:scale-110"
-             alt="{{ product.name }}" />
-        <div class="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
+        <img src="{{ product.image.url|default:'/static/images/default-product.jpg' }}" class="h-48 lg:h-56 xl:h-64 bg-white/10" alt="{{ product.name }}" />
+        <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent rounded-t-2xl"></div>
       </div>
-      <!-- محتوای کارت -->
       <div class="p-6 text-center">
-        <h3 class="font-semibold text-lg lg:text-xl mb-3 text-blue-800">{{ product.name }}</h3>
+        <h3 class="font-semibold text-lg lg:text-xl mb-3 text-blue-700">{{ product.name }}</h3>
         {% if product.description %}
-        <p class="text-gray-600 text-sm lg:text-base mb-4 line-clamp-2">{{ product.description }}</p>
+        <p class="text-gray-700 text-sm lg:text-base mb-4 line-clamp-2">{{ product.description }}</p>
         {% endif %}
-
-        <!-- مشخصات فنی -->
         <div class="flex justify-center gap-4 mb-4 text-sm lg:text-base text-gray-600">
-          <div>
-            <span class="font-semibold">{% trans "سایز:" %}</span>
-            <span>{{ product.size }}</span>
-          </div>
-          <div>
-            <span class="font-semibold">{% trans "فشار:" %}</span>
-            <span>{{ product.pressure }} {% trans "بار" %}</span>
-          </div>
-          <div>
-            <span class="font-semibold">{% trans "نوع PE:" %}</span>
-            <span>{{ product.pe_type }}</span>
-          </div>
+          <div><span class="font-semibold">{% trans "سایز:" %}</span> {{ product.size }}</div>
+          <div><span class="font-semibold">{% trans "فشار:" %}</span> {{ product.pressure }} {% trans "بار" %}</div>
+          <div><span class="font-semibold">{% trans "نوع PE:" %}</span> {{ product.pe_type }}</div>
         </div>
-
-        <!-- قیمت -->
-      <!-- قیمت -->
-      <div class="text-lg font-bold text-black-600 mb-4">
-        {% trans "قیمت:" %} 
-        <span class="counter" data-target="{{ product.price.price|default:0 }}">
-          {{ product.price.price|intcomma|default:"-" }}
-        </span> 
-        {% trans "تومان" %}
-      </div>
-
-
-        <!-- دکمه -->
         <div class="flex justify-center">
-          <a href="{% url 'orders:create_order' product.id %}" class="inline-block bg-gradient-to-r from-blue-700 to-blue-900 text-white px-5 py-2.5 rounded-lg hover:from-blue-800 hover:to-blue-950 transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-600">
-            {% trans "ثبت سفارش" %}
-          </a>
+          <a href="{% url 'orders:create_order' product.id %}" class="order-btn">{% trans "دریافت فاکتور" %}</a>
         </div>
       </div>
     </div>
     {% empty %}
-    <div class="col-span-full text-center text-gray-500 py-8">
+    <div class="col-span-full text-center text-gray-400 py-8">
       {% trans "هیچ محصولی یافت نشد." %}
     </div>
     {% endfor %}
   </div>
 </section>
 
-<!-- اسکریپت برای انیمیشن کانتر -->
 <script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const counters = document.querySelectorAll('.counter');
-    counters.forEach(counter => {
-      const updateCounter = () => {
-        const target = +counter.getAttribute('data-target');
-        const count = +counter.innerText.replace(/,/g, '');
-        const increment = target / 250; // انیمیشن نرم
-        if (count < target) {
-          counter.innerText = Math.ceil(count + increment).toLocaleString('fa-IR');
-          setTimeout(updateCounter, 25);
-        } else {
-          counter.innerText = target.toLocaleString('fa-IR');
-        }
-      };
-      updateCounter();
-    });
+document.addEventListener('DOMContentLoaded', () => {
+  const counters = document.querySelectorAll('.counter');
+  counters.forEach(counter => {
+    const updateCounter = () => {
+      const target = +counter.getAttribute('data-target');
+      const count = +counter.innerText.replace(/,/g, '');
+      const increment = target / 250;
+      if(count < target){
+        counter.innerText = Math.ceil(count + increment).toLocaleString('fa-IR');
+        setTimeout(updateCounter, 25);
+      } else {
+        counter.innerText = target.toLocaleString('fa-IR');
+      }
+    };
+    updateCounter();
   });
+});
 </script>
 {% endblock content %}

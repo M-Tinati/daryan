@@ -10,8 +10,15 @@ class Product(models.Model):
     image = models.ImageField(upload_to="products/", verbose_name="تصویر محصول")
     description = models.TextField(blank=True, null=True, verbose_name="توضیحات کوتاه")
 
-    size = models.CharField(max_length=50, verbose_name="سایز لوله/اینچ")  # بدون choices
-    pressure = models.PositiveIntegerField(verbose_name="بار", default=6)  # پیش‌فرض 6
+    size = models.IntegerField(
+        verbose_name="سایز لوله/اینچ",
+    )
+    pressure = models.DecimalField(
+        verbose_name="بار",
+        max_digits=5,
+        decimal_places=1,
+        default=6.0
+    )
     pe_type = models.CharField(max_length=10, choices=PE_CHOICES, verbose_name="نوع پلی‌اتیلن", default="PE100")
 
     def __str__(self):

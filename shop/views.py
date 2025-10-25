@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from .models import Product
-
+from pricing.models import PipePrice
 def product_list(request):
     products = Product.objects.all()
 

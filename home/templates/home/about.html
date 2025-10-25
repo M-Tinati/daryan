@@ -4,69 +4,87 @@
 {% block title %}{% trans "تماس با ما | کارخانه لوله پلی اتیلن" %}{% endblock %}
 
 {% block content %}
-<body class="font-vazirmatn bg-blue-50 text-black">
+<body class="font-sans bg-gray-100 text-gray-900">
 
 <!-- ===== Hero Section ===== -->
-<section class="relative overflow-hidden h-96 md:h-[500px] lg:h-[400px] bg-gradient-to-b from-blue-700 to-blue-500">
-  <div class="absolute inset-0 flex flex-col items-center justify-center text-center text-white px-4 z-10">
-    <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
+<section class="relative bg-gradient-to-r from-blue-700 to-blue-500 h-[500px] flex items-center justify-center overflow-hidden">
+  <div class="z-10 text-center px-6 max-w-2xl">
+    <h1 class="text-5xl md:text-6xl font-extrabold text-white mb-4 drop-shadow-lg">
       {% trans "با ما در ارتباط باشید" %}
     </h1>
-    <p class="mb-6 text-base sm:text-lg md:text-xl">
+    <p class="text-lg md:text-xl text-white mb-8 drop-shadow-sm">
       {% trans "تیم پشتیبانی و فروش ما آماده پاسخگویی به سوالات و درخواست‌های شماست." %}
     </p>
-    <a href="#contactFormSection" class="bg-orange-400 hover:bg-orange-300 text-black px-6 py-3 rounded-lg font-semibold shadow-lg">
+    <a href="#contactFormSection" class="inline-block bg-orange-400 hover:bg-orange-300 text-black font-semibold px-10 py-4 rounded-2xl shadow-xl transition-transform transform hover:-translate-y-1">
       {% trans "ارسال پیام" %}
     </a>
   </div>
+  <div class="absolute inset-0 opacity-20 bg-[url('/static/images/hero-pattern.svg')] bg-center bg-cover"></div>
 </section>
 
-<!-- ===== About Us Section ===== -->
-
 <!-- ===== Contact Form Section ===== -->
-<section id="contactFormSection" class="container mx-auto my-16 px-4 py-12 bg-white rounded-lg shadow-lg">
-  <h2 class="text-3xl font-bold mb-6 text-center text-blue-800">{% trans "فرم تماس با ما" %}</h2>
-  <p class="text-center text-gray-600 mb-8">{% trans "لطفاً اطلاعات خود را وارد کنید تا کارشناسان ما در اسرع وقت با شما تماس بگیرند." %}</p>
+<section id="contactFormSection" class="container mx-auto px-4 py-16">
+  <div class="bg-white rounded-3xl shadow-2xl p-10 max-w-3xl mx-auto">
+    <h2 class="text-4xl font-bold text-center text-blue-700 mb-4">{% trans "فرم تماس با ما" %}</h2>
+    <p class="text-center text-gray-500 mb-10">{% trans "لطفاً اطلاعات خود را وارد کنید تا کارشناسان ما در اسرع وقت با شما تماس بگیرند." %}</p>
 
-  <form id="contactForm" class="max-w-2xl mx-auto space-y-4">
-    <div class="relative">
-      <input type="text" id="name" required class="peer w-full px-3 py-2 border-b-2 border-gray-300 focus:outline-none focus:border-blue-600 placeholder-transparent">
-      <label for="name" class="absolute right-3 -top-2.5 text-gray-500 text-sm transition-all peer-placeholder-shown:top-2 peer-placeholder-shown:text-gray-400 peer-placeholder-shown:text-base">{% trans "نام و نام خانوادگی" %}</label>
-    </div>
+    <form id="contactForm" class="grid gap-6">
 
-    <div class="relative">
-      <input type="tel" id="phone" required class="peer w-full px-3 py-2 border-b-2 border-gray-300 focus:outline-none focus:border-blue-600 placeholder-transparent">
-      <label for="phone" class="absolute right-3 -top-2.5 text-gray-500 text-sm transition-all peer-placeholder-shown:top-2 peer-placeholder-shown:text-gray-400 peer-placeholder-shown:text-base">{% trans "شماره تماس" %}</label>
-    </div>
+      <!-- Name Field -->
+      <div class="relative">
+        <input type="text" id="name" required class="peer w-full px-5 py-4 border border-gray-300 rounded-2xl focus:outline-none focus:ring-2 focus:ring-blue-400 placeholder-transparent shadow-sm">
+        <label for="name" class="absolute right-5 top-4 text-gray-400 text-sm transition-all peer-placeholder-shown:top-4 peer-placeholder-shown:text-gray-400 peer-placeholder-shown:text-base peer-focus:-top-2 peer-focus:text-blue-600 peer-focus:text-sm">
+          {% trans "نام و نام خانوادگی" %}
+        </label>
+      </div>
 
-    <div class="relative">
-      <input type="email" id="email" class="peer w-full px-3 py-2 border-b-2 border-gray-300 focus:outline-none focus:border-blue-600 placeholder-transparent">
-      <label for="email" class="absolute right-3 -top-2.5 text-gray-500 text-sm transition-all peer-placeholder-shown:top-2 peer-placeholder-shown:text-gray-400 peer-placeholder-shown:text-base">{% trans "ایمیل (اختیاری)" %}</label>
-    </div>
+      <!-- Phone Field -->
+      <div class="relative">
+        <input type="tel" id="phone" required class="peer w-full px-5 py-4 border border-gray-300 rounded-2xl focus:outline-none focus:ring-2 focus:ring-blue-400 placeholder-transparent shadow-sm">
+        <label for="phone" class="absolute right-5 top-4 text-gray-400 text-sm transition-all peer-placeholder-shown:top-4 peer-placeholder-shown:text-gray-400 peer-placeholder-shown:text-base peer-focus:-top-2 peer-focus:text-blue-600 peer-focus:text-sm">
+          {% trans "شماره تماس" %}
+        </label>
+      </div>
 
-    <div class="relative">
-      <select id="subject" class="w-full px-3 py-2 border-b-2 border-gray-300 focus:outline-none focus:border-blue-600">
-        <option>{% trans "سفارش محصول" %}</option>
-        <option>{% trans "مشاوره فنی" %}</option>
-        <option>{% trans "پشتیبانی" %}</option>
-        <option>{% trans "سایر" %}</option>
-      </select>
-      <label for="subject" class="absolute right-3 -top-2.5 text-gray-500 text-sm">{% trans "موضوع" %}</label>
-    </div>
+      <!-- Email Field -->
+      <div class="relative">
+        <input type="email" id="email" class="peer w-full px-5 py-4 border border-gray-300 rounded-2xl focus:outline-none focus:ring-2 focus:ring-blue-400 placeholder-transparent shadow-sm">
+        <label for="email" class="absolute right-5 top-4 text-gray-400 text-sm transition-all peer-placeholder-shown:top-4 peer-placeholder-shown:text-gray-400 peer-placeholder-shown:text-base peer-focus:-top-2 peer-focus:text-blue-600 peer-focus:text-sm">
+          {% trans "ایمیل (اختیاری)" %}
+        </label>
+      </div>
 
-    <div class="relative">
-      <textarea id="message" rows="4" class="peer w-full px-3 py-2 border-b-2 border-gray-300 focus:outline-none focus:border-blue-600 placeholder-transparent"></textarea>
-      <label for="message" class="absolute right-3 -top-2.5 text-gray-500 text-sm transition-all peer-placeholder-shown:top-2 peer-placeholder-shown:text-gray-400 peer-placeholder-shown:text-base">{% trans "پیام شما" %}</label>
-    </div>
+      <!-- Subject Field -->
+      <div class="relative">
+        <select id="subject" class="w-full px-5 py-4 border border-gray-300 rounded-2xl focus:outline-none focus:ring-2 focus:ring-blue-400 shadow-sm">
+          <option>{% trans "سفارش محصول" %}</option>
+          <option>{% trans "مشاوره فنی" %}</option>
+          <option>{% trans "پشتیبانی" %}</option>
+          <option>{% trans "سایر" %}</option>
+        </select>
+        <label for="subject" class="absolute right-5 top-4 text-gray-400 text-sm">{% trans "موضوع" %}</label>
+      </div>
 
-    <button type="submit" class="w-full bg-blue-600 hover:bg-blue-500 text-white py-3 rounded-lg font-semibold transition-all duration-300">
-      {% trans "ارسال پیام" %}
-    </button>
-  </form>
+      <!-- Message Field -->
+      <div class="relative">
+        <textarea id="message" rows="5" class="peer w-full px-5 py-4 border border-gray-300 rounded-2xl focus:outline-none focus:ring-2 focus:ring-blue-400 placeholder-transparent shadow-sm"></textarea>
+        <label for="message" class="absolute right-5 top-4 text-gray-400 text-sm transition-all peer-placeholder-shown:top-4 peer-placeholder-shown:text-gray-400 peer-placeholder-shown:text-base peer-focus:-top-2 peer-focus:text-blue-600 peer-focus:text-sm">
+          {% trans "پیام شما" %}
+        </label>
+      </div>
 
-  <div id="successMsg" class="hidden mt-6 text-center">
-    <div class="bg-green-100 border border-green-300 text-green-700 px-4 py-3 rounded-lg">
-      {% trans "✅ پیام شما با موفقیت ارسال شد. تیم ما در اسرع وقت با شما تماس خواهد گرفت." %}
+      <!-- Submit Button -->
+      <button type="submit" class="w-full bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-500 hover:to-blue-400 text-white py-4 rounded-2xl font-bold shadow-xl transition-transform transform hover:-translate-y-1">
+        {% trans "ارسال پیام" %}
+      </button>
+
+    </form>
+
+    <!-- Success Message -->
+    <div id="successMsg" class="hidden mt-8 text-center animate-fadeIn">
+      <div class="bg-green-100 border border-green-300 text-green-700 px-6 py-4 rounded-2xl shadow-md">
+        {% trans "✅ پیام شما با موفقیت ارسال شد. تیم ما در اسرع وقت با شما تماس خواهد گرفت." %}
+      </div>
     </div>
   </div>
 </section>

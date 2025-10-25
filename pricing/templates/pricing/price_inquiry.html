@@ -20,7 +20,7 @@
         {% trans "استعلام قیمت لوله‌ها" %}
     </h1>
 
-    <!-- نمایش جدول در دسکتاپ و تبلت -->
+    <!-- جدول برای دسکتاپ و تبلت -->
     <div class="hidden sm:block overflow-x-auto rounded-xl shadow-lg">
         <table class="min-w-full bg-white border border-gray-200 rounded-xl">
             <thead class="bg-gradient-to-r from-blue-700 to-blue-500 text-white">
@@ -38,9 +38,11 @@
                     <td class="px-6 py-4 text-right text-gray-800">{{ pipe.size }}</td>
                     <td class="px-6 py-4 text-right text-gray-800">{{ pipe.pressure }} {% trans "بار" %}</td>
                     <td class="px-6 py-4 text-right text-gray-800">{{ pipe.pe_type }}</td>
-                    <td class="px-6 py-4 text-right text-gray-800">{{ pipe.weight }} {% trans "کیلوگرم" %}</td>
+                    <td class="px-6 py-4 text-right text-gray-800">
+                        {{ pipe.price.weight|floatformat:2 }} {% trans "کیلوگرم" %}
+                    </td>
                     <td class="px-6 py-4 text-right font-bold text-blue-700">
-                        {{ pipe.total_price|intcomma }} {% trans "تومان" %}
+                        {{ pipe.price.total_price|intcomma }} {% trans "تومان" %}
                     </td>
                 </tr>
                 {% empty %}
@@ -54,7 +56,7 @@
         </table>
     </div>
 
-    <!-- نمایش جدول به صورت کارت در موبایل -->
+    <!-- جدول به صورت کارت برای موبایل -->
     <div class="sm:hidden space-y-4">
         {% for pipe in pipes %}
         <div class="bg-white shadow-md rounded-lg p-4 border border-gray-200">
@@ -72,12 +74,12 @@
             </div>
             <div class="flex justify-between mb-1">
                 <span class="font-semibold text-gray-700">{% trans "وزن لوله:" %}</span>
-                <span>{{ pipe.weight }} {% trans "کیلوگرم" %}</span>
+                <span>{{ pipe.price.weight|floatformat:2 }} {% trans "کیلوگرم" %}</span>
             </div>
             <div class="flex justify-between mt-2 border-t pt-2">
                 <span class="font-semibold text-gray-800">{% trans "قیمت کل:" %}</span>
                 <span class="font-bold text-gray-900">
-                    {{ pipe.total_price|intcomma }} {% trans "تومان" %}
+                    {{ pipe.price.total_price|intcomma }} {% trans "تومان" %}
                 </span>
             </div>
         </div>

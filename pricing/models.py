@@ -6,8 +6,16 @@ class PipePrice(models.Model):
         ("PE100", "PE100"),
     ]
 
-    size = models.CharField(max_length=50, verbose_name="سایز لوله")
-    pressure = models.PositiveIntegerField(verbose_name="فشار (بار)")
+    size = models.IntegerField(
+        verbose_name="سایز لوله/اینچ",
+            # بسته به بزرگترین سایز
+    )
+    pressure = models.DecimalField(
+        max_digits=5,
+        decimal_places=1,
+        verbose_name="بار",
+        default=6.0
+    )
     pe_type = models.CharField(max_length=5, choices=PE_CHOICES, verbose_name="نوع PE")
     weight = models.FloatField(verbose_name="وزن لوله (کیلوگرم)", default=0.0)
     price_per_kg = models.IntegerField(verbose_name="قیمت هر کیلوگرم (تومان)", default=0)

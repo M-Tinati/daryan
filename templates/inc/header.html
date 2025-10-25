@@ -1,43 +1,43 @@
 {% load i18n %}
 <header
-  class="bg-gradient-to-r from-blue-50 via-white to-blue-50 border-b border-gray-200 shadow-md sticky top-0 z-50 transition-all duration-300 ease-in-out"
+  class="bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-700 shadow-lg sticky top-0 z-50 transition-all duration-300 ease-in-out"
   id="main-header"
 >
-  <div class="container mx-auto px-4">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8">
     <!-- ردیف بالا: لوگو، منوی کاربر، انتخاب زبان، دکمه CTA -->
-    <div class="py-3 flex flex-row-reverse items-center justify-between">
+    <div class="py-4 flex flex-row-reverse items-center justify-between">
       
       <!-- لوگو + نام سایت -->
       <a
         href="{% url 'home:main' %}"
-        class="flex items-center gap-2 text-2xl md:text-3xl font-bold text-blue-800 hover:text-blue-600 transition-colors duration-300"
+        class="flex items-center gap-3 text-2xl md:text-3xl font-extrabold text-gray-900 dark:text-white hover:text-blue-500 dark:hover:text-blue-400 transition-colors duration-300"
       >
         <img
           src="https://ippfa.ir/wp-content/uploads/2024/11/IMG_20241208_094817_166.jpg"
           alt="{% trans 'لوگو کارخانه پلی‌اتیلن' %}"
-          class="h-10 w-auto rounded-md border border-gray-300 shadow-sm"
+          class="h-12 w-auto rounded-full border border-gray-300 dark:border-gray-600 shadow-md"
         />
         <span>{% trans "کارخانه پلی‌اتیلن" %}</span>
       </a>
 
       <!-- بخش‌های سمت راست دسکتاپ -->
-      <div class="hidden md:flex items-center gap-6">
+      <div class="hidden md:flex items-center gap-8">
         <!-- منوی کشویی ورود/ثبت نام یا خروج (دسکتاپ) -->
-        <div class="relative">
+        <div class="relative group">
           {% if user.is_authenticated %}
           <button
             id="userMenuButton"
-            class="flex items-center gap-2 bg-gray-100 hover:bg-gray-200 px-3 py-2 rounded-md focus:outline-none transition"
+            class="flex items-center gap-3 bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 px-4 py-2 rounded-lg focus:outline-none transition-all duration-300"
           >
             <img
               src="/path/to/avatar.png"
               alt="Avatar"
-              class="w-7 h-7 rounded-full border-2 border-blue-400"
+              class="w-8 h-8 rounded-full border-2 border-blue-500 dark:border-blue-400"
             />
-            <span class="text-gray-700 font-semibold"
+            <span class="text-gray-800 dark:text-gray-200 font-medium"
               >{% blocktrans %}سلام، {{ user.username }}{% endblocktrans %}</span>
             <svg
-              class="w-4 h-4 transition-transform duration-200"
+              class="w-5 h-5 transition-transform duration-300 group-hover:rotate-180"
               id="userDropdownArrow"
               fill="none"
               stroke="currentColor"
@@ -53,11 +53,11 @@
           </button>
           <div
             id="userDropdown"
-            class="absolute right-0 mt-1 w-52 bg-white border border-gray-200 rounded-md shadow-lg flex-col overflow-hidden opacity-0 scale-95 transform origin-top transition-all duration-200 pointer-events-none"
+            class="absolute right-0 mt-2 w-56 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl shadow-2xl flex-col overflow-hidden opacity-0 scale-95 transform origin-top transition-all duration-300 group-hover:opacity-100 group-hover:scale-100 pointer-events-none group-hover:pointer-events-auto"
           >
             <a
               href="{% url 'accounts:dashboard' %}"
-              class="flex items-center gap-2 px-4 py-2 text-white bg-blue-500 hover:bg-blue-400 rounded-md transition transform hover:scale-105"
+              class="flex items-center gap-3 px-4 py-3 text-gray-800 dark:text-gray-200 bg-blue-50 dark:bg-blue-900 hover:bg-blue-100 dark:hover:bg-blue-800 rounded-t-xl transition-all duration-200"
             >
               {% trans "پنل کاربری" %}
             </a>
@@ -65,7 +65,7 @@
               {% csrf_token %}
               <button
                 type="submit"
-                class="w-full flex items-center gap-2 px-4 py-2 text-white bg-red-500 hover:bg-red-400 rounded-md transition transform hover:scale-105 mt-1"
+                class="w-full flex items-center gap-3 px-4 py-3 text-white bg-red-600 hover:bg-red-500 rounded-b-xl transition-all duration-200"
               >
                 {% trans "خروج" %}
               </button>
@@ -74,11 +74,11 @@
           {% else %}
           <button
             id="guestMenuButton"
-            class="flex items-center gap-3 bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg font-semibold shadow-md transition transform hover:scale-105 focus:outline-none"
+            class="flex items-center gap-3 bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-700 hover:to-blue-600 text-white px-5 py-2 rounded-full font-semibold shadow-md transition-all duration-300 hover:shadow-lg"
           >
             <span>{% trans "حساب کاربری" %}</span>
             <svg
-              class="w-4 h-4 transition-transform duration-200"
+              class="w-5 h-5 transition-transform duration-300 group-hover:rotate-180"
               id="guestDropdownArrow"
               fill="none"
               stroke="currentColor"
@@ -94,17 +94,17 @@
           </button>
           <div
             id="guestDropdown"
-            class="absolute right-0 mt-1 w-[148px] rounded-md shadow-lg flex flex-col overflow-hidden opacity-0 scale-95 transform origin-top transition-all duration-200 pointer-events-none"
+            class="absolute right-0 mt-2 w-48 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl shadow-2xl flex flex-col overflow-hidden opacity-0 scale-95 transform origin-top transition-all duration-300 group-hover:opacity-100 group-hover:scale-100 pointer-events-none group-hover:pointer-events-auto"
           >
             <a
               href="{% url 'accounts:login' %}"
-              class="flex items-center gap-2 justify-center px-4 py-2 text-white bg-blue-500 hover:bg-blue-600 rounded-md font-semibold text-sm transition transform hover:scale-105 w-full"
+              class="flex items-center gap-3 justify-center px-4 py-3 text-gray-800 dark:text-gray-200 bg-blue-50 dark:bg-blue-900 hover:bg-blue-100 dark:hover:bg-blue-800 rounded-t-xl font-semibold text-sm transition-all duration-200"
             >
               {% trans "ورود" %}
             </a>
             <a
               href="{% url 'accounts:register' %}"
-              class="flex items-center gap-2 justify-center px-4 py-2 text-white bg-green-500 hover:bg-green-600 rounded-md font-semibold text-sm transition transform hover:scale-105 mt-1 w-full"
+              class="flex items-center gap-3 justify-center px-4 py-3 text-gray-800 dark:text-gray-200 bg-green-50 dark:bg-green-900 hover:bg-green-100 dark:hover:bg-green-800 rounded-b-xl font-semibold text-sm transition-all duration-200"
             >
               {% trans "ثبت نام" %}
             </a>
@@ -113,14 +113,14 @@
         </div>
 
         <!-- انتخاب زبان کشویی (دسکتاپ) -->
-        <div class="relative">
+        <div class="relative group">
           <button
             id="languageMenuButton"
-            class="flex items-center gap-2 bg-gray-100 hover:bg-gray-200 px-3 py-2 rounded-md focus:outline-none transition"
+            class="flex items-center gap-3 bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 px-4 py-2 rounded-lg focus:outline-none transition-all duration-300"
           >
-            <span class="text-gray-700 font-semibold">🌍 Language / تغییر زبان</span>
+            <span class="text-gray-800 dark:text-gray-200 font-medium">🌍 Language</span>
             <svg
-              class="w-4 h-4 transition-transform duration-200"
+              class="w-5 h-5 transition-transform duration-300 group-hover:rotate-180"
               id="languageDropdownArrow"
               fill="none"
               stroke="currentColor"
@@ -131,7 +131,7 @@
           </button>
           <div
             id="languageDropdown"
-            class="absolute right-0 mt-1 w-52 bg-white border border-gray-200 rounded-md shadow-lg flex-col overflow-hidden opacity-0 scale-95 transform origin-top transition-all duration-200 pointer-events-none"
+            class="absolute right-0 mt-2 w-56 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl shadow-2xl flex-col overflow-hidden opacity-0 scale-95 transform origin-top transition-all duration-300 group-hover:opacity-100 group-hover:scale-100 pointer-events-none group-hover:pointer-events-auto"
           >
             {% for code, name in LANGUAGES %}
               <form action="{% url 'set_language' %}" method="post" class="w-full">
@@ -141,7 +141,7 @@
                   name="language"
                   value="{{ code }}"
                   type="submit"
-                  class="w-full flex items-center gap-2 px-4 py-2 text-gray-800 hover:bg-gray-100"
+                  class="w-full flex items-center gap-3 px-4 py-3 text-gray-800 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 transition-all duration-200"
                 >
                   {{ name }}
                 </button>
@@ -153,7 +153,7 @@
         <!-- دکمه CTA سریع: ثبت سفارش -->
         <a
           href="{% url 'shop:product_list' %}"
-          class="bg-blue-600 hover:bg-blue-500 text-white px-4 py-2 rounded-lg font-semibold transition transform hover:scale-105 duration-200"
+          class="bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-700 hover:to-blue-600 text-white px-6 py-3 rounded-full font-semibold shadow-md transition-all duration-300 hover:shadow-lg transform hover:-translate-y-1"
         >
           {% trans "🛒 ثبت سفارش" %}
         </a>
@@ -162,10 +162,10 @@
       <!-- دکمه موبایل -->
       <button
         id="mobile-menu-button"
-        class="md:hidden focus:outline-none bg-blue-600 text-white p-2 rounded-md shadow"
+        class="md:hidden focus:outline-none bg-gradient-to-r from-blue-600 to-blue-500 text-white p-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-300"
       >
         <svg
-          class="w-6 h-6"
+          class="w-7 h-7"
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
@@ -183,40 +183,44 @@
 
     <!-- ردیف پایین: منو ناوبری (دسکتاپ) -->
     <nav
-      class="hidden md:flex items-center justify-center space-x-6 space-x-reverse text-gray-700 font-bold border-t border-gray-200 py-2"
+      class="hidden md:flex items-center justify-center space-x-8 space-x-reverse text-gray-800 dark:text-gray-200 font-semibold border-t border-gray-200 dark:border-gray-700 py-3"
     >
       <a
         href="{% url 'shop:product_list' %}"
-        class="hover:text-blue-600 transition relative group flex items-center gap-1"
-      >📦 {% trans "محصولات" %}
+        class="relative group flex items-center gap-2 hover:text-blue-500 dark:hover:text-blue-400 transition-all duration-300"
+      >
+        📦 {% trans "محصولات" %}
         <span
-          class="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 transition-all group-hover:w-full"
+          class="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-500 dark:bg-blue-400 transition-all duration-300 group-hover:w-full"
         ></span>
       </a>
-      <span class="mx-2 text-gray-300">|</span>
       <a
         href="{% url 'blog:blog_list' %}"
-        class="hover:text-blue-600 transition relative group flex items-center gap-1"
-      >📰 {% trans "وبلاگ" %}
+        class="relative group flex items-center gap-2 hover:text-blue-500 dark:hover:text-blue-400 transition-all duration-300"
+      >
+        📰 {% trans "وبلاگ" %}
         <span
-          class="absolute bottom-0 left-0 w-0.5 bg-blue-600 transition-all group-hover:w-full"
+          class="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-500 dark:bg-blue-400 transition-all duration-300 group-hover:w-full"
         ></span>
       </a>
-      <span class="mx-2 text-gray-300">|</span>
       <a
         href="{% url 'home:about' %}"
-        class="hover:text-blue-600 transition relative group flex items-center gap-1"
-      >☎️ {% trans "تماس با ما" %}
+        class="relative group flex items-center gap-2 hover:text-blue-500 dark:hover:text-blue-400 transition-all duration-300"
+      >
+        ☎️ {% trans "تماس با ما" %}
         <span
-          class="absolute bottom-0 left-0 w-0.5 bg-blue-600 transition-all group-hover:w-full"
+          class="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-500 dark:bg-blue-400 transition-all duration-300 group-hover:w-full"
         ></span>
       </a>
       <a
         href="/static/catalog.pdf"
         target="_blank"
-        class="hover:text-blue-600 transition relative group flex items-center gap-1"
+        class="relative group flex items-center gap-2 hover:text-blue-500 dark:hover:text-blue-400 transition-all duration-300"
       >
         📖 {% trans "کاتالوگ" %}
+        <span
+          class="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-500 dark:bg-blue-400 transition-all duration-300 group-hover:w-full"
+        ></span>
       </a>
     </nav>
   </div>
@@ -224,54 +228,54 @@
   <!-- منوی موبایل -->
   <div
     id="mobile-menu"
-    class="hidden fixed top-0 right-0 w-72 h-full overflow-y-auto bg-gradient-to-b from-white to-blue-50 shadow-lg border-l border-gray-200 z-40 transition-transform transform translate-x-full"
+    class="hidden fixed top-0 right-0 w-80 h-full overflow-y-auto bg-white dark:bg-gray-900 shadow-2xl border-l border-gray-200 dark:border-gray-700 z-40 transition-transform transform translate-x-full duration-300"
   >
     <div
-      class="flex justify-between items-center px-6 py-4 border-b border-gray-200"
+      class="flex justify-between items-center px-6 py-5 border-b border-gray-200 dark:border-gray-700"
     >
-      <span class="font-bold text-blue-800">{% trans "منو" %}</span>
-      <button id="close-menu" class="text-gray-500 hover:text-red-500 text-xl">
+      <span class="font-extrabold text-gray-900 dark:text-white text-lg">{% trans "منو" %}</span>
+      <button id="close-menu" class="text-gray-500 dark:text-gray-300 hover:text-red-500 dark:hover:text-red-400 text-2xl transition-colors duration-300">
         &times;
       </button>
     </div>
     <nav
-      class="flex flex-col items-start px-6 py-6 space-y-4 text-gray-700 font-bold"
+      class="flex flex-col items-start px-6 py-6 space-y-5 text-gray-800 dark:text-gray-200 font-semibold"
     >
       <a
         href="{% url 'shop:product_list' %}"
-        class="hover:text-blue-600 transition flex items-center gap-2"
+        class="hover:text-blue-500 dark:hover:text-blue-400 transition-all duration-300 flex items-center gap-3"
       >📦 {% trans "محصولات" %}</a>
       <a
         href="{% url 'blog:blog_list' %}"
-        class="hover:text-blue-600 transition flex items-center gap-2"
+        class="hover:text-blue-500 dark:hover:text-blue-400 transition-all duration-300 flex items-center gap-3"
       >📰 {% trans "وبلاگ" %}</a>
       <a
         href="{% url 'home:about' %}"
-        class="hover:text-blue-600 transition flex items-center gap-2"
+        class="hover:text-blue-500 dark:hover:text-blue-400 transition-all duration-300 flex items-center gap-3"
       >☎️ {% trans "تماس با ما" %}</a>
 
       <a
         href="/static/catalog.pdf"
         target="_blank"
-        class="bg-blue-600 hover:bg-blue-500 text-white px-4 py-2 rounded-md transition transform hover:scale-105 duration-200 w-full text-center"
+        class="bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-700 hover:to-blue-600 text-white px-5 py-3 rounded-full transition-all duration-300 hover:shadow-lg transform hover:-translate-y-1 w-full text-center"
       >
         📖 {% trans "کاتالوگ" %}
       </a>
 
       <!-- فرم ورود/ثبت نام یا خروج موبایل -->
-      <div class="pt-4 border-t border-gray-200 w-full flex flex-col gap-2">
+      <div class="pt-5 border-t border-gray-200 dark:border-gray-700 w-full flex flex-col gap-3">
         {% if user.is_authenticated %}
-        <span class="text-gray-700 font-semibold"
+        <span class="text-gray-800 dark:text-gray-200 font-semibold"
           >{% blocktrans %}سلام، {{ user.username }}{% endblocktrans %}</span>
         <a
           href="{% url 'accounts:dashboard' %}"
-          class="bg-blue-500 hover:bg-blue-400 text-white px-4 py-2 rounded-md transition transform hover:scale-105 duration-200 w-full text-center"
+          class="bg-blue-600 hover:bg-blue-500 text-white px-5 py-3 rounded-full transition-all duration-300 hover:shadow-lg transform hover:-translate-y-1 w-full text-center"
           >{% trans "پنل کاربری" %}</a>
         <form action="{% url 'accounts:logout' %}" method="post">
           {% csrf_token %}
           <button
             type="submit"
-            class="bg-red-500 hover:bg-red-400 text-white px-4 py-2 rounded-md transition transform hover:scale-105 duration-200 w-full"
+            class="bg-red-600 hover:bg-red-500 text-white px-5 py-3 rounded-full transition-all duration-300 hover:shadow-lg transform hover:-translate-y-1 w-full"
           >
             {% trans "خروج" %}
           </button>
@@ -279,27 +283,27 @@
         {% else %}
         <a
           href="{% url 'accounts:login' %}"
-          class="bg-blue-500 hover:bg-blue-400 text-white px-4 py-2 rounded-md transition transform hover:scale-105 duration-200 w-full text-center"
+          class="bg-blue-600 hover:bg-blue-500 text-white px-5 py-3 rounded-full transition-all duration-300 hover:shadow-lg transform hover:-translate-y-1 w-full text-center"
           >{% trans "ورود" %}</a>
         <a
           href="{% url 'accounts:register' %}"
-          class="bg-blue-500 hover:bg-blue-400 text-white px-4 py-2 rounded-md transition transform hover:scale-105 duration-200 w-full text-center"
+          class="bg-green-600 hover:bg-green-500 text-white px-5 py-3 rounded-full transition-all duration-300 hover:shadow-lg transform hover:-translate-y-1 w-full text-center"
           >{% trans "ثبت نام" %}</a>
         {% endif %}
       </div>
 
       <!-- انتخاب زبان موبایل با کشویی -->
-      <div class="pt-4 border-t border-gray-200 w-full">
+      <div class="pt-5 border-t border-gray-200 dark:border-gray-700 w-full">
         <button
           id="mobileLanguageButton"
-          class="w-full flex justify-between items-center px-4 py-2 text-gray-700 bg-gray-100 rounded-md hover:bg-gray-200 font-semibold"
+          class="w-full flex justify-between items-center px-5 py-3 text-gray-800 dark:text-gray-200 bg-gray-100 dark:bg-gray-800 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 font-semibold transition-all duration-300"
         >
           🌍 Language / تغییر زبان
-          <svg class="w-4 h-4 transition-transform duration-200" id="mobileLanguageArrow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <svg class="w-5 h-5 transition-transform duration-300" id="mobileLanguageArrow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
           </svg>
         </button>
-        <div id="mobileLanguageDropdown" class="hidden flex-col gap-2 mt-2">
+        <div id="mobileLanguageDropdown" class="hidden flex-col gap-3 mt-3">
           {% for code, name in LANGUAGES %}
             <form action="{% url 'set_language' %}" method="post" class="w-full">
               {% csrf_token %}
@@ -308,7 +312,7 @@
                 name="language"
                 value="{{ code }}"
                 type="submit"
-                class="px-3 py-1 text-sm border rounded border-gray-300 hover:bg-blue-100 w-full text-center"
+                class="px-4 py-2 text-sm bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 rounded-lg w-full text-center transition-all duration-300"
               >
                 {{ name }}
               </button>
@@ -319,7 +323,6 @@
     </nav>
   </div>
 </header>
-
 <script>
   const menuButton = document.getElementById("mobile-menu-button");
   const mobileMenu = document.getElementById("mobile-menu");
